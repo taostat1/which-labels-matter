@@ -1,0 +1,11 @@
+{
+  "pools": 100,
+  "paths_per_pool": 1,
+  "workers": 4,
+  "cells": 12,
+  "methods": 4,
+  "runs": 4800,
+  "smoke_seconds_per_full_pool": 18.599357099970803,
+  "decision": "All originally registered grid settings retained. Replication count fixed at the planned 100 independent pools after smoke timing. Smoke data excluded.",
+  "timing": "Each worker uses one BLAS thread. Formal wall times include concurrent pool execution. Dedicated serial timing checks will be labeled separately."
+}

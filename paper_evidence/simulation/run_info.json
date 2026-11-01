@@ -1,0 +1,7 @@
+{
+  "pools": 100,
+  "runs": 4800,
+  "workers": 4,
+  "seconds": 361.2156659999164,
+  "source_sha256": "a098d648dd89aab38c02c50ae6afc4928f77cd63ddc0e0b37537792af2409d0e"
+}

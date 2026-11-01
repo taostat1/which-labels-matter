@@ -1,0 +1,77 @@
+{
+  "schema": "controlled-shared-logistic-fixed-cv-v1",
+  "registered": "2026-11-01T00:07:37.641308+08:00",
+  "pool_size": 2048,
+  "attributes": 4,
+  "dimension": 8,
+  "train_size": 64,
+  "test_size": 64,
+  "splits": 16,
+  "penalties": [
+    0.125,
+    0.5,
+    2.0
+  ],
+  "alphas": [
+    0.1,
+    0.6
+  ],
+  "signals": [
+    0.0,
+    4.0
+  ],
+  "tolerance": 0.01,
+  "delta": 0.05,
+  "query_checks": [
+    128,
+    256,
+    512,
+    1024,
+    2048,
+    4096,
+    8192,
+    16384,
+    32768
+  ],
+  "active_initial_draws": 32,
+  "active_max_draws_per_fold": 4096,
+  "inner_lambdas": [
+    0.005,
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    0.95
+  ],
+  "outer_betting_fractions": [
+    0.05,
+    0.1,
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    0.95
+  ],
+  "base_seed": 202611010101,
+  "smoke_seed": 202611010901,
+  "methods": [
+    "paired_weighted",
+    "paired_uniform",
+    "separate_weighted",
+    "active_cv"
+  ],
+  "generator": "U and V have four independent Rademacher coordinates divided by 2. Hadamard row h_a codes attribute a. Z_A[a]=(h_a*U,e_a)/sqrt(2); Z_B[a]=(h_a*((1-alpha)*U+alpha*V),e_a)/sqrt(2). Row norms at most 1. Shared true coefficient theta_s=s*(1,1/2,-1/2,1/4,0,0,0,0). Conditional marginal p_a=sigmoid(Z_A[a] theta_s). Y_a=1{Phi(sqrt(.3) C+sqrt(.7) E_a)<=p_a}, with independent standard normal C,E_a. Objects independent; labels within an object correlated.",
+  "design": "Sixteen fixed independent random train/test splits, disjoint within a split. One preassigned final subset per data pool. All configurations share U,V,latent uniforms and splits within a replicate. Different base replicates independent.",
+  "policies": "Zero-anchor shared logistic polynomial, min(paired,separate) allowance for paired methods, same public entry check and nine inspection times. Uniform changes only term probabilities and corresponding range. Separate-weighted changes only the allowance. Active CV uses exact training fits and corrected selective attribute evaluation with valid inner and outer intervals.",
+  "target": "Exact paired optimized BCE difference averaged over the fixed sixteen-split plan. Fully labeled audit is separate from all acquisition policies.",
+  "accounting": "Unique object-attribute labels across comparison, exact-CV fallback, and the shared final 64-object training subset. No pilot or calibration labels. Every method is charged its own matrix setup, bounds, queries and fitting. Common synthetic data generation and hidden audits excluded from decision time.",
+  "fallback": "Moment paths unresolved at 32768 draws complete exact CV with their cache. Active CV retains its verified numerical and interval fallback.",
+  "retention": "All twelve grid cells and all formal pools retained. Smoke pools excluded from formal summaries. Formal replication count selected only from smoke runtime.",
+  "confidence": "delta=.05 per method and configuration; not simultaneous across configurations. Formal summaries use independent pool replicates.",
+  "planned_pools": 100,
+  "paths_per_pool": 1
+}

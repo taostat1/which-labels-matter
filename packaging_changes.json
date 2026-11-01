@@ -1,0 +1,38 @@
+{
+  "reporting_only": [
+    {
+      "file": "paper_reproduction/main_cv/experiments/shared_resource/logistic_cv_attribution_20261031/summarize.py",
+      "change": "Create figure/table output directory before writing.",
+      "previous_sha256": "2a904797e8fdc1c22732a6e67d15a30dc528bcccadb47acd84751d91c0bffa32",
+      "sha256": "2b1e7e8b68c474d66476d206f72e22848de5fb816b02a101ad0c8be6988a352a"
+    },
+    {
+      "file": "paper_reproduction/main_cv/experiments/shared_resource/logistic_cv_attribution_20261031/plot_results.py",
+      "change": "Create figure/table output directory before writing.",
+      "previous_sha256": "6a53a5bc69965c71c58b23506ae8da17172b6a6e07d2ef9852d7a8223c934eed",
+      "sha256": "c1fd9b753ec38cc7217d2e603ec2abfd7ea822ff83ca4b2c851ae0577e437baa"
+    },
+    {
+      "file": "paper_reproduction/simulation/experiments/shared_resource/logistic_simulation_20261101/artifacts.py",
+      "change": "Create figure/table output directory before writing.",
+      "previous_sha256": "8c2b94890cf566557c6eed6c9cf7e88f55c9e66a82c4fc2e26542aa1f10db7a0",
+      "sha256": "b298dee7c7c6a536e962d9b820840d0556d280911d40630e7fa7151089befad8"
+    }
+  ],
+  "removed_unrelated_snapshot_files": [
+    "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_active_cv_budget_20261030\\protocol.json",
+    "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_active_cv_budget_20261030\\run.py",
+    "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_active_cv_budget_20261030\\summarize.py",
+    "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_continuation_20261029\\run_validation.py",
+    "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_continuation_20261029\\summarize.py",
+    "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_cv_earlystop_kfold_20261030\\run.py",
+    "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_cv_earlystop_kfold_20261030\\summarize.py",
+    "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_cv_extension_20261031\\plot_results.py",
+    "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_cv_extension_20261031\\summarize.py",
+    "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_cv_focus_20261030\\summarize.py",
+    "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_shufflesplit_20261030\\run.py",
+    "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_shufflesplit_20261030\\summarize.py",
+    "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_t4_paired_bound_20261030\\summarize.py",
+    "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_cv_attribution_20261031\\__pycache__\\run.cpython-312.pyc"
+  ]
+}

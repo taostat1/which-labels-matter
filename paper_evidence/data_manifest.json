@@ -1,0 +1,38 @@
+[
+  {
+    "cache": "goemotions_comparison_20261028",
+    "relative_path": "prepared/features_public.npz",
+    "bytes": 88701223,
+    "sha256": "4fb33b7c4be8bc6bd2e4c6904e7fd95d8d71a8d8bfb14913fce959fd6275945c"
+  },
+  {
+    "cache": "goemotions_comparison_20261028",
+    "relative_path": "prepared/labels_oracle.npz",
+    "bytes": 357819,
+    "sha256": "cdf95c59fc207d986bafa2a40beffc3f974ecc26923283f2b6c1304132fcdbdc"
+  },
+  {
+    "cache": "ade20k_decision_20261026",
+    "relative_path": "prepared/features_public.npz",
+    "bytes": 221354106,
+    "sha256": "70389015d0c926a40ff532df827571fd13a2b37709f0d92ac597fc00b9dc7eb7"
+  },
+  {
+    "cache": "ade20k_decision_20261026",
+    "relative_path": "prepared/labels_oracle.npz",
+    "bytes": 407123,
+    "sha256": "f97544cc45c44e266ceb6f784c9678bfc3ad29937af0f327a0854d2afa1333e4"
+  },
+  {
+    "cache": "cross_backbone_20261028",
+    "relative_path": "prepared/features_public.npz",
+    "bytes": 9760174,
+    "sha256": "147227894dd893dc5d5af21d9ade17c84fd4953abea0d70bbd2ef6b823c5eced"
+  },
+  {
+    "cache": "cross_backbone_20261028",
+    "relative_path": "prepared/labels_oracle.npz",
+    "bytes": 111361,
+    "sha256": "477cbd279edca4cdb4ed1fa6fe2e48181f31d3ee2b01204373bd3ebc1d159492"
+  }
+]

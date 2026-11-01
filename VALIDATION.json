@@ -1,0 +1,34 @@
+{
+  "python": "3.12.14",
+  "platform": "Windows",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "mpmath": "1.4.1"
+  },
+  "unit_tests": 10,
+  "unit_tests_passed": 10,
+  "reference_query_path_equal": true,
+  "original_simulation_smoke": {
+    "cells": 12,
+    "method_runs": 48,
+    "covered": 48,
+    "acceptable": 48
+  },
+  "demo": {
+    "selective_labels": 1509,
+    "active_cv_labels": 1998,
+    "target": -0.010966261706290573,
+    "both_intervals_cover": true,
+    "both_choices_acceptable": true,
+    "role": "Executable illustration; not additional manuscript evidence."
+  },
+  "mathematical_results_unchanged": true,
+  "remote_repository_created": false,
+  "extracted_package_tests_passed": true,
+  "extracted_demo_reproduced": true,
+  "main_cv_command_line_passed": true,
+  "no_real_data_bundled": true
+}

@@ -1,0 +1,253 @@
+{
+  "configuration": {
+    "output": "demo_output",
+    "seed": 202611010901,
+    "objects": 1024,
+    "splits": 8,
+    "penalty": 0.125,
+    "tolerance": 0.01
+  },
+  "audit": {
+    "difference": -0.010966261706290573,
+    "numerical_radius": 2.0000004290723945e-09,
+    "audit_labels": 2716
+  },
+  "methods": [
+    {
+      "method": "selective",
+      "choice": "A",
+      "interval": [
+        -0.03201432216667755,
+        0.004727649963062021
+      ],
+      "tolerance": 0.01,
+      "delta": 0.05,
+      "approximation_error_bound": 0.007551312428450767,
+      "branch": "selective_moments",
+      "fallback": false,
+      "comparison_labels": 1337,
+      "new_final_training_labels": 172,
+      "total_labels": 1509,
+      "stage_labels": {
+        "comparison": 1337,
+        "final_training": 172
+      },
+      "requests": {
+        "comparison": 2048,
+        "final_training": 256
+      },
+      "draws": 1024,
+      "history": [
+        {
+          "draws": 128,
+          "estimate": -0.014240371890845874,
+          "statistical_radius": 0.04263763776218944,
+          "approximation_radius": 0.007551312428450767,
+          "lower": -0.06442932408148608,
+          "upper": 0.035948580299794336,
+          "labels": 245,
+          "choice": "unresolved"
+        },
+        {
+          "draws": 256,
+          "estimate": -0.013046300312769652,
+          "statistical_radius": 0.026302805217124345,
+          "approximation_radius": 0.007551312428450767,
+          "lower": -0.04690041995834476,
+          "upper": 0.020807819332805455,
+          "labels": 460,
+          "choice": "unresolved"
+        },
+        {
+          "draws": 512,
+          "estimate": -0.013643336101807764,
+          "statistical_radius": 0.016655273059399126,
+          "approximation_radius": 0.007551312428450767,
+          "lower": -0.03784992358965766,
+          "upper": 0.01056325138604213,
+          "labels": 829,
+          "choice": "unresolved"
+        },
+        {
+          "draws": 1024,
+          "estimate": -0.013643336101807764,
+          "statistical_radius": 0.01081967163641902,
+          "approximation_radius": 0.007551312428450767,
+          "lower": -0.03201432216667755,
+          "upper": 0.004727649963062021,
+          "labels": 1337,
+          "choice": "A"
+        }
+      ],
+      "final_parameter": [
+        0.7347313466644803,
+        0.2751026623463764,
+        -0.2374017000421808,
+        0.07990816886997643,
+        0.11604393623756135,
+        -0.00823627827270001,
+        -0.05415571633516743,
+        0.016841626704634773
+      ],
+      "final_fit": {
+        "iterations": 3,
+        "objective_calls": 3,
+        "residual": 3.777009325058555e-17,
+        "parameter_error_bound": 3.021607460046844e-16
+      },
+      "setup_seconds": 0.23144569993019104,
+      "decision_and_final_fit_seconds": 0.0065882999915629625,
+      "total_seconds": 0.238033999921754,
+      "audit_covered": true,
+      "audit_acceptable": true
+    },
+    {
+      "method": "active_cv",
+      "choice": "A",
+      "interval": [
+        -0.014953886692849217,
+        0.0031655068275546704
+      ],
+      "tolerance": 0.01,
+      "delta": 0.05,
+      "approximation_error_bound": 0.007551312428450767,
+      "branch": "active_cv",
+      "fallback": false,
+      "comparison_labels": 1841,
+      "new_final_training_labels": 157,
+      "total_labels": 1998,
+      "stage_labels": {
+        "cv_training": 1606,
+        "evaluation": 235,
+        "final_training": 157
+      },
+      "requests": {
+        "cv_training": 2048,
+        "evaluation": 7721,
+        "final_training": 256
+      },
+      "draws": 256,
+      "history": [
+        {
+          "action": "open",
+          "fold": 5,
+          "opened_folds": 1,
+          "draws": 32,
+          "lower": -0.14180618035582132,
+          "upper": 0.13992082346446652,
+          "choice": "unresolved",
+          "labels": 285,
+          "training_labels": 256,
+          "evaluation_labels": 29
+        },
+        {
+          "action": "open",
+          "fold": 3,
+          "opened_folds": 2,
+          "draws": 64,
+          "lower": -0.12457088095403288,
+          "upper": 0.12204718644192124,
+          "choice": "unresolved",
+          "labels": 562,
+          "training_labels": 502,
+          "evaluation_labels": 60
+        },
+        {
+          "action": "open",
+          "fold": 6,
+          "opened_folds": 3,
+          "draws": 96,
+          "lower": -0.10600751080264542,
+          "upper": 0.10197467975211061,
+          "choice": "unresolved",
+          "labels": 822,
+          "training_labels": 733,
+          "evaluation_labels": 89
+        },
+        {
+          "action": "open",
+          "fold": 4,
+          "opened_folds": 4,
+          "draws": 128,
+          "lower": -0.08855046375836519,
+          "upper": 0.08302354144535494,
+          "choice": "unresolved",
+          "labels": 1047,
+          "training_labels": 928,
+          "evaluation_labels": 119
+        },
+        {
+          "action": "open",
+          "fold": 0,
+          "opened_folds": 5,
+          "draws": 160,
+          "lower": -0.07127078371967854,
+          "upper": 0.06421263194095736,
+          "choice": "unresolved",
+          "labels": 1258,
+          "training_labels": 1110,
+          "evaluation_labels": 148
+        },
+        {
+          "action": "open",
+          "fold": 1,
+          "opened_folds": 6,
+          "draws": 192,
+          "lower": -0.052791273340085314,
+          "upper": 0.043893028746843414,
+          "choice": "unresolved",
+          "labels": 1466,
+          "training_labels": 1288,
+          "evaluation_labels": 178
+        },
+        {
+          "action": "open",
+          "fold": 2,
+          "opened_folds": 7,
+          "draws": 224,
+          "lower": -0.03427372573490433,
+          "upper": 0.02384416766837163,
+          "choice": "unresolved",
+          "labels": 1652,
+          "training_labels": 1444,
+          "evaluation_labels": 208
+        },
+        {
+          "action": "open",
+          "fold": 7,
+          "opened_folds": 8,
+          "draws": 256,
+          "lower": -0.014953886692849217,
+          "upper": 0.0031655068275546704,
+          "choice": "A",
+          "labels": 1841,
+          "training_labels": 1606,
+          "evaluation_labels": 235
+        }
+      ],
+      "final_parameter": [
+        0.7347313466644803,
+        0.2751026623463764,
+        -0.2374017000421808,
+        0.07990816886997643,
+        0.11604393623756135,
+        -0.00823627827270001,
+        -0.05415571633516743,
+        0.016841626704634773
+      ],
+      "final_fit": {
+        "iterations": 3,
+        "objective_calls": 3,
+        "residual": 3.777009325058555e-17,
+        "parameter_error_bound": 3.021607460046844e-16
+      },
+      "setup_seconds": 0.012739899917505682,
+      "decision_and_final_fit_seconds": 0.024868299951776862,
+      "total_seconds": 0.037608199869282544,
+      "audit_covered": true,
+      "audit_acceptable": true
+    }
+  ],
+  "note": "One synthetic example, not a new manuscript experiment.",
+  "label_saving_percent": 24.474474474474473
+}

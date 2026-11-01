@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "which-labels-logistic"
+version = "0.1.0"
+description = "Selective labels for a fixed shared-logistic CV comparison"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+
+[project.optional-dependencies]
+reproduce = ["scikit-learn>=1.2", "matplotlib>=3.7", "mpmath>=1.3"]
+
+[project.scripts]
+whichlabels-demo = "whichlabels.demo:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

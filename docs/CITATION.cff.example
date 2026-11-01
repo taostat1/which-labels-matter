@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Replace author placeholders and add the manuscript URL before using this as CITATION.cff."
+title: "Which Labels Matter for Model Comparison? Risk Guarantees and Costs for Shared Logistic Regression"
+type: software
+version: 0.1.0
+authors:
+  - family-names: REPLACE_WITH_FAMILY_NAME
+    given-names: REPLACE_WITH_GIVEN_NAMES
+

@@ -1,0 +1,106 @@
+{
+  "schema": "explicit-image-text-tolerance-attribution-v1",
+  "specified": "2026-10-31T12:06:30.117662+08:00",
+  "domains": [
+    {
+      "name": "image",
+      "data": "ADE20K",
+      "feature_domain": "backbone",
+      "attributes": 6,
+      "dimension": 22,
+      "candidate_A": "DINOv2-S/14",
+      "candidate_B": "DINOv2-B/14",
+      "interpolation": false,
+      "train_size": 128,
+      "test_size": 128,
+      "lam": 0.5,
+      "tolerances": [
+        0.0025,
+        0.00375,
+        0.005
+      ]
+    },
+    {
+      "name": "text",
+      "data": "GoEmotions",
+      "feature_domain": "text",
+      "attributes": 8,
+      "dimension": 20,
+      "candidate_A": "mean pooling",
+      "candidate_B": "0.9 mean pooling + 0.1 first token",
+      "interpolation": true,
+      "alpha": 0.1,
+      "train_size": 64,
+      "test_size": 128,
+      "lam": 0.125,
+      "tolerances": [
+        0.005
+      ]
+    }
+  ],
+  "pools_per_domain": 20,
+  "paths_per_pool": 3,
+  "pool_size": 4096,
+  "splits": 32,
+  "delta": 0.05,
+  "query_checks": [
+    128,
+    256,
+    512,
+    1024,
+    2048,
+    4096,
+    8192,
+    16384,
+    32768
+  ],
+  "active_initial_draws": 32,
+  "active_max_draws_per_fold": 4096,
+  "inner_lambdas": [
+    0.005,
+    0.01,
+    0.02,
+    0.05,
+    0.1,
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    0.95
+  ],
+  "outer_betting_fractions": [
+    0.05,
+    0.1,
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    0.95
+  ],
+  "pool_seed": 202610313101,
+  "split_seed": 202610313102,
+  "query_seed": 202610313103,
+  "methods": [
+    "active_cv",
+    "selective_paired",
+    "whole_object_purchases",
+    "no_early_stop",
+    "separate_bound"
+  ],
+  "target": "Exact mean optimized paired binary-cross-entropy difference on the prescribed 32-split plan, conditional on the pool and hidden labels.",
+  "final_training": "A common prespecified subset with the same size as each split training sample; all previously purchased labels are reused.",
+  "comparison": "Active CV fits complete training subsets, actively evaluates attributes, reuses labels and stops early. All moment variants use the same zero anchor, polynomial, public coefficient probabilities, queries, confidence radius, and label cache rule.",
+  "ablations": {
+    "whole_object_purchases": "When a sampled product requests an attribute, buy every attribute on that object. Keep the same estimator and decision times. This isolates purchase granularity; it is a matched ablation, not an optimized all-label competitor.",
+    "no_early_stop": "Use selective purchases and the paired allowance, but make no decision until the same prespecified 32768-product cap. Keep the same nine-look radius, so only the stopping policy is removed.",
+    "separate_bound": "Use the separate-candidate allowance in place of min(paired,separate). Every other component is unchanged."
+  },
+  "fallback": "An unresolved moment variant at the cap completes exact CV with its own paid-label cache. Numerical tolerance is included in all intervals.",
+  "error_control": "delta=.05 for each prespecified configuration and method. No simultaneous claim across configurations. All interval look counts remain nine, including the no-early-stop ablation.",
+  "pairing": "Within a pool, all tolerances and moment variants share product-query seeds and final subsets. The active CV fold order and evaluation-query seeds are also paired across tolerances.",
+  "retention": "Every prespecified pool, tolerance and method is reported, regardless of target, saving, or fallback. New independent pool and query seeds; pools can overlap within the same fixed corpus.",
+  "audit": "Full-label targets and actual approximation errors are computed in a separate audit. Acquisition and stopping functions never receive these values.",
+  "accounting": "Distinct object-attribute union across comparison and final training. Zero pilot and calibration labels. Feature calculations and fitting seconds are reported separately.",
+  "analysis": "Means of complete labels, SD of pool means, paired pool-bootstrap intervals, coverage and acceptable decisions, first-moment decisions and fallback counts. Ablation effects are one-component comparisons and are not added together.",
+  "relation_to_prior": "The grid halves the existing tolerance and includes its midpoint. Choices use earlier study results; all current pools and query paths are new. The weak-penalty text case is inherited unchanged to assess paired-error cancellation."
+}

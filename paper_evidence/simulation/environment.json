@@ -1,0 +1,23 @@
+{
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "matplotlib": "3.11.2"
+  },
+  "files": {
+    "experiments/shared_resource/logistic_active_cv_budget_20261030/active_core.py": "73c3768540cedebe8197148a45ac66d6b4b25d63a89b1e20ee244164ac4fa605",
+    "experiments/shared_resource/logistic_cv_attribution_20261031/run.py": "a688821faa34452e0cd58b2b708dd9c806c716899567a68282b11df7fd3e707d",
+    "experiments/shared_resource/logistic_cv_earlystop_kfold_20261030/extensions.py": "170a3361886ab1ef96710aaa460cf2f001461c8248b7766b75940723331a3ab9",
+    "experiments/shared_resource/logistic_cv_focus_20261030/check_geometry.py": "615f56688104d59b90c809e911b1b19da627534dfe0b89715e96fe2e0cade5ce",
+    "experiments/shared_resource/logistic_cv_focus_20261030/run_validation.py": "66b1dee31cd82318e4db1b190875312108d9a69443d6428410ff4ba078acdc84",
+    "experiments/shared_resource/logistic_shufflesplit_20261030/cv_core.py": "f040dcf2eccc144ee43dfa1a8c96e32fa6a2f728338a6e8c650e7dbf095f8a24",
+    "experiments/shared_resource/logistic_shufflesplit_20261030/diagnose.py": "56d3ab88c7b754064db6c63d397ff30f41362f642f5179a73ae0f1e2e83f65e4",
+    "experiments/shared_resource/logistic_simulation_20261101/capture_environment.py": "05b6fe5899d95500fad1d349da7671cf8849132a4a68da39156f63ccfc92be46",
+    "experiments/shared_resource/logistic_t4_paired_bound_20261030/paired.py": "e536147b4b3402d980ba9e1bc93e68bfa2af97bd52be8e2a748348d3400100d9",
+    "experiments/shared_resource/shared_logistic_full_20261029/core.py": "50d8c56239cdd608601a50a71427b343dfcebe3f52ed70281d1b35a6fa850f70",
+    "experiments/shared_resource/shared_logistic_full_20261029/local_bounds.py": "485ed407eef709616a1a704c229e95941904c4a689c7e50402a146d9fb16c258",
+    "experiments/shared_resource/shared_logistic_full_20261029/study.py": "06e5662d3d1d4a0bba1d2fc0b904067b34ec82a4162ed22501e389ac9bf68c86"
+  }
+}
