@@ -1,34 +1,75 @@
 {
-  "python": "3.12.14",
-  "platform": "Windows",
+  "version": "0.2.1",
+  "date": "2026-11-08",
+  "python": "3.12.3",
   "versions": {
-    "numpy": "2.3.5",
-    "scipy": "1.18.1",
-    "scikit-learn": "1.9.1",
-    "matplotlib": "3.11.2",
-    "mpmath": "1.4.1"
+    "numpy": "1.26.4",
+    "scipy": "1.13.1"
   },
-  "unit_tests": 10,
-  "unit_tests_passed": 10,
-  "reference_query_path_equal": true,
-  "original_simulation_smoke": {
-    "cells": 12,
-    "method_runs": 48,
-    "covered": 48,
-    "acceptable": 48
+  "default_interval": "Clopper-Pearson, per-look alpha=delta/J",
+  "unit_tests": 14,
+  "unit_tests_passed": 14,
+  "unit_command": "python -m unittest discover -s tests -v",
+  "theory_numeric_audit": "CP_Revision_20261106.zip:reproduction/experiments/shared_resource/logistic_cp_revision_20261106/cp_theory_numeric_audit.json",
+  "historical_eb_validation": {
+    "python": "3.12.14",
+    "platform": "Windows",
+    "versions": {
+      "numpy": "2.3.5",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "matplotlib": "3.11.2",
+      "mpmath": "1.4.1"
+    },
+    "unit_tests": 10,
+    "unit_tests_passed": 10,
+    "reference_query_path_equal": true,
+    "original_simulation_smoke": {
+      "cells": 12,
+      "method_runs": 48,
+      "covered": 48,
+      "acceptable": 48
+    },
+    "demo": {
+      "selective_labels": 1509,
+      "active_cv_labels": 1998,
+      "target": -0.010966261706290573,
+      "both_intervals_cover": true,
+      "both_choices_acceptable": true,
+      "role": "Executable illustration; not additional manuscript evidence."
+    },
+    "mathematical_results_unchanged": true,
+    "remote_repository_created": false,
+    "extracted_package_tests_passed": true,
+    "extracted_demo_reproduced": true,
+    "main_cv_command_line_passed": true,
+    "no_real_data_bundled": true
   },
-  "demo": {
-    "selective_labels": 1509,
+  "companion_evidence_archive": "CP_Revision_20261106.zip",
+  "current_local_demo": {
+    "output": "software_smoke/results.json (revision workspace)",
+    "version": "0.2.0",
+    "selective_labels": 685,
     "active_cv_labels": 1998,
-    "target": -0.010966261706290573,
-    "both_intervals_cover": true,
-    "both_choices_acceptable": true,
-    "role": "Executable illustration; not additional manuscript evidence."
+    "both_acceptable": true,
+    "illustrative_not_manuscript_evidence": true
   },
-  "mathematical_results_unchanged": true,
-  "remote_repository_created": false,
-  "extracted_package_tests_passed": true,
-  "extracted_demo_reproduced": true,
-  "main_cv_command_line_passed": true,
-  "no_real_data_bundled": true
+  "audit": "paper_evidence/audit_20261107.json",
+  "companion_evidence_archives": [
+    "CP_Revision_20261106.zip",
+    "Simulation_Refinement_20261106.zip"
+  ],
+  "algorithm_readability_revision": {
+    "date": "2026-11-08",
+    "stages": 3,
+    "numbered_steps": 14,
+    "body_lines_including_input_output_and_stage_headings": 19,
+    "paper_algorithm_page": 8,
+    "paper_pages": 50,
+    "mathematical_procedure_unchanged": true,
+    "implementation_unchanged_since_version": "0.2.1",
+    "unit_tests_rerun": 14,
+    "unit_tests_passed": 14,
+    "latex_source": "docs/ALGORITHM1.tex"
+  }
 }

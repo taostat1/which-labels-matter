@@ -34,5 +34,34 @@
     "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_shufflesplit_20261030\\summarize.py",
     "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_t4_paired_bound_20261030\\summarize.py",
     "paper_reproduction\\main_cv\\experiments\\shared_resource\\logistic_cv_attribution_20261031\\__pycache__\\run.cpython-312.pyc"
-  ]
+  ],
+  "cp_revision": {
+    "date": "2026-11-06",
+    "version": "0.2.0",
+    "change": "Replaced default fixed-CV EB interval with CP and rewrote algorithm/scope/reproduction documentation. Original scripts and evidence retain historical status.",
+    "current_entry_point": "paper_reproduction/cp_revision_20261106/README.txt",
+    "remote_push_performed": false
+  },
+  "companion_evidence_archive": "CP_Revision_20261106.zip",
+  "evidence_in_package": "Only the CP index; full evidence tree is in the companion archive.",
+  "proof_code_audit_revision": {
+    "date": "2026-11-07",
+    "version": "0.2.1",
+    "changes": [
+      "Exact equality cancellation in paired error bound",
+      "Two regression tests",
+      "Current simulation archive index"
+    ],
+    "reported_experiment_values_changed": false,
+    "remote_push_performed": false
+  },
+  "companion_evidence_archives": [
+    "CP_Revision_20261106.zip",
+    "Simulation_Refinement_20261106.zip"
+  ],
+  "algorithm_readability_revision": {
+    "date": "2026-11-08",
+    "change": "Three stages and 14 numbered steps in the paper and bilingual algorithm documentation.",
+    "formula_and_decision_rules_unchanged": true
+  }
 }

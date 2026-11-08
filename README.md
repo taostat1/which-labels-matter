@@ -2,11 +2,15 @@
 
 Selective label comparison for shared logistic regression.
 
-[中文算法说明](docs/ALGORITHM_ZH.md) · [中文上传说明](docs/GITHUB_UPLOAD_ZH.md)
+[Algorithm 1: 14 steps](docs/ALGORITHM.md#queries-and-decisions) · [中文算法说明](docs/ALGORITHM_ZH.md)
 
 Repeated CV can involve many more labeled objects than the final fit. This code compares two fixed feature representations **before acquiring all labels in a prescribed CV plan**. It uses public features to identify weighted label products, queries their labels, and stops when its interval supports a candidate within a specified tolerance.
 
-The main method starts at a zero anchor and needs **no pilot labels**. The interval includes both sampling uncertainty and approximation error. Labels acquired for comparison, fallback, and final training are counted once through a shared cache.
+Algorithm 1 has three stages: **label-free preparation, sequential label queries, and selection with final training**. Its [14-step pseudocode](docs/ALGORITHM.md#queries-and-decisions) and [LaTeX source](docs/ALGORITHM1.tex) follow the manuscript.
+
+The main method starts at a zero anchor and needs **no pilot labels**. The current 0.2.1 method uses a Clopper--Pearson (CP) exact binomial interval at each prespecified inspection, with error probability `delta/J` per look. Its endpoints include the approximation error bound. Labels acquired for comparison, fallback, and final training are counted once through a shared cache.
+
+Version 0.2.1 also recognizes exact cancellation for identical training designs under weak regularization. Identical candidates need only the prescribed final-training labels. The reported experimental configurations are unchanged. See [the reproduction guide](docs/REPRODUCING.md) for the current simulation and real-data archives.
 
 ## Installation
 
@@ -77,22 +81,24 @@ The approximation is not an unbiased estimator of the exact logistic score. Samp
 | `src/whichlabels/api.py` | Prepare, query, stop, fall back, and train the selected candidate |
 | `src/whichlabels/labels.py` | Callback-based label acquisition and distinct-label accounting |
 | `src/whichlabels/_bounds.py` | Feature-only paired and separate approximation bounds |
-| `src/whichlabels/_moments.py` | Sparse label polynomial and sampling interval |
+| `src/whichlabels/_moments.py` | Sparse label polynomial and fixed sampling probabilities |
+| `src/whichlabels/_intervals.py` | Exact binomial endpoints, numerical guard, and stopping |
 | `src/whichlabels/_active.py` | Same-permission active-CV comparator |
 | `tests/` | Algebra, cache, decision branches, and archived-code regression checks |
 | `paper_reproduction/` | Original scripts with their relative imports preserved |
 | `paper_evidence/` | Compact frozen summaries and input-cache hashes |
 | `source_provenance.json` | Function-level provenance of extracted implementations |
 
-The private modules retain the experiment implementations. The public API adds input validation, a real acquisition callback, explicit numerical-residual checks, and one complete decision function. `paper_reproduction` preserves the original experiment scripts separately so the package refactoring does not replace the frozen research record.
+The private modules retain the public-feature and fitting implementations; `_intervals.py` supplies the CP revision. The public API adds input validation, a real acquisition callback, explicit numerical-residual checks, and one complete decision function. `paper_reproduction` preserves the original experiment scripts separately so the package refactoring does not replace the frozen research record.
 
 ## Reproduce the manuscript
 
 See [REPRODUCING.md](docs/REPRODUCING.md). The controlled simulation is self-contained. GoEmotions and ADE20K reruns require the documented prepared feature/label caches. Those datasets, model weights, and hidden label arrays are not bundled in this code repository.
 
-The main real-data table reports 35.4%-51.9% fewer total labels than active CV. The simulation also includes ties and configurations in which selective moments acquire more labels. Complete-label counts include final training; computation is reported separately.
+The revised experiment index is `paper_reproduction/cp_revision_20261106/README.txt`. The current main simulation uses `Simulation_Refinement_20261106.zip`. Real-data and extension runners use `CP_Revision_20261106.zip`. Each companion archive includes its execution commands and full result records. This keeps the installable package small. The older `paper_reproduction/simulation`, `paper_reproduction/main_cv`, and corresponding `paper_evidence` folders preserve the empirical-Bernstein (EB) version as historical evidence. Their percentages are not the CP revision results.
 
-## Before publishing this repository
+The CP update keeps sampling probabilities, batches, inspection times, approximation bounds, caching, fallback, and final training unchanged. The active-CV comparator retains its original confidence sequences. Uniform-term and general prediction-assisted statistics retain their applicable bounded-variable intervals. Complete-label counts include final training; coverage and acceptable choices are reported separately.
 
-Add the real author names, citation information, and manuscript URL. Choose a code license and add `LICENSE`; no license has been assigned on the authors' behalf. A citation template is in `docs/CITATION.cff.example`. See [the upload notes](docs/GITHUB_UPLOAD_ZH.md). No GitHub repository has been created or pushed by this package preparation.
+## Citation and license
 
+Add the real author names, citation information, and manuscript URL. Choose a code license and add `LICENSE`; no license has been assigned on the authors' behalf. A citation template is in `docs/CITATION.cff.example`. See [the upload notes](docs/GITHUB_UPLOAD_ZH.md).

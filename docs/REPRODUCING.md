@@ -1,10 +1,23 @@
 # Reproduce the manuscript
 
-There are two software routes. The installable `whichlabels` package is a clean algorithm interface. `paper_reproduction` preserves the original relative imports and protocols for rerunning the published experiment design. Function-level source hashes are in `source_provenance.json`.
+## Current CP revision
+
+Versions 0.2.0 and 0.2.1 use CP intervals for the fixed-CV signed-product sampler. Version 0.2.1 adds exact cancellation when the training designs coincide; all reported experiment paths retain their results. The current manuscript uses two separate companion archives:
+
+- `Simulation_Refinement_20261106.zip` contains the current main simulation: penalties 0.25, 0.5, and 2; two candidate differences; two signal levels; and 100 independent pools. Its twelve cells produce 4,800 method runs. Follow the root README in that archive.
+- `CP_Revision_20261106.zip` contains the repeated-split and full-coverage comparisons, fivefold checks, cache ablations, and population extension. Its earlier simulation includes penalty 0.125; it is the source for the retained weak-penalty appendix results, not the current main simulation table.
+
+The local index `paper_reproduction/cp_revision_20261106/README.txt` identifies these archives. General-valued population statistics, uniform-term sampling, and the active-CV comparator retain their applicable bounded-variable intervals.
+
+The executable public API is `whichlabels.compare`; `python -m whichlabels.demo` uses the current CP implementation. The folders and commands below preserve the earlier EB experiments. Running them reproduces that historical version, not the revised CP tables.
+
+## Historical EB reproduction routes
+
+There are two software routes. The installable `whichlabels` package is a clean algorithm interface. `paper_reproduction` preserves the original relative imports and protocols for rerunning the archived experiment design. Function-level source hashes are in `source_provenance.json`.
 
 Three reporting scripts now create their output directories explicitly, so a fresh checkout can generate figures and tables. These filesystem-only changes are recorded in `packaging_changes.json`; the experiment algorithms and frozen protocols are unchanged.
 
-## Controlled simulation
+### Historical controlled simulation
 
 Install the reproduction dependencies, then use a fresh result directory:
 
@@ -25,9 +38,9 @@ python experiments/shared_resource/logistic_simulation_20261101/artifacts.py
 
 The 12 cells vary candidate interpolation, regularization, and signal strength. All cells are retained. The smoke example is separate from the formal evidence. Completed formal pool files are reused on restart; use a new working copy for a new independent rerun. Plot generation may require LaTeX.
 
-## Main text and image comparison
+### Historical text and image comparison
 
-The main Table 1 experiment is the tolerance-grid and matched-ablation run:
+The archived tolerance-grid experiment is the tolerance-grid and matched-ablation run:
 
 ```bash
 cd paper_reproduction/main_cv
@@ -52,7 +65,7 @@ The paper describes frozen text feature extraction, image feature extraction, an
 
 The primary run uses 20 pools per domain, three query paths per pool, 32 splits, and the prespecified tolerance grid. Full-label audits and acquisition policies remain separate. `run.py` refuses to overwrite completed formal evidence.
 
-## Other paper results
+### Additional evidence
 
-The Overleaf/source archive is the full evidence archive. It also contains ordinary-fivefold checks, the cache ablation, information-bound checks, and the population-risk extension. These are not prerequisites for running Algorithm 1. In particular, the historical paid-pilot/planner scripts should not be used as the entry point for the main fixed-CV method.
+The separate `CP_Revision_20261106.zip` holds the full rerun evidence. The Overleaf archive contains the manuscript and compact summaries. Ordinary-fivefold checks, the cache ablation, information-bound checks, and the population-risk extension are not prerequisites for running Algorithm 1. In particular, the historical paid-pilot/planner scripts should not be used as the entry point for the main fixed-CV method.
 

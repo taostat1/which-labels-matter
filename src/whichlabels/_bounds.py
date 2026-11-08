@@ -112,6 +112,9 @@ def paired_preconditioned(za,zb,qa,qb,lam):
         details.append(dict(preconditioned_residual_difference=dr,eta=a['eta'],geometry=dgeometry,
                             weight_constant=dweights,weight_feedback=feedback,denominator=den))
     de=min(choices+[A['d']+B['d']])
+    # Identical training designs have identical fits and Newton errors, even
+    # when the sufficient contraction denominator is nonpositive.
+    if np.array_equal(A['z'],B['z']):de=0.
     risk=[]
     for a,b in [(A,B),(B,A)]:
         delta_logit=dvq+a['rq']*de+rdq*b['d']

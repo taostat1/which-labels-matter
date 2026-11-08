@@ -1,4 +1,4 @@
-"""Polynomial and inspection interval from the frozen CV implementation."""
+"""Fixed-CV polynomial with a sequentially corrected exact binomial interval."""
 import time
 import numpy as np
 from scipy import sparse
@@ -57,24 +57,7 @@ def query_plan(poly,hp,r):
                 low=low,high=high,width=high-low,seconds=time.perf_counter()-tick)
 
 
-def query_trial(poly,plan,oracle,rng,checks,g,delta):
-    tick=time.perf_counter();su=0.;sq=0.;n=0;history=[];choice='unresolved'
-    for end in checks:
-        idx=np.searchsorted(plan['cdf'],rng.random(end-n),side='right')
-        xl=2*oracle.query_keys(poly['left'][idx],'comparison')-1
-        xr=2*oracle.query_keys(poly['right'][idx],'comparison')-1
-        residual=poly['coef'][idx]/plan['q'][idx]*(xl*xr-plan['pred'][idx])
-        assert residual.min()>=plan['low']-1e-10 and residual.max()<=plan['high']+1e-10
-        su+=float(residual.sum());sq+=float(residual@residual);n=end
-        variance=max(0.,(sq-su*su/n)/(n-1));t=np.log(4*len(checks)/delta)
-        stat=np.sqrt(2*variance*t/n)+7*plan['width']*t/(3*(n-1))
-        center=plan['base']+su/n;half=stat+poly['epsilon']+2e-9
-        lo,hi=center-half,center+half;choice=decision(lo,hi,g)
-        history.append(dict(draws=n,estimate=center,statistical_radius=stat,approximation_radius=poly['epsilon'],
-                            lower=lo,upper=hi,labels=oracle.count,choice=choice))
-        if choice!='unresolved':break
-    return dict(choice=choice,lower=lo,upper=hi,estimate=center,draws=n,
-                seconds=time.perf_counter()-tick,history=history)
+from ._intervals import query_trial
 
 
 def audit_polynomial(poly,y,splits,a,b,lam):

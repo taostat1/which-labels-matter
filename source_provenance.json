@@ -1,5 +1,5 @@
 {
-  "purpose": "Function-level extraction from the manuscript experiment source; only import namespaces are changed.",
+  "purpose": "Original function extraction with explicit versioned CP-interval replacement. Historical hashes document ancestry, not the current query engine.",
   "symbols": [
     {
       "source": "shared_logistic_full_20261029/core.py",
@@ -164,7 +164,8 @@
       "source_file_sha256": "f040dcf2eccc144ee43dfa1a8c96e32fa6a2f728338a6e8c650e7dbf095f8a24",
       "original_symbol_sha256": "9ee02851e7c05bec316a0e4a52f54bb829a052247957a42fc5a12384eaa9f552",
       "packaged_symbol_sha256": "9ee02851e7c05bec316a0e4a52f54bb829a052247957a42fc5a12384eaa9f552",
-      "namespace_replacements": []
+      "namespace_replacements": [],
+      "status": "Historical EB function; superseded by current_interval_revision."
     },
     {
       "source": "logistic_shufflesplit_20261030/cv_core.py",
@@ -331,5 +332,34 @@
         ]
       ]
     }
-  ]
+  ],
+  "current_interval_revision": {
+    "date": "2026-11-06",
+    "package_version": "0.2.0",
+    "source": "experiments/shared_resource/logistic_cp_revision_20261106/cp_core.py",
+    "source_file_sha256": "f50b3ee239810674fe33f980440239116cf0cd46f71b527180600eea464ee2dd",
+    "target": "src/whichlabels/_intervals.py",
+    "target_file_sha256": "c2d8f097954ad630cafe8747f50a63fbd0ffb3684235ddb00c176ce983d293f1",
+    "source_function_sha256": {
+      "endpoints": "dec02312351519d251b4a4c2528511cff9cde394f633b8be1e320309ea025627",
+      "mapping_guard": "70155bff23210b87bd45db974e376a3d045a70d72b35399c6b1fd8d0855df5b0",
+      "query_trial": "5ae4bc017d926ed462a19488176c4e769c646d1e7fc0cb51854fd61913aa59ae",
+      "cache_interval": "6041a14f2dfc30147bf7c7f39057d145ca2a843dc513eaba0d83bdfa73b8159f"
+    },
+    "target_function_sha256": {
+      "endpoints": "dec02312351519d251b4a4c2528511cff9cde394f633b8be1e320309ea025627",
+      "mapping_guard": "70155bff23210b87bd45db974e376a3d045a70d72b35399c6b1fd8d0855df5b0",
+      "query_trial": "5ae4bc017d926ed462a19488176c4e769c646d1e7fc0cb51854fd61913aa59ae"
+    },
+    "change": "Fixed-CV EB interval replaced by CP endpoints with delta/J per look; other query and decision stages unchanged. cache_interval is experiment-only and is not copied to the public package.",
+    "remote_push_performed": false
+  },
+  "exact_equality_revision": {
+    "date": "2026-11-07",
+    "package_version": "0.2.1",
+    "target": "src/whichlabels/_bounds.py",
+    "previous_file_sha256": "27f25b40e5628fad724c24375a001aeefd3e42ae64896a1cb10303d304dc5177",
+    "target_file_sha256": "49df410bdf2d40730a50587d63626027bc0aa3b6b12533cb4bbc734a4da861d6",
+    "change": "Use equality of training objectives to cancel Newton errors without a contraction condition. Historical extraction hashes above remain ancestry records."
+  }
 }

@@ -36,11 +36,17 @@ class ReferenceParity(unittest.TestCase):
         current_cache=LabelCache(len(a),4,ArrayLabelProvider(y))
         reference_cache=self.ref.base.Oracle(y)
         current=query_trial(prepared.polynomial,prepared.proposal,current_cache,
-                            np.random.default_rng(7),[8,16,32],.01,.05)
+                            np.random.default_rng(7),[8,16,32],1e-8,.05)
         reference=self.ref.base.query_trial(old,proposal,reference_cache,
-                            np.random.default_rng(7),[8,16,32],.01,.05)
+                            np.random.default_rng(7),[8,16,32],1e-8,.05)
         self.assertEqual(current_cache.count,reference_cache.count)
-        self.assertEqual(current['history'],reference['history'])
+        self.assertEqual(current['draws'],reference['draws'])
+        # The polynomial, query indices, purchased labels and point estimates
+        # still agree. Interval endpoints intentionally change from EB to CP.
+        np.testing.assert_array_equal(current_cache.seen,reference_cache.seen)
+        for new,old in zip(current['history'],reference['history']):
+            self.assertAlmostEqual(new['estimate'],old['estimate'],13)
+            self.assertEqual(new['interval'],'CP')
 
 
 if __name__=='__main__':

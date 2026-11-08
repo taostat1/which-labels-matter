@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-07",
+  "scope": "Latest 50-page manuscript, seven main theorems and active appendices; public algorithm package and manuscript experiment implementations.",
+  "result": "Main fixed-CV implementation matches Algorithm 1. No invalidating gap found in the reviewed theorem chain. One proof justification and one exact-equality implementation case were corrected.",
+  "unit_tests_passed": 14,
+  "fresh_real_method_runs": 64,
+  "fresh_simulation_method_runs": 96,
+  "extra_known_error_path_reproduced": true,
+  "fresh_method_runs_total": 161,
+  "maximum_reproduced_interval_endpoint_difference": 7.852822558884753e-12,
+  "fixed_design_conditions": 60,
+  "exhaustive_binary_labelings": 3840,
+  "polynomial_identity_max_error": 2.042810365310288e-14,
+  "population_identity_configs": 8,
+  "population_identity_max_expectation_difference": 4.440892098500626e-16,
+  "additional_lower_bound_labelings": 256,
+  "CP_horizon_cases": 36,
+  "existing_result_records_checked": 6960,
+  "full_coverage_proposed_existing_unacceptable_choices": {
+    "count": 2,
+    "all_paths": 240,
+    "affected_configuration_paths": 60,
+    "tolerance": 0.00375,
+    "data": "ADE20K",
+    "both_error_paths_reproduced": true
+  },
+  "fixes": [
+    {
+      "kind": "proof",
+      "where": "Appendix C.5, Uniform Query Ranges",
+      "change": "Derive the anchor-norm bound by reverse Taylor expansion; Theorem 5 alone bounds displacement and is not the direct justification."
+    },
+    {
+      "kind": "implementation",
+      "where": "paired_preconditioned",
+      "change": "Set the Newton-error difference to zero for identical training designs, including nonpositive contraction denominators. Regression example: total labels 16 -> 6 at penalties 0.01 and 0.001."
+    },
+    {
+      "kind": "reproduction",
+      "change": "Identify Simulation_Refinement_20261106.zip as current main simulation, distinguish CP_Revision_20261106.zip and historical EB routes."
+    }
+  ],
+  "reported_experiment_values_changed": false,
+  "full_formal_experiment_rerun_this_audit": false,
+  "software_version": "0.2.1",
+  "remote_push_performed": false
+}

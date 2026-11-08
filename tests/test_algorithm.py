@@ -61,6 +61,31 @@ class AlgorithmChecks(unittest.TestCase):
         self.assertLessEqual(result['interval'][0], audit['difference'])
         self.assertGreaterEqual(result['interval'][1], audit['difference'])
 
+    def test_identical_candidates_cancel_under_weak_penalties(self):
+        # Regression: a nonpositive sufficient denominator used to force
+        # unnecessary exact-CV annotation even though the two risks are equal.
+        rng = np.random.default_rng(20261107)
+        a = rng.normal(size=(8, 2, 3))
+        a /= np.maximum(1, np.linalg.norm(a, axis=-1, keepdims=True))
+        y = rng.integers(0, 2, (8, 2))
+        plan = [(np.array([0, 1, 2]), np.array([3, 4, 5]))]
+        final = np.array([5, 6, 7])
+        for penalty in (.5, .125, .01, .001):
+            with self.subTest(penalty=penalty):
+                p = prepare_comparison(a, a, plan, penalty)
+                result = compare(p, LabelCache(8, 2, ArrayLabelProvider(y)), final, tolerance=.01)
+                self.assertEqual(p.epsilon, 0.)
+                self.assertEqual(result['branch'], 'public_range')
+                self.assertEqual(result['comparison_labels'], 0)
+                self.assertEqual(result['total_labels'], 6)
+
+    def test_identical_training_designs_cancel_parameter_error(self):
+        from whichlabels._bounds import paired_preconditioned
+        a = self.a[self.plan[0][0]]
+        qa, qb = self.a[self.plan[0][1]], self.b[self.plan[0][1]]
+        bound = paired_preconditioned(a, a, qa, qb, .001)
+        self.assertEqual(bound['parameter_error_difference'], 0.)
+
     def test_active_cv_has_same_label_union_cap(self):
         result = compare(self.prepared, self.cache(), self.final, tolerance=.001,
                          method='active_cv', seed=17)
