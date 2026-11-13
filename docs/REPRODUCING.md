@@ -1,5 +1,19 @@
 # Reproduce the manuscript
 
+This guide accompanies **Label-Efficient Comparison of Shared Logistic Models with Finite-Sample Guarantees**, revised 12 November 2026. LEC's installable API implements Algorithm 1. [Algorithm 2](POPULATION.md) describes the population program-risk extension. The code version remains 0.2.1.
+
+The current [results guide](RESULTS.md) separates the three real-data settings and links the compact CP summary included in this repository. It uses the current manuscript's method names; frozen source records retain their original method identifiers.
+
+| Manuscript study | Source and evidence |
+|---|---|
+| Main controlled simulation | `Simulation_Refinement_20261106.zip` |
+| Repeated splits with a fixed training budget | `CP_Revision_20261106.zip`, real-data attribution experiment |
+| Full validation coverage at a fixed training size | `CP_Revision_20261106.zip`, real-data coverage experiment |
+| Population program risk (Algorithm 2) | `CP_Revision_20261106.zip`, population experiment |
+| Weak-penalty simulations, ordinary fivefold, and cache ablations | Appendix checks in `CP_Revision_20261106.zip` |
+
+The companion ZIP files are supplied separately from this checkout. The repository includes their index, the installable API, a self-contained demo, and historical experiment scripts; it does not currently host the full companion archives or raw datasets.
+
 ## Current CP revision
 
 Versions 0.2.0 and 0.2.1 use CP intervals for the fixed-CV signed-product sampler. Version 0.2.1 adds exact cancellation when the training designs coincide; all reported experiment paths retain their results. The current manuscript uses two separate companion archives:

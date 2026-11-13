@@ -1,0 +1,16 @@
+{
+  "manuscript_title": "Label-Efficient Comparison of Shared Logistic Models with Finite-Sample Guarantees",
+  "manuscript_revision": "2026-11-12",
+  "documentation_updated": "2026-11-13",
+  "algorithm_name": "Label-Efficient Comparison (LEC)",
+  "package_version": "0.2.1",
+  "source_record": "CP_Revision_20261106.zip:reproduction/experiments/shared_resource/logistic_cp_revision_20261106/real/summary.csv",
+  "real_summary_sha256": "1567cefeed81bbb889554b1e202aa16b57e6c8c718e04e90aef99181a35705e0",
+  "method_id": {
+    "selective_paired": "LEC"
+  },
+  "aggregation": "20 pool means, three query paths per pool; pools may overlap within each corpus",
+  "fresh_experiments_run_for_this_update": false,
+  "source_summary_sha256": "e18a4346dd012555c139d1a235be5ad0c395e56cd277c6f441b32e3b1d1f205f",
+  "csv_normalization": "Line endings normalized to LF for Git; values and UTF-8 BOM unchanged."
+}

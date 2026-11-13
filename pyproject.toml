@@ -5,10 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "which-labels-logistic"
 version = "0.2.1"
-description = "Selective labels for a fixed shared-logistic CV comparison"
+description = "Label-Efficient Comparison (LEC) of shared logistic models with finite-sample guarantees"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.24", "scipy>=1.10"]
+
+[project.urls]
+Repository = "https://github.com/taostat1/which-labels-matter"
+Documentation = "https://github.com/taostat1/which-labels-matter/blob/main/docs/ALGORITHM.md"
 
 [project.optional-dependencies]
 reproduce = ["scikit-learn>=1.2", "matplotlib>=3.7", "mpmath>=1.3"]

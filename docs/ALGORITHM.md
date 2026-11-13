@@ -1,8 +1,14 @@
-# Algorithm 1: selective labels for a fixed CV comparison
+# Algorithm 1: Label-Efficient Comparison (LEC) for a Fixed CV Plan
+
+This guide describes Algorithm 1 of **Label-Efficient Comparison of Shared Logistic Models with Finite-Sample Guarantees**. The public `whichlabels.compare` API implements this fixed-plan algorithm. [Algorithm 2](POPULATION.md) extends the paper's analysis to expected test risk over random training sets.
+
+## Why partial labels suffice
+
+Model comparison needs a reliable estimate of the performance difference. With public features fixed, one Newton update from zero makes the approximate coefficients weighted sums of training labels coded as `-1` or `1`. A quadratic loss expansion then expresses the approximate score difference through label products with known weights. LEC estimates this sum by querying selected products, with at most two labels per draw. It adds a feature-based approximation bound to the sampling interval and stops when that interval supports a choice about the exact CV scores.
 
 ## Statistical target
 
-There are `m` objects and `r` binary attributes per object. Candidate `j` has public feature rows `z_j(i,a)` in a shared coefficient space. Each row has norm at most one. All coefficients receive an L2 penalty `lambda > 0`.
+There are `m` objects and `r` binary attributes per object. Candidate `j` has public feature rows `z_j(i,a)` in a shared coefficient space. Each row has norm at most one. All coefficients receive an L2 penalty `lambda > 0`. Cross-validation (CV) refers to the prescribed training/evaluation splits below.
 
 For a training subset `S`, the exact parameter minimizes
 
@@ -17,7 +23,26 @@ A fixed plan contains `B` pairs of training and evaluation subsets. Its target d
 $$\Delta_{\mathcal V}=\frac1B\sum_{b=1}^B
 \bigl[R_{A,b}(\widehat\theta_{A,b})-R_{B,b}(\widehat\theta_{B,b})\bigr].$$
 
-`R` is mean evaluation BCE, without the training penalty. A is acceptable if `Delta <= g`; B is acceptable if `Delta >= -g`. Both can be acceptable.
+`R` is mean evaluation binary cross-entropy (BCE), without the training penalty. A is acceptable if `Delta <= g`; B is acceptable if `Delta >= -g`. Both can be acceptable. The guarantee is conditional on the fixed pool and plan; `delta` bounds the probability of an unacceptable choice over the randomized queries.
+
+The tolerance also has a relative interpretation. Write `G_j = exp(-mean_CV_loss_j)` for the geometric mean of probabilities assigned to the observed validation labels, with the same weights as the CV score. An acceptable choice satisfies
+
+$$\mathcal G_{\widehat j}\ge e^{-g}\max(\mathcal G_A,\mathcal G_B).$$
+
+Thus `g = 0.005` allows a relative decrease of at most `1 - exp(-0.005)`, or about **0.499%**, in this score. An allowed decrease `rho` corresponds to `g = -log(1-rho)`.
+
+| Symbol | Meaning |
+|---|---|
+| `n`, `r`, `B` | Training objects per fit, attributes per object, and splits |
+| `Delta_V` | Exact candidate-A-minus-candidate-B score on the fixed plan |
+| `T`, `epsilon` | Queryable approximate score difference and its uniform error bound |
+| `a_k`, `psi_k` | Public coefficient and signed-label product |
+| `S1`, `p_k` | Sum of absolute coefficients and term-query probabilities |
+| `g`, `delta` | Excess-risk tolerance and selection-error probability bound |
+| `N`, `J` | Sampled terms at an inspection and number of inspections |
+| `C`, `F` | Acquired-label cache and prescribed final-training labels |
+
+In the matrix derivation below, `N = n r` instead counts training feature rows. Neither use of `N` is the number of distinct labels purchased.
 
 ## Public preparation
 
@@ -98,4 +123,15 @@ Let `C` be the set of labels acquired for comparison and fallback, and `F` the l
 ## The active-CV comparator
 
 The comparator fits both candidates using complete training labels for a selected split. It actively queries evaluation attributes, corrects the samples by their probabilities, and uses sequential intervals inside and across splits. It reuses all acquired labels and may stop early. Thus the remaining difference concerns whether complete labels must be purchased for the training subsets used in comparison.
+
+## How the guarantees support the algorithm
+
+| Paper result | Role |
+|---|---|
+| Theorem 1 | Bounds the paired approximation error using public features in Stage 1 |
+| Theorem 2 | Covers the exact CV score at every prescribed inspection in Stage 2 |
+| Theorem 3 | Controls selection error and total distinct labels through fallback and final training |
+| Theorem 4 and Corollary 3 | Give an information lower bound and matching-order conditions; these results benchmark acquisition rather than drive the implementation |
+
+The matching order requires sensitivity, dispersion, and approximation conditions. Algorithm 1's upper bound also includes the logarithmic cost of the prescribed inspections. The population extension uses Theorems 5-7 and a different interval construction; see [Algorithm 2](POPULATION.md).
 

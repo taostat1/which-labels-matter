@@ -1,5 +1,7 @@
 # 仓库维护说明
 
+当前论文标题为 **Label-Efficient Comparison of Shared Logistic Models with Finite-Sample Guarantees**，算法简称 **LEC**。文档对应 2026 年 11 月 12 日的 50 页修订稿；代码版本仍为 0.2.1。
+
 这个文件夹可以直接作为仓库根目录。它与 Overleaf 压缩包分开：这里主要放算法、演示、测试和复现入口，不放个人投稿信和大体积数据。
 
 ## 先看这几个文件
@@ -10,6 +12,8 @@
 4. `src/whichlabels/labels.py`：真实标签接口与去重记账。
 5. `docs/REPRODUCING.md`：模拟和真实数据实验入口。
 6. `VALIDATION.json`：当前 CP 版本的软件检查及此前版本的历史记录。
+7. `docs/POPULATION.md`：Algorithm 2 的总体程序风险目标、独立准备与一般有界统计量区间。
+8. `docs/RESULTS.md`：当前论文结果和定理作用；`paper_evidence/cp_20261106/real_summary.csv` 保留对应的完整数值。
 
 ## 本地运行
 
@@ -34,6 +38,6 @@ python -m unittest discover -s tests -v
 - `.gitignore` 已排除虚拟环境、特征缓存、标签数组和新运行结果。
 - 不要把投稿信、作者私人联系记录或本地完整研究文件夹一起上传。
 
-本地 0.2.1 版本使用 CP 精确二项区间，并补上弱正则下相同训练设计的精确相消。最新正文模拟使用 Simulation_Refinement_20261106.zip，真实实验与扩展使用 CP_Revision_20261106.zip；旧 EB 复现目录保留作历史记录。
+本地 0.2.1 版本实现 Algorithm 1：零先导固定 CV 比较、CP 精确二项区间、标签复用和最终训练。Algorithm 2 另用独立先导与校准，以及适用于一般有界统计量的区间。最新正文模拟使用 Simulation_Refinement_20261106.zip，真实实验与总体扩展使用 CP_Revision_20261106.zip；这些完整压缩包未放入本仓库，旧 EB 复现目录保留作历史记录。
 仓库地址：https://github.com/taostat1/which-labels-matter 。后续修改可通过 Git 客户端提交和推送。
 

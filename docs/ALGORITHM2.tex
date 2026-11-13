@@ -1,0 +1,25 @@
+\begin{algorithm}[htbp]
+\caption{Label-Efficient Comparison (LEC) for Population Risk}\label{alg:population}
+\small
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\begin{algorithmic}[1]
+\Require Sampling access to $P,Q$, public features, $n,\lambda,g$, error allocations $\delta_c+\delta_s+\delta_r\le\delta$, inspection grid, preparation and query budgets
+\Statex\textbf{Stage 1: Independent Preparation}
+\State Buy pilot labels and fit anchors $\theta_{A0},\theta_{B0}$; initialize $I\gets\R$ and store purchases in $\mathcal C$.
+\State \textbf{Calibrate:} bound the score and gradient moments; set $\varepsilon\gets\varepsilon_A+\varepsilon_B$.
+\State Fix product predictors and the range-constrained query rule from preparation.
+\Statex\textbf{Stage 2: Selective Comparison}
+\For{permitted inspections $N$ within the moment-trial budget, if $\varepsilon<g$}
+ \State \textbf{Query:} extend independent blocks to $N$; buy uncached labels and compute \eqref{eq:prediction_query}.
+ \State \textbf{Risk interval:} $I\gets[\overline Z_N-h_N^{\rm pop}-\varepsilon,\ \overline Z_N+h_N^{\rm pop}+\varepsilon]$ using $\delta_s$.
+ \State \textbf{Stop:} if $\sup I\le g$ or $\inf I\ge-g$, break.
+\EndFor
+\Statex\textbf{Stage 3: Refits and Final Training}
+\State If unresolved, switch to independent paired refits with separate statistics and error probability $\delta_r$; update $I$, including numerical error, until a choice is supported or the budget ends.
+\State If still unresolved, return \textsc{Unresolved} and $|\mathcal C|$.
+\State \textbf{Select:} $j\gets A$ if $\sup I\le g$; otherwise $j\gets B$.
+\State Draw an independent size-$n$ final sample, buy its uncached labels, and fit $j$.
+\Ensure Selected candidate $j$, supporting interval $I$, and total distinct labels $|\mathcal C|$
+\end{algorithmic}
+\end{algorithm}
