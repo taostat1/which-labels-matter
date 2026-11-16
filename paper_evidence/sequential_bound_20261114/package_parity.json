@@ -1,0 +1,38 @@
+{
+  "job": {
+    "family": "attribution",
+    "domain": "text",
+    "case": "text",
+    "g": 0.005,
+    "lam": 0.125,
+    "pool": 0,
+    "alpha": 0.1,
+    "id": 60
+  },
+  "rep": 0,
+  "checks": [
+    {
+      "method": "selective_paired",
+      "labels": 2436,
+      "draws": 1024,
+      "refinement_count": 2,
+      "interval": [
+        -0.004741152588966542,
+        0.013310550373633372
+      ],
+      "epsilon": 0.004368107505607181
+    },
+    {
+      "method": "separate_bound",
+      "labels": 7083,
+      "draws": 4096,
+      "refinement_count": 5,
+      "interval": [
+        -0.002865332960195319,
+        0.010948329378667328
+      ],
+      "epsilon": 0.004586351370407568
+    }
+  ],
+  "passed": true
+}

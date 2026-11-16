@@ -7,7 +7,7 @@
 ## 先看这几个文件
 
 1. `README.md`：英文项目主页及安装说明。
-2. `docs/ALGORITHM.md`：与论文 Algorithm 1 对应的公式和三阶段、十四步流程。
+2. `docs/ALGORITHM.md`：与论文 Algorithm 1 对应的公式和三阶段、十五步流程。
 3. `src/whichlabels/api.py`：公共特征准备、查询、停止、回退及最终训练。
 4. `src/whichlabels/labels.py`：真实标签接口与去重记账。
 5. `docs/REPRODUCING.md`：模拟和真实数据实验入口。
@@ -38,6 +38,4 @@ python -m unittest discover -s tests -v
 - `.gitignore` 已排除虚拟环境、特征缓存、标签数组和新运行结果。
 - 不要把投稿信、作者私人联系记录或本地完整研究文件夹一起上传。
 
-本地 0.2.1 版本实现 Algorithm 1：零先导固定 CV 比较、CP 精确二项区间、标签复用和最终训练。Algorithm 2 另用独立先导与校准，以及适用于一般有界统计量的区间。最新正文模拟使用 Simulation_Refinement_20261106.zip，真实实验与总体扩展使用 CP_Revision_20261106.zip；这些完整压缩包未放入本仓库，旧 EB 复现目录保留作历史记录。
-仓库地址：https://github.com/taostat1/which-labels-matter 。后续修改可通过 Git 客户端提交和推送。
-
+本地 0.3.1 实现零先导固定 CV、累计 CP、免费缓存误差界收紧和完整标签记账。Algorithm 2 主流程同样从零锚点启动，采用公开误差界、缓存收紧及累计有界均值投注区间。当前图表与审计复现入口为 `paper_reproduction/current/reproduce.py`；旧实验目录作为历史记录保留。

@@ -18,3 +18,7 @@ paper_reproduction/**/timing_summary.json
 paper_reproduction/**/*.png
 *.npz
 *.npy
+
+# Compact manuscript path records
+!paper_reproduction/current/data/
+!paper_reproduction/current/data/**

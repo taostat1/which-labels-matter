@@ -1,0 +1,1821 @@
+{
+  "configurations": [
+    {
+      "code": "T1",
+      "case": {
+        "id": "text_strong_separated",
+        "domain": "text",
+        "n": 64,
+        "lam": 2.0,
+        "alpha": 1.0,
+        "g": 0.005
+      },
+      "methods": {
+        "zero_public_first": {
+          "mean_labels": 1022.6666666666666,
+          "sd_labels": 0.5773502691896257,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 0.0,
+            "comparison": 511.0,
+            "refit": 0.0,
+            "final_training": 511.6666666666667
+          },
+          "epsilon_mean": 3.276010424484381e-05,
+          "epsilon_min": 3.276010424484381e-05,
+          "epsilon_max": 3.276010424484381e-05,
+          "public_epsilon_mean": 3.276010424484381e-05,
+          "calibrated": 0,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            1023,
+            1022,
+            1023
+          ]
+        },
+        "paid_public_first": {
+          "mean_labels": 5084.333333333333,
+          "sd_labels": 15.275252316519467,
+          "stages": {
+            "pilot": 4066.6666666666665,
+            "calibration": 0.0,
+            "comparison": 508.6666666666667,
+            "refit": 0.0,
+            "final_training": 509.0
+          },
+          "epsilon_mean": 0.0005378249359403766,
+          "epsilon_min": 0.0005339237383768289,
+          "epsilon_max": 0.0005404267121381294,
+          "public_epsilon_mean": 0.0005378249359403766,
+          "calibrated": 0,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            5071,
+            5101,
+            5081
+          ]
+        },
+        "zero_calibrated": {
+          "mean_labels": 30618.666666666668,
+          "sd_labels": 109.66464030549379,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 29706.666666666668,
+            "comparison": 422.0,
+            "refit": 0.0,
+            "final_training": 490.0
+          },
+          "epsilon_mean": 3.318446747773532e-05,
+          "epsilon_min": 3.3051355728158436e-05,
+          "epsilon_max": 3.333729504948287e-05,
+          "public_epsilon_mean": 3.276010424484381e-05,
+          "calibrated": 3,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            30563,
+            30548,
+            30745
+          ]
+        },
+        "paid_calibrated": {
+          "mean_labels": 34456.666666666664,
+          "sd_labels": 144.00462955521027,
+          "stages": {
+            "pilot": 4066.6666666666665,
+            "calibration": 29480.0,
+            "comparison": 422.6666666666667,
+            "refit": 0.0,
+            "final_training": 487.3333333333333
+          },
+          "epsilon_mean": 1.8865568253059367e-06,
+          "epsilon_min": 1.828473811244906e-06,
+          "epsilon_max": 1.9474467718040953e-06,
+          "public_epsilon_mean": null,
+          "calibrated": 3,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            34402,
+            34348,
+            34620
+          ]
+        }
+      },
+      "pilot_cost": 4066.6666666666665,
+      "subsequent_saving_paid": 5.000000000000114,
+      "net_saving_zero": 4061.6666666666665,
+      "zero_reduction_percent": 79.88592408050876,
+      "zero_wins": 3,
+      "paid_wins": 0,
+      "ties": 0
+    },
+    {
+      "code": "T2",
+      "case": {
+        "id": "text_strong_nearby",
+        "domain": "text",
+        "n": 64,
+        "lam": 2.0,
+        "alpha": 0.1,
+        "g": 0.005
+      },
+      "methods": {
+        "zero_public_first": {
+          "mean_labels": 2541.3333333333335,
+          "sd_labels": 6.658328118479393,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 0.0,
+            "comparison": 2034.0,
+            "refit": 0.0,
+            "final_training": 507.3333333333333
+          },
+          "epsilon_mean": 1.8673016268178114e-06,
+          "epsilon_min": 1.8673016268178114e-06,
+          "epsilon_max": 1.8673016268178114e-06,
+          "public_epsilon_mean": 1.8673016268178114e-06,
+          "calibrated": 0,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "A",
+            "A",
+            "A"
+          ],
+          "counts": [
+            2538,
+            2537,
+            2549
+          ]
+        },
+        "paid_public_first": {
+          "mean_labels": 6594.666666666667,
+          "sd_labels": 18.0092568789868,
+          "stages": {
+            "pilot": 4072.0,
+            "calibration": 0.0,
+            "comparison": 2026.3333333333333,
+            "refit": 0.0,
+            "final_training": 496.3333333333333
+          },
+          "epsilon_mean": 1.2408985661185797e-05,
+          "epsilon_min": 1.1839618475318988e-05,
+          "epsilon_max": 1.2982757808111844e-05,
+          "public_epsilon_mean": 1.2408985661185797e-05,
+          "calibrated": 0,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "A",
+            "A",
+            "A"
+          ],
+          "counts": [
+            6574,
+            6603,
+            6607
+          ]
+        },
+        "zero_calibrated": {
+          "mean_labels": 31873.666666666668,
+          "sd_labels": 187.6734753057377,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 29712.0,
+            "comparison": 1680.6666666666667,
+            "refit": 0.0,
+            "final_training": 481.0
+          },
+          "epsilon_mean": 1.3929984198988887e-06,
+          "epsilon_min": 1.344153926222505e-06,
+          "epsilon_max": 1.4274870968141605e-06,
+          "public_epsilon_mean": 1.8673016268178114e-06,
+          "calibrated": 3,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "A",
+            "A",
+            "A"
+          ],
+          "counts": [
+            31663,
+            32023,
+            31935
+          ]
+        },
+        "paid_calibrated": {
+          "mean_labels": 35301.0,
+          "sd_labels": 670.941875276838,
+          "stages": {
+            "pilot": 4072.0,
+            "calibration": 29506.666666666668,
+            "comparison": 1249.3333333333333,
+            "refit": 0.0,
+            "final_training": 473.0
+          },
+          "epsilon_mean": 5.475812075542819e-07,
+          "epsilon_min": 5.332151955800741e-07,
+          "epsilon_max": 5.702149033114343e-07,
+          "public_epsilon_mean": null,
+          "calibrated": 3,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "A",
+            "A",
+            "A"
+          ],
+          "counts": [
+            35504,
+            35847,
+            34552
+          ]
+        }
+      },
+      "pilot_cost": 4072.0,
+      "subsequent_saving_paid": 18.666666666666515,
+      "net_saving_zero": 4053.3333333333335,
+      "zero_reduction_percent": 61.46380913869793,
+      "zero_wins": 3,
+      "paid_wins": 0,
+      "ties": 0
+    },
+    {
+      "code": "T3",
+      "case": {
+        "id": "text_moderate",
+        "domain": "text",
+        "n": 64,
+        "lam": 0.5,
+        "alpha": 1.0,
+        "g": 0.02
+      },
+      "methods": {
+        "zero_public_first": {
+          "mean_labels": 2545.3333333333335,
+          "sd_labels": 8.504900548115383,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 0.0,
+            "comparison": 2037.0,
+            "refit": 0.0,
+            "final_training": 508.3333333333333
+          },
+          "epsilon_mean": 0.009990300132490639,
+          "epsilon_min": 0.009990300132490639,
+          "epsilon_max": 0.009990300132490639,
+          "public_epsilon_mean": 0.009990300132490639,
+          "calibrated": 0,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            2542,
+            2539,
+            2555
+          ]
+        },
+        "paid_public_first": {
+          "mean_labels": 35774.666666666664,
+          "sd_labels": 160.97929473486127,
+          "stages": {
+            "pilot": 4066.6666666666665,
+            "calibration": 29520.0,
+            "comparison": 1703.3333333333333,
+            "refit": 0.0,
+            "final_training": 484.6666666666667
+          },
+          "epsilon_mean": 0.000358735586140636,
+          "epsilon_min": 0.0003416239663578119,
+          "epsilon_max": 0.0003719517654156931,
+          "public_epsilon_mean": 0.16905745361724814,
+          "calibrated": 3,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            35928,
+            35789,
+            35607
+          ]
+        },
+        "zero_calibrated": {
+          "mean_labels": 31905.666666666668,
+          "sd_labels": 181.5277756524696,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 29693.333333333332,
+            "comparison": 1722.6666666666667,
+            "refit": 0.0,
+            "final_training": 489.6666666666667
+          },
+          "epsilon_mean": 0.009936448686637081,
+          "epsilon_min": 0.009837063094414372,
+          "epsilon_max": 0.009996221311256277,
+          "public_epsilon_mean": 0.009990300132490639,
+          "calibrated": 3,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            32089,
+            31902,
+            31726
+          ]
+        },
+        "paid_calibrated": {
+          "mean_labels": 35774.666666666664,
+          "sd_labels": 160.97929473486127,
+          "stages": {
+            "pilot": 4066.6666666666665,
+            "calibration": 29520.0,
+            "comparison": 1703.3333333333333,
+            "refit": 0.0,
+            "final_training": 484.6666666666667
+          },
+          "epsilon_mean": 0.000358735586140636,
+          "epsilon_min": 0.0003416239663578119,
+          "epsilon_max": 0.0003719517654156931,
+          "public_epsilon_mean": null,
+          "calibrated": 3,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            35928,
+            35789,
+            35607
+          ]
+        }
+      },
+      "pilot_cost": 4066.6666666666665,
+      "subsequent_saving_paid": -29162.666666666664,
+      "net_saving_zero": 33229.33333333333,
+      "zero_reduction_percent": 92.88509559837502,
+      "zero_wins": 3,
+      "paid_wins": 0,
+      "ties": 0
+    },
+    {
+      "code": "T4",
+      "case": {
+        "id": "text_weak_nearby",
+        "domain": "text",
+        "n": 64,
+        "lam": 0.125,
+        "alpha": 0.1,
+        "g": 0.005
+      },
+      "methods": {
+        "zero_public_first": {
+          "mean_labels": 389197.3333333333,
+          "sd_labels": 129.32646029847618,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 197520.0,
+            "comparison": 0.0,
+            "refit": 191677.33333333334,
+            "final_training": 0.0
+          },
+          "epsilon_mean": 0.047531586843319096,
+          "epsilon_min": 0.04647376865079058,
+          "epsilon_max": 0.0482344667719702,
+          "public_epsilon_mean": 0.1504662224314004,
+          "calibrated": 3,
+          "fallback": 3,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            389176,
+            389336,
+            389080
+          ]
+        },
+        "paid_public_first": {
+          "mean_labels": 389753.0,
+          "sd_labels": 583.63258990567,
+          "stages": {
+            "pilot": 4074.6666666666665,
+            "calibration": 195384.0,
+            "comparison": 24272.666666666668,
+            "refit": 166021.66666666666,
+            "final_training": 0.0
+          },
+          "epsilon_mean": 0.004897626323651504,
+          "epsilon_min": 0.004616882782861266,
+          "epsilon_max": 0.005102266794908989,
+          "public_epsilon_mean": 1.131997098953028,
+          "calibrated": 3,
+          "fallback": 3,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            390059,
+            390120,
+            389080
+          ]
+        },
+        "zero_calibrated": {
+          "mean_labels": 389197.3333333333,
+          "sd_labels": 129.32646029847618,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 197520.0,
+            "comparison": 0.0,
+            "refit": 191677.33333333334,
+            "final_training": 0.0
+          },
+          "epsilon_mean": 0.047531586843319096,
+          "epsilon_min": 0.04647376865079058,
+          "epsilon_max": 0.0482344667719702,
+          "public_epsilon_mean": 0.1504662224314004,
+          "calibrated": 3,
+          "fallback": 3,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            389176,
+            389336,
+            389080
+          ]
+        },
+        "paid_calibrated": {
+          "mean_labels": 389753.0,
+          "sd_labels": 583.63258990567,
+          "stages": {
+            "pilot": 4074.6666666666665,
+            "calibration": 195384.0,
+            "comparison": 24272.666666666668,
+            "refit": 166021.66666666666,
+            "final_training": 0.0
+          },
+          "epsilon_mean": 0.004897626323651504,
+          "epsilon_min": 0.004616882782861266,
+          "epsilon_max": 0.005102266794908989,
+          "public_epsilon_mean": null,
+          "calibrated": 3,
+          "fallback": 3,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            390059,
+            390120,
+            389080
+          ]
+        }
+      },
+      "pilot_cost": 4074.6666666666665,
+      "subsequent_saving_paid": 3519.0,
+      "net_saving_zero": 555.6666666666861,
+      "zero_reduction_percent": 0.14256892613185856,
+      "zero_wins": 2,
+      "paid_wins": 0,
+      "ties": 1
+    },
+    {
+      "code": "V1",
+      "case": {
+        "id": "image_strong",
+        "domain": "image",
+        "n": 128,
+        "lam": 2.0,
+        "alpha": 1.0,
+        "g": 0.005
+      },
+      "methods": {
+        "zero_public_first": {
+          "mean_labels": 11654.0,
+          "sd_labels": 3270.47901690257,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 0.0,
+            "comparison": 10931.333333333334,
+            "refit": 0.0,
+            "final_training": 722.6666666666666
+          },
+          "epsilon_mean": 5.414802701936888e-06,
+          "epsilon_min": 5.414802701936888e-06,
+          "epsilon_max": 5.414802701936888e-06,
+          "public_epsilon_mean": 5.414802701936888e-06,
+          "calibrated": 0,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            13493,
+            13591,
+            7878
+          ]
+        },
+        "paid_public_first": {
+          "mean_labels": 16486.666666666668,
+          "sd_labels": 78.67867140040771,
+          "stages": {
+            "pilot": 3032.0,
+            "calibration": 0.0,
+            "comparison": 12755.0,
+            "refit": 0.0,
+            "final_training": 699.6666666666666
+          },
+          "epsilon_mean": 1.745124404013367e-05,
+          "epsilon_min": 1.699036049113952e-05,
+          "epsilon_max": 1.7974479384630636e-05,
+          "public_epsilon_mean": 1.745124404013367e-05,
+          "calibrated": 0,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            16468,
+            16573,
+            16419
+          ]
+        },
+        "zero_calibrated": {
+          "mean_labels": 24913.333333333332,
+          "sd_labels": 2473.4027842899613,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 16868.0,
+            "comparison": 7394.0,
+            "refit": 0.0,
+            "final_training": 651.3333333333334
+          },
+          "epsilon_mean": 4.1587769381425424e-07,
+          "epsilon_min": 3.821546748335031e-07,
+          "epsilon_max": 4.3344238326658457e-07,
+          "public_epsilon_mean": 5.414802701936888e-06,
+          "calibrated": 3,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            22058,
+            26396,
+            26286
+          ]
+        },
+        "paid_calibrated": {
+          "mean_labels": 27587.666666666668,
+          "sd_labels": 2409.3908635448365,
+          "stages": {
+            "pilot": 3032.0,
+            "calibration": 16576.0,
+            "comparison": 7343.333333333333,
+            "refit": 0.0,
+            "final_training": 636.3333333333334
+          },
+          "epsilon_mean": 1.364595675161966e-07,
+          "epsilon_min": 1.3432643790893383e-07,
+          "epsilon_max": 1.3852541009277143e-07,
+          "public_epsilon_mean": null,
+          "calibrated": 3,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            24807,
+            29056,
+            28900
+          ]
+        }
+      },
+      "pilot_cost": 3032.0,
+      "subsequent_saving_paid": -1800.6666666666679,
+      "net_saving_zero": 4832.666666666668,
+      "zero_reduction_percent": 29.312575818843513,
+      "zero_wins": 3,
+      "paid_wins": 0,
+      "ties": 0
+    },
+    {
+      "code": "V2",
+      "case": {
+        "id": "image_moderate",
+        "domain": "image",
+        "n": 128,
+        "lam": 0.5,
+        "alpha": 1.0,
+        "g": 0.005
+      },
+      "methods": {
+        "zero_public_first": {
+          "mean_labels": 39881.333333333336,
+          "sd_labels": 51.86842327788009,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 0.0,
+            "comparison": 39330.0,
+            "refit": 0.0,
+            "final_training": 551.3333333333334
+          },
+          "epsilon_mean": 0.001490501786484041,
+          "epsilon_min": 0.001490501786484041,
+          "epsilon_max": 0.001490501786484041,
+          "public_epsilon_mean": 0.001490501786484041,
+          "calibrated": 0,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            39824,
+            39925,
+            39895
+          ]
+        },
+        "paid_public_first": {
+          "mean_labels": 42586.0,
+          "sd_labels": 75.9012516365837,
+          "stages": {
+            "pilot": 3020.0,
+            "calibration": 0.0,
+            "comparison": 39026.333333333336,
+            "refit": 0.0,
+            "final_training": 539.6666666666666
+          },
+          "epsilon_mean": 0.004429866520581579,
+          "epsilon_min": 0.004362744447229809,
+          "epsilon_max": 0.004511830489368898,
+          "public_epsilon_mean": 0.004429866520581579,
+          "calibrated": 0,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            42515,
+            42666,
+            42577
+          ]
+        },
+        "zero_calibrated": {
+          "mean_labels": 40776.0,
+          "sd_labels": 9191.34010903742,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 16926.0,
+            "comparison": 23300.333333333332,
+            "refit": 0.0,
+            "final_training": 549.6666666666666
+          },
+          "epsilon_mean": 0.0001189681448165743,
+          "epsilon_min": 0.00011686135219889354,
+          "epsilon_max": 0.00012104314731015963,
+          "public_epsilon_mean": 0.001490501786484041,
+          "calibrated": 3,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            35407,
+            35532,
+            51389
+          ]
+        },
+        "paid_calibrated": {
+          "mean_labels": 38003.333333333336,
+          "sd_labels": 71.59841711471933,
+          "stages": {
+            "pilot": 3020.0,
+            "calibration": 16636.0,
+            "comparison": 17777.0,
+            "refit": 0.0,
+            "final_training": 570.3333333333334
+          },
+          "epsilon_mean": 3.4409138471982214e-05,
+          "epsilon_min": 3.242819602219858e-05,
+          "epsilon_max": 3.615660683569217e-05,
+          "public_epsilon_mean": null,
+          "calibrated": 3,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "B",
+            "B",
+            "B"
+          ],
+          "counts": [
+            37999,
+            38077,
+            37934
+          ]
+        }
+      },
+      "pilot_cost": 3020.0,
+      "subsequent_saving_paid": 315.33333333333576,
+      "net_saving_zero": 2704.6666666666642,
+      "zero_reduction_percent": 6.351069991703062,
+      "zero_wins": 3,
+      "paid_wins": 0,
+      "ties": 0
+    },
+    {
+      "code": "V3",
+      "case": {
+        "id": "image_weak_nearby",
+        "domain": "image",
+        "n": 128,
+        "lam": 0.125,
+        "alpha": 0.05,
+        "g": 0.005
+      },
+      "methods": {
+        "zero_public_first": {
+          "mean_labels": 110144.33333333333,
+          "sd_labels": 141.79680297289264,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 99478.0,
+            "comparison": 10602.333333333334,
+            "refit": 0.0,
+            "final_training": 64.0
+          },
+          "epsilon_mean": 0.003534187973035951,
+          "epsilon_min": 0.0034703111246664,
+          "epsilon_max": 0.0035686794315748275,
+          "public_epsilon_mean": 0.14367759016558598,
+          "calibrated": 3,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "A",
+            "A",
+            "A"
+          ],
+          "counts": [
+            110100,
+            110030,
+            110303
+          ]
+        },
+        "paid_public_first": {
+          "mean_labels": 121032.0,
+          "sd_labels": 0.0,
+          "stages": {
+            "pilot": 3020.0,
+            "calibration": 16554.0,
+            "comparison": 37574.0,
+            "refit": 63884.0,
+            "final_training": 0.0
+          },
+          "epsilon_mean": 0.004882058212916356,
+          "epsilon_min": 0.004847842036058124,
+          "epsilon_max": 0.004925952272795549,
+          "public_epsilon_mean": 0.4465014898694,
+          "calibrated": 3,
+          "fallback": 3,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "A",
+            "A",
+            "A"
+          ],
+          "counts": [
+            121032,
+            121032,
+            121032
+          ]
+        },
+        "zero_calibrated": {
+          "mean_labels": 110144.33333333333,
+          "sd_labels": 141.79680297289264,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 99478.0,
+            "comparison": 10602.333333333334,
+            "refit": 0.0,
+            "final_training": 64.0
+          },
+          "epsilon_mean": 0.003534187973035951,
+          "epsilon_min": 0.0034703111246664,
+          "epsilon_max": 0.0035686794315748275,
+          "public_epsilon_mean": 0.14367759016558598,
+          "calibrated": 3,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "A",
+            "A",
+            "A"
+          ],
+          "counts": [
+            110100,
+            110030,
+            110303
+          ]
+        },
+        "paid_calibrated": {
+          "mean_labels": 121032.0,
+          "sd_labels": 0.0,
+          "stages": {
+            "pilot": 3020.0,
+            "calibration": 16554.0,
+            "comparison": 37574.0,
+            "refit": 63884.0,
+            "final_training": 0.0
+          },
+          "epsilon_mean": 0.004882058212916356,
+          "epsilon_min": 0.004847842036058124,
+          "epsilon_max": 0.004925952272795549,
+          "public_epsilon_mean": null,
+          "calibrated": 3,
+          "fallback": 3,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "A",
+            "A",
+            "A"
+          ],
+          "counts": [
+            121032,
+            121032,
+            121032
+          ]
+        }
+      },
+      "pilot_cost": 3020.0,
+      "subsequent_saving_paid": -7867.6666666666715,
+      "net_saving_zero": 10887.666666666672,
+      "zero_reduction_percent": 8.995692599202421,
+      "zero_wins": 3,
+      "paid_wins": 0,
+      "ties": 0
+    },
+    {
+      "code": "V4",
+      "case": {
+        "id": "image_backbone",
+        "domain": "backbone",
+        "n": 128,
+        "lam": 0.5,
+        "alpha": 1.0,
+        "g": 0.005
+      },
+      "methods": {
+        "zero_public_first": {
+          "mean_labels": 38585.666666666664,
+          "sd_labels": 35.3459097114975,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 0.0,
+            "comparison": 38041.666666666664,
+            "refit": 0.0,
+            "final_training": 544.0
+          },
+          "epsilon_mean": 0.000429257166706244,
+          "epsilon_min": 0.000429257166706244,
+          "epsilon_max": 0.000429257166706244,
+          "public_epsilon_mean": 0.000429257166706244,
+          "calibrated": 0,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "A",
+            "A",
+            "A"
+          ],
+          "counts": [
+            38603,
+            38545,
+            38609
+          ]
+        },
+        "paid_public_first": {
+          "mean_labels": 41304.666666666664,
+          "sd_labels": 36.19852667351716,
+          "stages": {
+            "pilot": 3040.0,
+            "calibration": 0.0,
+            "comparison": 37737.333333333336,
+            "refit": 0.0,
+            "final_training": 527.3333333333334
+          },
+          "epsilon_mean": 0.001450734040144773,
+          "epsilon_min": 0.0014097975779105826,
+          "epsilon_max": 0.0015280229298915305,
+          "public_epsilon_mean": 0.001450734040144773,
+          "calibrated": 0,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "A",
+            "A",
+            "A"
+          ],
+          "counts": [
+            41345,
+            41275,
+            41294
+          ]
+        },
+        "zero_calibrated": {
+          "mean_labels": 49967.0,
+          "sd_labels": 20.223748416156685,
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 17006.0,
+            "comparison": 32487.0,
+            "refit": 0.0,
+            "final_training": 474.0
+          },
+          "epsilon_mean": 6.716189381792935e-05,
+          "epsilon_min": 6.495122437177644e-05,
+          "epsilon_max": 6.942096407758882e-05,
+          "public_epsilon_mean": 0.000429257166706244,
+          "calibrated": 3,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "A",
+            "A",
+            "A"
+          ],
+          "counts": [
+            49990,
+            49952,
+            49959
+          ]
+        },
+        "paid_calibrated": {
+          "mean_labels": 52363.333333333336,
+          "sd_labels": 19.03505538035898,
+          "stages": {
+            "pilot": 3040.0,
+            "calibration": 16686.0,
+            "comparison": 32173.333333333332,
+            "refit": 0.0,
+            "final_training": 464.0
+          },
+          "epsilon_mean": 2.669345330663867e-05,
+          "epsilon_min": 2.5843149127924114e-05,
+          "epsilon_max": 2.7873850389852847e-05,
+          "public_epsilon_mean": null,
+          "calibrated": 3,
+          "fallback": 0,
+          "issued": 3,
+          "acceptable": 3,
+          "coverage": 3,
+          "conflicts": 0,
+          "choices": [
+            "A",
+            "A",
+            "A"
+          ],
+          "counts": [
+            52383,
+            52362,
+            52345
+          ]
+        }
+      },
+      "pilot_cost": 3040.0,
+      "subsequent_saving_paid": 321.0,
+      "net_saving_zero": 2719.0,
+      "zero_reduction_percent": 6.5827912907338915,
+      "zero_wins": 3,
+      "paid_wins": 0,
+      "ties": 0
+    }
+  ],
+  "totals": {
+    "zero_public_first": {
+      "paths": 24,
+      "issued": 24,
+      "acceptable": 24,
+      "covered": 24,
+      "fallback": 3,
+      "conflicts": 0
+    },
+    "paid_public_first": {
+      "paths": 24,
+      "issued": 24,
+      "acceptable": 24,
+      "covered": 24,
+      "fallback": 6,
+      "conflicts": 0
+    },
+    "zero_calibrated": {
+      "paths": 24,
+      "issued": 24,
+      "acceptable": 24,
+      "covered": 24,
+      "fallback": 3,
+      "conflicts": 0
+    },
+    "paid_calibrated": {
+      "paths": 24,
+      "issued": 24,
+      "acceptable": 24,
+      "covered": 24,
+      "fallback": 6,
+      "conflicts": 0
+    }
+  },
+  "new_paths": 96,
+  "frozen_reference_paths": 48,
+  "previous_control_sources_unchanged": [
+    "experiments\\shared_resource\\logistic_all_scenarios_reanchor_20261114\\population_jobs.py",
+    "experiments\\shared_resource\\shared_logistic_full_20261029\\study.py",
+    "experiments\\shared_resource\\shared_logistic_full_20261029\\core.py",
+    "experiments\\shared_resource\\shared_logistic_full_20261029\\local_bounds.py"
+  ],
+  "scope": "Three matched preparation/query paths per original configuration; the underlying finite training/test laws are unchanged.",
+  "main_comparison": "Both anchors first use a response-uniform public bound and calibrate only when needed.",
+  "calibration_diagnostic": "Mandatory calibration on both sides, with only the pilot/anchor changed.",
+  "reanchor_configurations": [
+    {
+      "code": "T1",
+      "case": {
+        "id": "text_strong_separated",
+        "domain": "text",
+        "n": 64,
+        "lam": 2.0,
+        "alpha": 1.0,
+        "g": 0.005
+      },
+      "methods": {
+        "zero_reanchor_calibrated": {
+          "mean_labels": 30618.666666666668,
+          "sd_labels": 109.66464030549379,
+          "counts": [
+            30563,
+            30548,
+            30745
+          ],
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 29706.666666666668,
+            "comparison": 422.0,
+            "refit": 0.0,
+            "final_training": 490.0
+          },
+          "calibration_rounds": [
+            1,
+            1,
+            1
+          ],
+          "blocks": [
+            256,
+            256,
+            256
+          ],
+          "fallback": 0,
+          "acceptable": 3
+        },
+        "paid_reanchor_calibrated": {
+          "mean_labels": 34456.666666666664,
+          "sd_labels": 144.00462955521027,
+          "counts": [
+            34402,
+            34348,
+            34620
+          ],
+          "stages": {
+            "pilot": 4066.6666666666665,
+            "calibration": 29480.0,
+            "comparison": 422.6666666666667,
+            "refit": 0.0,
+            "final_training": 487.3333333333333
+          },
+          "calibration_rounds": [
+            1,
+            1,
+            1
+          ],
+          "blocks": [
+            256,
+            256,
+            256
+          ],
+          "fallback": 0,
+          "acceptable": 3
+        }
+      },
+      "net_saving_zero": 3837.9999999999964,
+      "zero_reduction_percent": 11.138628228693035,
+      "zero_wins": 3,
+      "paid_wins": 0,
+      "ties": 0
+    },
+    {
+      "code": "T2",
+      "case": {
+        "id": "text_strong_nearby",
+        "domain": "text",
+        "n": 64,
+        "lam": 2.0,
+        "alpha": 0.1,
+        "g": 0.005
+      },
+      "methods": {
+        "zero_reanchor_calibrated": {
+          "mean_labels": 76911.66666666667,
+          "sd_labels": 297.14698944013105,
+          "counts": [
+            76786,
+            77251,
+            76698
+          ],
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 75053.33333333333,
+            "comparison": 1433.6666666666667,
+            "refit": 0.0,
+            "final_training": 424.6666666666667
+          },
+          "calibration_rounds": [
+            3,
+            3,
+            3
+          ],
+          "blocks": [
+            1024,
+            1024,
+            1024
+          ],
+          "fallback": 0,
+          "acceptable": 3
+        },
+        "paid_reanchor_calibrated": {
+          "mean_labels": 65202.0,
+          "sd_labels": 26544.623768288748,
+          "counts": [
+            80303,
+            80751,
+            34552
+          ],
+          "stages": {
+            "pilot": 4072.0,
+            "calibration": 59608.333333333336,
+            "comparison": 1086.3333333333333,
+            "refit": 0.0,
+            "final_training": 435.3333333333333
+          },
+          "calibration_rounds": [
+            3,
+            3,
+            1
+          ],
+          "blocks": [
+            1024,
+            1024,
+            256
+          ],
+          "fallback": 0,
+          "acceptable": 3
+        }
+      },
+      "net_saving_zero": -11709.666666666672,
+      "zero_reduction_percent": -17.959060560514512,
+      "zero_wins": 2,
+      "paid_wins": 1,
+      "ties": 0
+    },
+    {
+      "code": "T3",
+      "case": {
+        "id": "text_moderate",
+        "domain": "text",
+        "n": 64,
+        "lam": 0.5,
+        "alpha": 1.0,
+        "g": 0.02
+      },
+      "methods": {
+        "zero_reanchor_calibrated": {
+          "mean_labels": 77039.0,
+          "sd_labels": 136.12126946219684,
+          "counts": [
+            76967,
+            77196,
+            76954
+          ],
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 75094.66666666667,
+            "comparison": 1486.3333333333333,
+            "refit": 0.0,
+            "final_training": 458.0
+          },
+          "calibration_rounds": [
+            3,
+            3,
+            3
+          ],
+          "blocks": [
+            1024,
+            1024,
+            1024
+          ],
+          "fallback": 0,
+          "acceptable": 3
+        },
+        "paid_reanchor_calibrated": {
+          "mean_labels": 80591.0,
+          "sd_labels": 126.58198924017587,
+          "counts": [
+            80512,
+            80737,
+            80524
+          ],
+          "stages": {
+            "pilot": 4066.6666666666665,
+            "calibration": 74589.0,
+            "comparison": 1482.6666666666667,
+            "refit": 0.0,
+            "final_training": 452.6666666666667
+          },
+          "calibration_rounds": [
+            3,
+            3,
+            3
+          ],
+          "blocks": [
+            1024,
+            1024,
+            1024
+          ],
+          "fallback": 0,
+          "acceptable": 3
+        }
+      },
+      "net_saving_zero": 3552.0,
+      "zero_reduction_percent": 4.407440036728667,
+      "zero_wins": 3,
+      "paid_wins": 0,
+      "ties": 0
+    },
+    {
+      "code": "T4",
+      "case": {
+        "id": "text_weak_nearby",
+        "domain": "text",
+        "n": 64,
+        "lam": 0.125,
+        "alpha": 0.1,
+        "g": 0.005
+      },
+      "methods": {
+        "zero_reanchor_calibrated": {
+          "mean_labels": 389197.3333333333,
+          "sd_labels": 129.32646029847618,
+          "counts": [
+            389176,
+            389336,
+            389080
+          ],
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 197520.0,
+            "comparison": 0.0,
+            "refit": 191677.33333333334,
+            "final_training": 0.0
+          },
+          "calibration_rounds": [
+            1,
+            1,
+            1
+          ],
+          "blocks": [
+            0,
+            0,
+            0
+          ],
+          "fallback": 3,
+          "acceptable": 3
+        },
+        "paid_reanchor_calibrated": {
+          "mean_labels": 390127.6666666667,
+          "sd_labels": 907.4063771725066,
+          "counts": [
+            390665,
+            390638,
+            389080
+          ],
+          "stages": {
+            "pilot": 4074.6666666666665,
+            "calibration": 319732.3333333333,
+            "comparison": 2107.0,
+            "refit": 64213.666666666664,
+            "final_training": 0.0
+          },
+          "calibration_rounds": [
+            8,
+            8,
+            1
+          ],
+          "blocks": [
+            32768,
+            32768,
+            0
+          ],
+          "fallback": 3,
+          "acceptable": 3
+        }
+      },
+      "net_saving_zero": 930.3333333333721,
+      "zero_reduction_percent": 0.23846894563575483,
+      "zero_wins": 2,
+      "paid_wins": 0,
+      "ties": 1
+    },
+    {
+      "code": "V1",
+      "case": {
+        "id": "image_strong",
+        "domain": "image",
+        "n": 128,
+        "lam": 2.0,
+        "alpha": 1.0,
+        "g": 0.005
+      },
+      "methods": {
+        "zero_reanchor_calibrated": {
+          "mean_labels": 57338.0,
+          "sd_labels": 223.22186272854188,
+          "counts": [
+            57594,
+            57184,
+            57236
+          ],
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 53259.0,
+            "comparison": 3661.3333333333335,
+            "refit": 0.0,
+            "final_training": 417.6666666666667
+          },
+          "calibration_rounds": [
+            5,
+            5,
+            5
+          ],
+          "blocks": [
+            4096,
+            4096,
+            4096
+          ],
+          "fallback": 0,
+          "acceptable": 3
+        },
+        "paid_reanchor_calibrated": {
+          "mean_labels": 58997.333333333336,
+          "sd_labels": 265.4323517081769,
+          "counts": [
+            59303,
+            58864,
+            58825
+          ],
+          "stages": {
+            "pilot": 3032.0,
+            "calibration": 51945.666666666664,
+            "comparison": 3608.0,
+            "refit": 0.0,
+            "final_training": 411.6666666666667
+          },
+          "calibration_rounds": [
+            5,
+            5,
+            5
+          ],
+          "blocks": [
+            4096,
+            4096,
+            4096
+          ],
+          "fallback": 0,
+          "acceptable": 3
+        }
+      },
+      "net_saving_zero": 1659.3333333333358,
+      "zero_reduction_percent": 2.8125564997288053,
+      "zero_wins": 3,
+      "paid_wins": 0,
+      "ties": 0
+    },
+    {
+      "code": "V2",
+      "case": {
+        "id": "image_moderate",
+        "domain": "image",
+        "n": 128,
+        "lam": 0.5,
+        "alpha": 1.0,
+        "g": 0.005
+      },
+      "methods": {
+        "zero_reanchor_calibrated": {
+          "mean_labels": 78322.0,
+          "sd_labels": 267.904833849634,
+          "counts": [
+            78193,
+            78630,
+            78143
+          ],
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 65156.666666666664,
+            "comparison": 12875.666666666666,
+            "refit": 0.0,
+            "final_training": 289.6666666666667
+          },
+          "calibration_rounds": [
+            7,
+            7,
+            7
+          ],
+          "blocks": [
+            16384,
+            16384,
+            16384
+          ],
+          "fallback": 0,
+          "acceptable": 3
+        },
+        "paid_reanchor_calibrated": {
+          "mean_labels": 79537.0,
+          "sd_labels": 246.19707553096563,
+          "counts": [
+            79406,
+            79821,
+            79384
+          ],
+          "stages": {
+            "pilot": 3020.0,
+            "calibration": 63595.0,
+            "comparison": 12637.666666666666,
+            "refit": 0.0,
+            "final_training": 284.3333333333333
+          },
+          "calibration_rounds": [
+            7,
+            7,
+            7
+          ],
+          "blocks": [
+            16384,
+            16384,
+            16384
+          ],
+          "fallback": 0,
+          "acceptable": 3
+        }
+      },
+      "net_saving_zero": 1215.0,
+      "zero_reduction_percent": 1.527590932521971,
+      "zero_wins": 3,
+      "paid_wins": 0,
+      "ties": 0
+    },
+    {
+      "code": "V3",
+      "case": {
+        "id": "image_weak_nearby",
+        "domain": "image",
+        "n": 128,
+        "lam": 0.125,
+        "alpha": 0.05,
+        "g": 0.005
+      },
+      "methods": {
+        "zero_reanchor_calibrated": {
+          "mean_labels": 119910.0,
+          "sd_labels": 598.1605135747427,
+          "counts": [
+            119320,
+            119894,
+            120516
+          ],
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 118884.66666666667,
+            "comparison": 1021.3333333333334,
+            "refit": 0.0,
+            "final_training": 4.0
+          },
+          "calibration_rounds": [
+            7,
+            7,
+            8
+          ],
+          "blocks": [
+            16384,
+            16384,
+            32768
+          ],
+          "fallback": 0,
+          "acceptable": 3
+        },
+        "paid_reanchor_calibrated": {
+          "mean_labels": 116628.33333333333,
+          "sd_labels": 3034.355340650355,
+          "counts": [
+            113125,
+            118428,
+            118332
+          ],
+          "stages": {
+            "pilot": 3020.0,
+            "calibration": 108637.33333333333,
+            "comparison": 4951.0,
+            "refit": 0.0,
+            "final_training": 20.0
+          },
+          "calibration_rounds": [
+            7,
+            8,
+            8
+          ],
+          "blocks": [
+            16384,
+            32768,
+            32768
+          ],
+          "fallback": 0,
+          "acceptable": 3
+        }
+      },
+      "net_saving_zero": -3281.6666666666715,
+      "zero_reduction_percent": -2.8137816711205152,
+      "zero_wins": 0,
+      "paid_wins": 3,
+      "ties": 0
+    },
+    {
+      "code": "V4",
+      "case": {
+        "id": "image_backbone",
+        "domain": "backbone",
+        "n": 128,
+        "lam": 0.5,
+        "alpha": 1.0,
+        "g": 0.005
+      },
+      "methods": {
+        "zero_reanchor_calibrated": {
+          "mean_labels": 82775.0,
+          "sd_labels": 8204.833514459633,
+          "counts": [
+            78336,
+            92243,
+            77746
+          ],
+          "stages": {
+            "pilot": 0.0,
+            "calibration": 66852.66666666667,
+            "comparison": 15666.0,
+            "refit": 0.0,
+            "final_training": 256.3333333333333
+          },
+          "calibration_rounds": [
+            7,
+            8,
+            7
+          ],
+          "blocks": [
+            16384,
+            32768,
+            16384
+          ],
+          "fallback": 0,
+          "acceptable": 3
+        },
+        "paid_reanchor_calibrated": {
+          "mean_labels": 79316.33333333333,
+          "sd_labels": 299.493461253052,
+          "counts": [
+            79586,
+            79369,
+            78994
+          ],
+          "stages": {
+            "pilot": 3040.0,
+            "calibration": 63752.666666666664,
+            "comparison": 12251.0,
+            "refit": 0.0,
+            "final_training": 272.6666666666667
+          },
+          "calibration_rounds": [
+            7,
+            7,
+            7
+          ],
+          "blocks": [
+            16384,
+            16384,
+            16384
+          ],
+          "fallback": 0,
+          "acceptable": 3
+        }
+      },
+      "net_saving_zero": -3458.6666666666715,
+      "zero_reduction_percent": -4.360598279463253,
+      "zero_wins": 2,
+      "paid_wins": 1,
+      "ties": 0
+    }
+  ],
+  "reanchor_totals": {
+    "zero_reanchor_calibrated": {
+      "paths": 24,
+      "issued": 24,
+      "acceptable": 24,
+      "covered": 24,
+      "fallback": 3,
+      "conflicts": 0
+    },
+    "paid_reanchor_calibrated": {
+      "paths": 24,
+      "issued": 24,
+      "acceptable": 24,
+      "covered": 24,
+      "fallback": 3,
+      "conflicts": 0
+    }
+  },
+  "verified_unchanged_data": [
+    "experiments\\shared_resource\\goemotions_comparison_20261028\\prepared\\features_public.npz",
+    "experiments\\shared_resource\\goemotions_comparison_20261028\\prepared\\labels_oracle.npz",
+    "experiments\\shared_resource\\cross_backbone_20261028\\prepared\\features_public.npz",
+    "experiments\\shared_resource\\cross_backbone_20261028\\prepared\\labels_oracle.npz",
+    "experiments\\shared_resource\\ade20k_decision_20261026\\prepared\\features_public.npz",
+    "experiments\\shared_resource\\ade20k_decision_20261026\\prepared\\labels_oracle.npz"
+  ]
+}

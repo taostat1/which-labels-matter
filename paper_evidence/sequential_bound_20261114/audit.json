@@ -1,0 +1,7222 @@
+{
+  "completed_designs": 1872,
+  "expected_designs": 1872,
+  "families": {
+    "attribution": 80,
+    "coverage": 80,
+    "cache": 88,
+    "fivefold": 24,
+    "simulation": 1200,
+    "boundary": 400
+  },
+  "paths": 6504,
+  "baseline_parity_passed": 6504,
+  "label_nonincrease_passed": 6504,
+  "approximation_checks_passed": 22364,
+  "refined_paths": 1575,
+  "saved_paths": 1144,
+  "failures": [],
+  "public_entry": [
+    {
+      "id": 0,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1313973430641364,
+        0.13139483245704706
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 0,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1313973430641364,
+        0.13139483245704706
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 0,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13149464437744998,
+        0.13149213377036065
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 0,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13139734306413642,
+        0.13139483245704708
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 0,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13139734306413642,
+        0.13139483245704708
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 0,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13149464437745,
+        0.13149213377036068
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 0,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1313973430641364,
+        0.13139483245704706
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 0,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1313973430641364,
+        0.13139483245704706
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 0,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13149464437744998,
+        0.13149213377036065
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 1,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13163656428925055,
+        0.13163435321518938
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 1,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13163656428925055,
+        0.13163435321518938
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 1,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173042729194173,
+        0.13172821621788056
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 1,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13163656428925058,
+        0.1316343532151894
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 1,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13163656428925058,
+        0.1316343532151894
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 1,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173042729194176,
+        0.13172821621788058
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 1,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13163656428925055,
+        0.13163435321518938
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 1,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13163656428925055,
+        0.13163435321518938
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 1,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173042729194173,
+        0.13172821621788056
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 2,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 2,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 2,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13158481076677672,
+        0.13158256805990712
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 2,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 2,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 2,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13158481076677672,
+        0.13158256805990712
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 2,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 2,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 2,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13158481076677672,
+        0.13158256805990712
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 3,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13174474295034422,
+        0.1317424807394718
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 3,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13174474295034422,
+        0.1317424807394718
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 3,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13183764304252402,
+        0.1318353808316516
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 3,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13174474295034422,
+        0.1317424807394718
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 3,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13174474295034422,
+        0.1317424807394718
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 3,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13183764304252402,
+        0.1318353808316516
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 3,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317447429503442,
+        0.13174248073947178
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 3,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317447429503442,
+        0.13174248073947178
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 3,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13183764304252402,
+        0.1318353808316516
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 4,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13145858810527614,
+        0.13145638486797742
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 4,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13145858810527614,
+        0.13145638486797742
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 4,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1315565180604632,
+        0.1315543148231645
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 4,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1314585881052761,
+        0.1314563848679774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 4,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1314585881052761,
+        0.1314563848679774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 4,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13155651806046317,
+        0.13155431482316446
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 4,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1314585881052761,
+        0.1314563848679774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 4,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1314585881052761,
+        0.1314563848679774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 4,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.1315565180604632,
+        0.1315543148231645
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 5,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13133454187190544,
+        0.1313322232818959
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 5,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13133454187190544,
+        0.1313322232818959
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 5,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13143173399783137,
+        0.13142941540782183
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 5,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13133454187190544,
+        0.13133222328189595
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 5,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13133454187190544,
+        0.13133222328189595
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 5,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13143173399783137,
+        0.13142941540782183
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 5,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13133454187190544,
+        0.1313322232818959
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 5,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13133454187190544,
+        0.1313322232818959
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 5,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13143173399783137,
+        0.13142941540782183
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 6,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13219990879370944,
+        0.1321977711552675
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 6,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13219990879370944,
+        0.1321977711552675
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 6,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1322956267965126,
+        0.13229348915807068
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 6,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13219990879370944,
+        0.1321977711552675
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 6,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13219990879370944,
+        0.1321977711552675
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 6,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.1322956267965126,
+        0.13229348915807068
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 6,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13219990879370946,
+        0.13219777115526754
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 6,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13219990879370946,
+        0.13219777115526754
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 6,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13229562679651263,
+        0.1322934891580707
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 7,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13204194886752182,
+        0.1320392343109333
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 7,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13204194886752182,
+        0.1320392343109333
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 7,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1321427749560749,
+        0.1321400603994864
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 7,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13204194886752185,
+        0.13203923431093334
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 7,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13204194886752185,
+        0.13203923431093334
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 7,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13214277495607493,
+        0.13214006039948642
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 7,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13204194886752182,
+        0.13203923431093326
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 7,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13204194886752182,
+        0.13203923431093326
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 7,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13214277495607493,
+        0.13214006039948636
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 8,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13179064755592207,
+        0.13178832506004917
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 8,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13179064755592207,
+        0.13178832506004917
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 8,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1318875378267409,
+        0.131885215330868
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 8,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13179064755592204,
+        0.13178832506004914
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 8,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13179064755592204,
+        0.13178832506004914
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 8,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.1318875378267409,
+        0.131885215330868
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 8,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13179064755592207,
+        0.13178832506004917
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 8,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13179064755592207,
+        0.13178832506004917
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 8,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.1318875378267409,
+        0.131885215330868
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 9,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1312251296215922,
+        0.1312225335418203
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 9,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1312251296215922,
+        0.1312225335418203
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 9,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13132215059815333,
+        0.13131955451838145
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 9,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13122512962159216,
+        0.13122253354182029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 9,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13122512962159216,
+        0.13122253354182029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 9,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.1313221505981533,
+        0.13131955451838143
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 9,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13122512962159216,
+        0.13122253354182029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 9,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13122512962159216,
+        0.13122253354182029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 9,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.1313221505981533,
+        0.13131955451838143
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 10,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 10,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 10,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13188092359394188,
+        0.1318783742940529
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 10,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 10,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 10,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13188092359394188,
+        0.1318783742940529
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 10,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 10,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 10,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13188092359394185,
+        0.13187837429405289
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 11,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 11,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 11,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13169849276881584,
+        0.13169586663504146
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 11,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 11,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 11,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13169849276881584,
+        0.13169586663504146
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 11,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 11,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 11,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13169849276881584,
+        0.13169586663504146
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 12,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13180499601342469,
+        0.1318027377119416
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 12,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13180499601342469,
+        0.1318027377119416
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 12,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13189863414229944,
+        0.13189637584081634
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 12,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13180499601342474,
+        0.1318027377119416
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 12,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13180499601342474,
+        0.1318027377119416
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 12,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13189863414229946,
+        0.13189637584081632
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 12,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1318049960134247,
+        0.13180273771194156
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 12,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1318049960134247,
+        0.13180273771194156
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 12,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13189863414229946,
+        0.13189637584081632
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 13,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 13,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 13,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13202124322813474,
+        0.13201878628137298
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 13,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 13,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 13,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13202124322813474,
+        0.13201878628137292
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 13,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 13,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 13,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13202124322813474,
+        0.13201878628137298
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 14,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794253
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 14,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794253
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 14,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13134000971402987,
+        0.13133786027079725
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 14,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794253
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 14,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794253
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 14,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13134000971402987,
+        0.13133786027079725
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 14,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794258
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 14,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794258
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 14,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13134000971402987,
+        0.1313378602707973
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 15,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 15,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 15,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173449434484188,
+        0.1317319382886535
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 15,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 15,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 15,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173449434484188,
+        0.1317319382886535
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 15,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 15,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 15,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173449434484186,
+        0.13173193828865348
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 16,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317189710686301,
+        0.13171653590812285
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 16,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317189710686301,
+        0.13171653590812285
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 16,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13181241157570042,
+        0.13180997641519318
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 16,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317189710686301,
+        0.1317165359081228
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 16,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317189710686301,
+        0.1317165359081228
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 16,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13181241157570042,
+        0.13180997641519313
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 16,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317189710686301,
+        0.1317165359081228
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 16,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317189710686301,
+        0.1317165359081228
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 16,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13181241157570042,
+        0.13180997641519313
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 17,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 17,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 17,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1315654521135974,
+        0.13156307897359779
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 17,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 17,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 17,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13156545211359738,
+        0.13156307897359776
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 17,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 17,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 17,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.1315654521135974,
+        0.13156307897359779
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 18,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13160826879484538,
+        0.13160577207462337
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 18,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13160826879484538,
+        0.13160577207462337
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 18,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1317068275534992,
+        0.13170433083327718
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 18,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13160826879484538,
+        0.13160577207462332
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 18,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13160826879484538,
+        0.13160577207462332
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 18,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.1317068275534992,
+        0.13170433083327712
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 18,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316082687948454,
+        0.1316057720746234
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 18,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316082687948454,
+        0.1316057720746234
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 18,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13170682755349922,
+        0.1317043308332772
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 19,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316513237068683,
+        0.1316490541540933
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 19,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316513237068683,
+        0.1316490541540933
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 19,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13175080012893503,
+        0.13174853057616004
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 19,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316513237068683,
+        0.1316490541540933
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 19,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316513237068683,
+        0.1316490541540933
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 19,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13175080012893506,
+        0.13174853057616007
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 19,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13165132370686827,
+        0.13164905415409328
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 19,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13165132370686827,
+        0.13164905415409328
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 19,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13175080012893503,
+        0.13174853057616004
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 20,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1313973430641364,
+        0.13139483245704706
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 20,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1313973430641364,
+        0.13139483245704706
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 20,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13149464437744998,
+        0.13149213377036065
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 20,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13139734306413642,
+        0.13139483245704708
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 20,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13139734306413642,
+        0.13139483245704708
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 20,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13149464437745,
+        0.13149213377036068
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 20,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1313973430641364,
+        0.13139483245704706
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 20,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1313973430641364,
+        0.13139483245704706
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 20,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13149464437744998,
+        0.13149213377036065
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 21,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13163656428925055,
+        0.13163435321518938
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 21,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13163656428925055,
+        0.13163435321518938
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 21,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173042729194173,
+        0.13172821621788056
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 21,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13163656428925058,
+        0.1316343532151894
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 21,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13163656428925058,
+        0.1316343532151894
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 21,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173042729194176,
+        0.13172821621788058
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 21,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13163656428925055,
+        0.13163435321518938
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 21,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13163656428925055,
+        0.13163435321518938
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 21,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173042729194173,
+        0.13172821621788056
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 22,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 22,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 22,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13158481076677672,
+        0.13158256805990712
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 22,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 22,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 22,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13158481076677672,
+        0.13158256805990712
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 22,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 22,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 22,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13158481076677672,
+        0.13158256805990712
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 23,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13174474295034422,
+        0.1317424807394718
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 23,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13174474295034422,
+        0.1317424807394718
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 23,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13183764304252402,
+        0.1318353808316516
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 23,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13174474295034422,
+        0.1317424807394718
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 23,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13174474295034422,
+        0.1317424807394718
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 23,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13183764304252402,
+        0.1318353808316516
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 23,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317447429503442,
+        0.13174248073947178
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 23,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317447429503442,
+        0.13174248073947178
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 23,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13183764304252402,
+        0.1318353808316516
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 24,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13145858810527614,
+        0.13145638486797742
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 24,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13145858810527614,
+        0.13145638486797742
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 24,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1315565180604632,
+        0.1315543148231645
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 24,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1314585881052761,
+        0.1314563848679774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 24,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1314585881052761,
+        0.1314563848679774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 24,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13155651806046317,
+        0.13155431482316446
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 24,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1314585881052761,
+        0.1314563848679774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 24,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1314585881052761,
+        0.1314563848679774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 24,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.1315565180604632,
+        0.1315543148231645
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 25,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13133454187190544,
+        0.1313322232818959
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 25,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13133454187190544,
+        0.1313322232818959
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 25,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13143173399783137,
+        0.13142941540782183
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 25,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13133454187190544,
+        0.13133222328189595
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 25,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13133454187190544,
+        0.13133222328189595
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 25,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13143173399783137,
+        0.13142941540782183
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 25,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13133454187190544,
+        0.1313322232818959
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 25,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13133454187190544,
+        0.1313322232818959
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 25,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13143173399783137,
+        0.13142941540782183
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 26,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13219990879370944,
+        0.1321977711552675
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 26,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13219990879370944,
+        0.1321977711552675
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 26,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1322956267965126,
+        0.13229348915807068
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 26,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13219990879370944,
+        0.1321977711552675
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 26,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13219990879370944,
+        0.1321977711552675
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 26,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.1322956267965126,
+        0.13229348915807068
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 26,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13219990879370946,
+        0.13219777115526754
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 26,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13219990879370946,
+        0.13219777115526754
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 26,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13229562679651263,
+        0.1322934891580707
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 27,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13204194886752182,
+        0.1320392343109333
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 27,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13204194886752182,
+        0.1320392343109333
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 27,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1321427749560749,
+        0.1321400603994864
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 27,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13204194886752185,
+        0.13203923431093334
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 27,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13204194886752185,
+        0.13203923431093334
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 27,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13214277495607493,
+        0.13214006039948642
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 27,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13204194886752182,
+        0.13203923431093326
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 27,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13204194886752182,
+        0.13203923431093326
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 27,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13214277495607493,
+        0.13214006039948636
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 28,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13179064755592207,
+        0.13178832506004917
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 28,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13179064755592207,
+        0.13178832506004917
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 28,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1318875378267409,
+        0.131885215330868
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 28,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13179064755592204,
+        0.13178832506004914
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 28,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13179064755592204,
+        0.13178832506004914
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 28,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.1318875378267409,
+        0.131885215330868
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 28,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13179064755592207,
+        0.13178832506004917
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 28,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13179064755592207,
+        0.13178832506004917
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 28,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.1318875378267409,
+        0.131885215330868
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 29,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1312251296215922,
+        0.1312225335418203
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 29,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1312251296215922,
+        0.1312225335418203
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 29,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13132215059815333,
+        0.13131955451838145
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 29,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13122512962159216,
+        0.13122253354182029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 29,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13122512962159216,
+        0.13122253354182029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 29,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.1313221505981533,
+        0.13131955451838143
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 29,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13122512962159216,
+        0.13122253354182029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 29,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13122512962159216,
+        0.13122253354182029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 29,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.1313221505981533,
+        0.13131955451838143
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 30,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 30,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 30,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13188092359394188,
+        0.1318783742940529
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 30,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 30,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 30,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13188092359394188,
+        0.1318783742940529
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 30,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 30,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 30,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13188092359394185,
+        0.13187837429405289
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 31,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 31,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 31,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13169849276881584,
+        0.13169586663504146
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 31,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 31,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 31,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13169849276881584,
+        0.13169586663504146
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 31,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 31,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 31,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13169849276881584,
+        0.13169586663504146
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 32,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13180499601342469,
+        0.1318027377119416
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 32,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13180499601342469,
+        0.1318027377119416
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 32,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13189863414229944,
+        0.13189637584081634
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 32,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13180499601342474,
+        0.1318027377119416
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 32,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13180499601342474,
+        0.1318027377119416
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 32,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13189863414229946,
+        0.13189637584081632
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 32,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1318049960134247,
+        0.13180273771194156
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 32,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1318049960134247,
+        0.13180273771194156
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 32,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13189863414229946,
+        0.13189637584081632
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 33,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 33,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 33,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13202124322813474,
+        0.13201878628137298
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 33,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 33,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 33,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13202124322813474,
+        0.13201878628137292
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 33,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 33,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 33,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13202124322813474,
+        0.13201878628137298
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 34,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794253
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 34,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794253
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 34,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13134000971402987,
+        0.13133786027079725
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 34,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794253
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 34,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794253
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 34,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13134000971402987,
+        0.13133786027079725
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 34,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794258
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 34,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794258
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 34,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13134000971402987,
+        0.1313378602707973
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 35,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 35,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 35,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173449434484188,
+        0.1317319382886535
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 35,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 35,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 35,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173449434484188,
+        0.1317319382886535
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 35,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 35,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 35,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173449434484186,
+        0.13173193828865348
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 36,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317189710686301,
+        0.13171653590812285
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 36,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317189710686301,
+        0.13171653590812285
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 36,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13181241157570042,
+        0.13180997641519318
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 36,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317189710686301,
+        0.1317165359081228
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 36,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317189710686301,
+        0.1317165359081228
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 36,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13181241157570042,
+        0.13180997641519313
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 36,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317189710686301,
+        0.1317165359081228
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 36,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317189710686301,
+        0.1317165359081228
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 36,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13181241157570042,
+        0.13180997641519313
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 37,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 37,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 37,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1315654521135974,
+        0.13156307897359779
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 37,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 37,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 37,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13156545211359738,
+        0.13156307897359776
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 37,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 37,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 37,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.1315654521135974,
+        0.13156307897359779
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 38,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13160826879484538,
+        0.13160577207462337
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 38,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13160826879484538,
+        0.13160577207462337
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 38,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1317068275534992,
+        0.13170433083327718
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 38,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13160826879484538,
+        0.13160577207462332
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 38,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13160826879484538,
+        0.13160577207462332
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 38,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.1317068275534992,
+        0.13170433083327712
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 38,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316082687948454,
+        0.1316057720746234
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 38,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316082687948454,
+        0.1316057720746234
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 38,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13170682755349922,
+        0.1317043308332772
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 39,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316513237068683,
+        0.1316490541540933
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 39,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316513237068683,
+        0.1316490541540933
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 39,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13175080012893503,
+        0.13174853057616004
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 39,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316513237068683,
+        0.1316490541540933
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 39,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316513237068683,
+        0.1316490541540933
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 39,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13175080012893506,
+        0.13174853057616007
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 39,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13165132370686827,
+        0.13164905415409328
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 39,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13165132370686827,
+        0.13164905415409328
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 39,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13175080012893503,
+        0.13174853057616004
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 40,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1313973430641364,
+        0.13139483245704706
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 40,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1313973430641364,
+        0.13139483245704706
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 40,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13149464437744998,
+        0.13149213377036065
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 40,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13139734306413642,
+        0.13139483245704708
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 40,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13139734306413642,
+        0.13139483245704708
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 40,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13149464437745,
+        0.13149213377036068
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 40,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1313973430641364,
+        0.13139483245704706
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 40,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1313973430641364,
+        0.13139483245704706
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 40,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13149464437744998,
+        0.13149213377036065
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 41,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13163656428925055,
+        0.13163435321518938
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 41,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13163656428925055,
+        0.13163435321518938
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 41,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173042729194173,
+        0.13172821621788056
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 41,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13163656428925058,
+        0.1316343532151894
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 41,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13163656428925058,
+        0.1316343532151894
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 41,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173042729194176,
+        0.13172821621788058
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 41,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13163656428925055,
+        0.13163435321518938
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 41,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13163656428925055,
+        0.13163435321518938
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 41,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173042729194173,
+        0.13172821621788056
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 42,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 42,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 42,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13158481076677672,
+        0.13158256805990712
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 42,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 42,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 42,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13158481076677672,
+        0.13158256805990712
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 42,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 42,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1314923596957696,
+        0.1314901169889
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 42,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13158481076677672,
+        0.13158256805990712
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 43,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13174474295034422,
+        0.1317424807394718
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 43,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13174474295034422,
+        0.1317424807394718
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 43,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13183764304252402,
+        0.1318353808316516
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 43,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13174474295034422,
+        0.1317424807394718
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 43,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13174474295034422,
+        0.1317424807394718
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 43,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13183764304252402,
+        0.1318353808316516
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 43,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317447429503442,
+        0.13174248073947178
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 43,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317447429503442,
+        0.13174248073947178
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 43,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13183764304252402,
+        0.1318353808316516
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 44,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13145858810527614,
+        0.13145638486797742
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 44,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13145858810527614,
+        0.13145638486797742
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 44,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1315565180604632,
+        0.1315543148231645
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 44,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1314585881052761,
+        0.1314563848679774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 44,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1314585881052761,
+        0.1314563848679774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 44,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13155651806046317,
+        0.13155431482316446
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 44,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1314585881052761,
+        0.1314563848679774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 44,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1314585881052761,
+        0.1314563848679774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 44,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.1315565180604632,
+        0.1315543148231645
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 45,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13133454187190544,
+        0.1313322232818959
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 45,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13133454187190544,
+        0.1313322232818959
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 45,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13143173399783137,
+        0.13142941540782183
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 45,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13133454187190544,
+        0.13133222328189595
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 45,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13133454187190544,
+        0.13133222328189595
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 45,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13143173399783137,
+        0.13142941540782183
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 45,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13133454187190544,
+        0.1313322232818959
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 45,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13133454187190544,
+        0.1313322232818959
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 45,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13143173399783137,
+        0.13142941540782183
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 46,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13219990879370944,
+        0.1321977711552675
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 46,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13219990879370944,
+        0.1321977711552675
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 46,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1322956267965126,
+        0.13229348915807068
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 46,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13219990879370944,
+        0.1321977711552675
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 46,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13219990879370944,
+        0.1321977711552675
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 46,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.1322956267965126,
+        0.13229348915807068
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 46,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13219990879370946,
+        0.13219777115526754
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 46,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13219990879370946,
+        0.13219777115526754
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 46,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13229562679651263,
+        0.1322934891580707
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 47,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13204194886752182,
+        0.1320392343109333
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 47,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13204194886752182,
+        0.1320392343109333
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 47,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1321427749560749,
+        0.1321400603994864
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 47,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13204194886752185,
+        0.13203923431093334
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 47,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13204194886752185,
+        0.13203923431093334
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 47,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13214277495607493,
+        0.13214006039948642
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 47,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13204194886752182,
+        0.13203923431093326
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 47,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13204194886752182,
+        0.13203923431093326
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 47,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13214277495607493,
+        0.13214006039948636
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 48,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13179064755592207,
+        0.13178832506004917
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 48,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13179064755592207,
+        0.13178832506004917
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 48,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1318875378267409,
+        0.131885215330868
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 48,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13179064755592204,
+        0.13178832506004914
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 48,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13179064755592204,
+        0.13178832506004914
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 48,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.1318875378267409,
+        0.131885215330868
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 48,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13179064755592207,
+        0.13178832506004917
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 48,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13179064755592207,
+        0.13178832506004917
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 48,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.1318875378267409,
+        0.131885215330868
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 49,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1312251296215922,
+        0.1312225335418203
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 49,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1312251296215922,
+        0.1312225335418203
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 49,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13132215059815333,
+        0.13131955451838145
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 49,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13122512962159216,
+        0.13122253354182029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 49,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13122512962159216,
+        0.13122253354182029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 49,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.1313221505981533,
+        0.13131955451838143
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 49,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13122512962159216,
+        0.13122253354182029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 49,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13122512962159216,
+        0.13122253354182029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 49,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.1313221505981533,
+        0.13131955451838143
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 50,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 50,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 50,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13188092359394188,
+        0.1318783742940529
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 50,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 50,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 50,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13188092359394188,
+        0.1318783742940529
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 50,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 50,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317811493893735,
+        0.13177860008948453
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 50,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13188092359394185,
+        0.13187837429405289
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 51,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 51,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 51,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13169849276881584,
+        0.13169586663504146
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 51,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 51,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 51,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13169849276881584,
+        0.13169586663504146
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 51,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 51,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13159811610234368,
+        0.1315954899685693
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 51,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13169849276881584,
+        0.13169586663504146
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 52,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13180499601342469,
+        0.1318027377119416
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 52,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13180499601342469,
+        0.1318027377119416
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 52,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13189863414229944,
+        0.13189637584081634
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 52,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13180499601342474,
+        0.1318027377119416
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 52,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13180499601342474,
+        0.1318027377119416
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 52,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13189863414229946,
+        0.13189637584081632
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 52,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1318049960134247,
+        0.13180273771194156
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 52,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1318049960134247,
+        0.13180273771194156
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 52,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13189863414229946,
+        0.13189637584081632
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 53,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 53,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 53,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13202124322813474,
+        0.13201878628137298
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 53,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 53,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 53,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13202124322813474,
+        0.13201878628137292
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 53,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 53,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13191839213602674,
+        0.13191593518926498
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 53,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13202124322813474,
+        0.13201878628137298
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 54,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794253
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 54,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794253
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 54,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13134000971402987,
+        0.13133786027079725
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 54,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794253
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 54,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794253
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 54,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13134000971402987,
+        0.13133786027079725
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 54,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794258
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 54,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13124133492117515,
+        0.13123918547794258
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 54,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13134000971402987,
+        0.1313378602707973
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 55,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 55,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 55,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173449434484188,
+        0.1317319382886535
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 55,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 55,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 55,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173449434484188,
+        0.1317319382886535
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 55,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 55,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316392115053489,
+        0.13163665544916053
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 55,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13173449434484186,
+        0.13173193828865348
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 56,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317189710686301,
+        0.13171653590812285
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 56,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317189710686301,
+        0.13171653590812285
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 56,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13181241157570042,
+        0.13180997641519318
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 56,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317189710686301,
+        0.1317165359081228
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 56,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317189710686301,
+        0.1317165359081228
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 56,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13181241157570042,
+        0.13180997641519313
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 56,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1317189710686301,
+        0.1317165359081228
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 56,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1317189710686301,
+        0.1317165359081228
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 56,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13181241157570042,
+        0.13180997641519313
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 57,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 57,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 57,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1315654521135974,
+        0.13156307897359779
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 57,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 57,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 57,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13156545211359738,
+        0.13156307897359776
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 57,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 57,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13147300971102724,
+        0.13147063657102762
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 57,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.1315654521135974,
+        0.13156307897359779
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 58,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.13160826879484538,
+        0.13160577207462337
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 58,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13160826879484538,
+        0.13160577207462337
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 58,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.1317068275534992,
+        0.13170433083327718
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 58,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.13160826879484538,
+        0.13160577207462332
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 58,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13160826879484538,
+        0.13160577207462332
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 58,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.1317068275534992,
+        0.13170433083327712
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 58,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316082687948454,
+        0.1316057720746234
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 58,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316082687948454,
+        0.1316057720746234
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 58,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13170682755349922,
+        0.1317043308332772
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 59,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316513237068683,
+        0.1316490541540933
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 59,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316513237068683,
+        0.1316490541540933
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 59,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.13175080012893503,
+        0.13174853057616004
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 59,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.1316513237068683,
+        0.1316490541540933
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 59,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.1316513237068683,
+        0.1316490541540933
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 59,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.13175080012893506,
+        0.13174853057616007
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 59,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.13165132370686827,
+        0.13164905415409328
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 59,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.13165132370686827,
+        0.13164905415409328
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 59,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.13175080012893503,
+        0.13174853057616004
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 60,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.057775563378350464,
+        0.057833046072232774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 60,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.057775563378350464,
+        0.057833046072232774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 60,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.0783842126280421,
+        0.07844169532192441
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 60,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.057775563378350464,
+        0.057833046072232774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 60,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.057775563378350464,
+        0.057833046072232774
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 60,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07838421262804213,
+        0.07844169532192444
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 60,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.057775563378350464,
+        0.05783304607223279
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 60,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.057775563378350464,
+        0.05783304607223279
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 60,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07838421262804213,
+        0.07844169532192445
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 61,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.058080723119628905,
+        0.05813938033749201
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 61,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.058080723119628905,
+        0.05813938033749201
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 61,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07796473415105853,
+        0.07802339136892161
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 61,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.05808072311962892,
+        0.058139380337492025
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 61,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05808072311962892,
+        0.058139380337492025
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 61,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07796473415105856,
+        0.07802339136892167
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 61,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.058080723119628905,
+        0.05813938033749201
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 61,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.058080723119628905,
+        0.05813938033749201
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 61,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07796473415105855,
+        0.07802339136892165
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 62,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.05802044507684069,
+        0.058080299432924365
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 62,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05802044507684069,
+        0.058080299432924365
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 62,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07824243247029605,
+        0.07830228682637971
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 62,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.05802044507684069,
+        0.058080299432924365
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 62,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05802044507684069,
+        0.058080299432924365
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 62,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07824243247029602,
+        0.07830228682637971
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 62,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.05802044507684068,
+        0.05808029943292435
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 62,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05802044507684068,
+        0.05808029943292435
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 62,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07824243247029602,
+        0.07830228682637971
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 63,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.057948644367640675,
+        0.058007501194443964
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 63,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.057948644367640675,
+        0.058007501194443964
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 63,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.08010630444384094,
+        0.08016516127064423
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 63,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.05794864436764067,
+        0.05800750119444396
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 63,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05794864436764067,
+        0.05800750119444396
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 63,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.08010630444384095,
+        0.08016516127064424
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 63,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.05794864436764067,
+        0.05800750119444396
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 63,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05794864436764067,
+        0.05800750119444396
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 63,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.08010630444384095,
+        0.08016516127064424
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 64,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.05786769286479483,
+        0.05792651966232247
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 64,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05786769286479483,
+        0.05792651966232247
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 64,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07988578487522141,
+        0.07994461167274905
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 64,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.057867692864794824,
+        0.05792651966232246
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 64,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.057867692864794824,
+        0.05792651966232246
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 64,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07988578487522142,
+        0.07994461167274906
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 64,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.05786769286479483,
+        0.05792651966232247
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 64,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05786769286479483,
+        0.05792651966232247
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 64,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07988578487522141,
+        0.07994461167274905
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 65,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.05818062407838039,
+        0.05824015706641245
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 65,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05818062407838039,
+        0.05824015706641245
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 65,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07954601342334827,
+        0.07960554641138035
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 65,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.0581806240783804,
+        0.058240157066412473
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 65,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.0581806240783804,
+        0.058240157066412473
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 65,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07954601342334824,
+        0.0796055464113803
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 65,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.0581806240783804,
+        0.05824015706641246
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 65,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.0581806240783804,
+        0.05824015706641246
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 65,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07954601342334824,
+        0.0796055464113803
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 66,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.057595997138990426,
+        0.05765351966005913
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 66,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.057595997138990426,
+        0.05765351966005913
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 66,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07802154506689728,
+        0.07807906758796598
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 66,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.057595997138990426,
+        0.05765351966005913
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 66,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.057595997138990426,
+        0.05765351966005913
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 66,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07802154506689728,
+        0.07807906758796598
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 66,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.05759599713899043,
+        0.05765351966005914
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 66,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05759599713899043,
+        0.05765351966005914
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 66,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07802154506689729,
+        0.07807906758796601
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 67,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.05793140628071619,
+        0.05799007005531029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 67,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05793140628071619,
+        0.05799007005531029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 67,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.08012877452206163,
+        0.08018743829665573
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 67,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.05793140628071619,
+        0.05799007005531029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 67,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05793140628071619,
+        0.05799007005531029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 67,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.08012877452206164,
+        0.08018743829665573
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 67,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.05793140628071619,
+        0.05799007005531029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 67,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05793140628071619,
+        0.05799007005531029
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 67,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.08012877452206164,
+        0.08018743829665573
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 68,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.05786200149119897,
+        0.05791992953161462
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 68,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05786200149119897,
+        0.05791992953161462
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 68,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07986464038513089,
+        0.07992256842554654
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 68,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.05786200149119898,
+        0.057919929531614636
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 68,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05786200149119898,
+        0.057919929531614636
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 68,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07986464038513087,
+        0.07992256842554654
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 68,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.05786200149119897,
+        0.05791992953161462
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 68,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05786200149119897,
+        0.05791992953161462
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 68,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07986464038513087,
+        0.07992256842554653
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 69,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.05754131511604074,
+        0.05760012384768162
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 69,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05754131511604074,
+        0.05760012384768162
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 69,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07929524520200758,
+        0.07935405393364844
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 69,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.05754131511604075,
+        0.05760012384768163
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 69,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05754131511604075,
+        0.05760012384768163
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 69,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07929524520200758,
+        0.07935405393364846
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 69,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.05754131511604075,
+        0.05760012384768163
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 69,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05754131511604075,
+        0.05760012384768163
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 69,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07929524520200756,
+        0.07935405393364844
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 70,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.05753157955989212,
+        0.05758968326073141
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 70,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05753157955989212,
+        0.05758968326073141
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 70,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07670454113549022,
+        0.07676264483632952
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 70,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.057531579559892104,
+        0.0575896832607314
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 70,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.057531579559892104,
+        0.0575896832607314
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 70,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07670454113549022,
+        0.07676264483632952
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 70,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.057531579559892104,
+        0.0575896832607314
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 70,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.057531579559892104,
+        0.0575896832607314
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 70,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07670454113549022,
+        0.07676264483632952
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 71,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.05786994494310474,
+        0.05792853981557346
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 71,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05786994494310474,
+        0.05792853981557346
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 71,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07975930426617917,
+        0.07981789913864788
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 71,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.05786994494310475,
+        0.057928539815573464
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 71,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05786994494310475,
+        0.057928539815573464
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 71,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07975930426617917,
+        0.0798178991386479
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 71,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.05786994494310474,
+        0.05792853981557346
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 71,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05786994494310474,
+        0.05792853981557346
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 71,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07975930426617917,
+        0.07981789913864788
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 72,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.05805666928753584,
+        0.058115871609972704
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 72,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05805666928753584,
+        0.058115871609972704
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 72,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.08038822410056536,
+        0.08044742642300222
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 72,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.05805666928753585,
+        0.05811587160997271
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 72,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05805666928753585,
+        0.05811587160997271
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 72,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.08038822410056534,
+        0.08044742642300222
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 72,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.05805666928753584,
+        0.058115871609972704
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 72,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05805666928753584,
+        0.058115871609972704
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 72,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.08038822410056537,
+        0.08044742642300225
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 73,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.05801863805311944,
+        0.05807774207131544
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 73,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05801863805311944,
+        0.05807774207131544
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 73,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07836671890920732,
+        0.07842582292740333
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 73,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.058018638053119444,
+        0.05807774207131545
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 73,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.058018638053119444,
+        0.05807774207131545
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 73,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07836671890920732,
+        0.07842582292740333
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 73,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.05801863805311944,
+        0.05807774207131544
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 73,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05801863805311944,
+        0.05807774207131544
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 73,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07836671890920734,
+        0.07842582292740335
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 74,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.05787825281772159,
+        0.05793665572704383
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 74,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05787825281772159,
+        0.05793665572704383
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 74,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07881314148643988,
+        0.07887154439576212
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 74,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.05787825281772159,
+        0.057936655727043845
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 74,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05787825281772159,
+        0.057936655727043845
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 74,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07881314148643989,
+        0.07887154439576212
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 74,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.05787825281772159,
+        0.057936655727043845
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 74,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05787825281772159,
+        0.057936655727043845
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 74,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07881314148643989,
+        0.07887154439576213
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 75,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.057865556240164345,
+        0.05792505358204825
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 75,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.057865556240164345,
+        0.05792505358204825
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 75,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07992365796327386,
+        0.07998315530515775
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 75,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.05786555624016436,
+        0.05792505358204826
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 75,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05786555624016436,
+        0.05792505358204826
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 75,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07992365796327386,
+        0.07998315530515777
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 75,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.05786555624016436,
+        0.05792505358204826
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 75,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05786555624016436,
+        0.05792505358204826
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 75,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07992365796327387,
+        0.07998315530515779
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 76,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.05768283101968796,
+        0.05774128427329778
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 76,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05768283101968796,
+        0.05774128427329778
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 76,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07749307981459631,
+        0.07755153306820614
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 76,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.057682831019687957,
+        0.05774128427329777
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 76,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.057682831019687957,
+        0.05774128427329777
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 76,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07749307981459631,
+        0.07755153306820614
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 76,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.057682831019687957,
+        0.05774128427329777
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 76,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.057682831019687957,
+        0.05774128427329777
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 76,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07749307981459631,
+        0.07755153306820614
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 77,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.057743846973727836,
+        0.05780236851790088
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 77,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.057743846973727836,
+        0.05780236851790088
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 77,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07823451682285586,
+        0.0782930383670289
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 77,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.05774384697372782,
+        0.05780236851790087
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 77,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05774384697372782,
+        0.05780236851790087
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 77,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.0782345168228559,
+        0.07829303836702894
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 77,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.057743846973727836,
+        0.05780236851790088
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 77,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.057743846973727836,
+        0.05780236851790088
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 77,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07823451682285588,
+        0.07829303836702893
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 78,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.05834348865371829,
+        0.05840264600368297
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 78,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05834348865371829,
+        0.05840264600368297
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 78,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07932386815345269,
+        0.07938302550341736
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 78,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.05834348865371827,
+        0.05840264600368296
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 78,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05834348865371827,
+        0.05840264600368296
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 78,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07932386815345269,
+        0.07938302550341737
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 78,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.05834348865371829,
+        0.05840264600368297
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 78,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05834348865371829,
+        0.05840264600368297
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 78,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07932386815345269,
+        0.07938302550341737
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 79,
+      "rep": 0,
+      "method": "selective_paired",
+      "interval": [
+        -0.05854778505531111,
+        0.058607343721707686
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 79,
+      "rep": 0,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.05854778505531111,
+        0.058607343721707686
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 79,
+      "rep": 0,
+      "method": "separate_bound",
+      "interval": [
+        -0.07905794736494909,
+        0.07911750603134567
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 79,
+      "rep": 1,
+      "method": "selective_paired",
+      "interval": [
+        -0.0585477850553111,
+        0.05860734372170769
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 79,
+      "rep": 1,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.0585477850553111,
+        0.05860734372170769
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 79,
+      "rep": 1,
+      "method": "separate_bound",
+      "interval": [
+        -0.07905794736494909,
+        0.07911750603134568
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 79,
+      "rep": 2,
+      "method": "selective_paired",
+      "interval": [
+        -0.058547785055311094,
+        0.058607343721707686
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 79,
+      "rep": 2,
+      "method": "whole_object_purchases",
+      "interval": [
+        -0.058547785055311094,
+        0.058607343721707686
+      ],
+      "choice": "unresolved"
+    },
+    {
+      "id": 79,
+      "rep": 2,
+      "method": "separate_bound",
+      "interval": [
+        -0.07905794736494907,
+        0.07911750603134567
+      ],
+      "choice": "unresolved"
+    }
+  ],
+  "complete": true
+}

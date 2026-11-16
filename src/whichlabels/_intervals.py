@@ -15,9 +15,10 @@ def mapping_guard(coef,cdf,mass):
     assert actual.min()>=0
     return float(mass*np.abs(actual-ideal).sum()+mass*len(coef)/2**53)
 
-def query_trial(poly,plan,oracle,rng,checks,g,delta):
+def query_trial(poly,plan,oracle,rng,checks,g,delta,refine_bound=None):
     start=time.perf_counter();n=0;k=0;history=[];choice='unresolved'
     coef=poly['coef'];mass=float(np.abs(coef).sum());constant=float(poly['constant'])
+    epsilon=float(poly['epsilon'])
     assert np.all(plan['pred']==0), 'CP requires the zero-predictor two-point sampler'
     assert np.allclose(plan['q'],np.abs(coef)/mass,rtol=1e-13,atol=0)
     guard=2e-9
@@ -33,12 +34,25 @@ def query_trial(poly,plan,oracle,rng,checks,g,delta):
         pl,pu=endpoints(k,n,delta/len(checks))
         center=constant+mass*(2*k/n-1)
         sl=constant+mass*(2*pl-1);su=constant+mass*(2*pu-1)
-        lo=sl-poly['epsilon']-guard;hi=su+poly['epsilon']+guard
+        lo=sl-epsilon-guard;hi=su+epsilon+guard
         choice='A' if hi<=g else 'B' if lo>=-g else 'unresolved'
+        refined=False
+        # The raw interval must support a choice before a smaller deterministic
+        # approximation bound can change this inspection's decision.
+        if (refine_bound is not None and choice=='unresolved'
+                and (su+guard<=g or sl-guard>=-g)):
+            candidate=float(refine_bound())
+            if not np.isfinite(candidate) or candidate<0:
+                raise ArithmeticError('invalid cache approximation certificate')
+            epsilon=min(epsilon,candidate)
+            lo=sl-epsilon-guard;hi=su+epsilon+guard
+            choice='A' if hi<=g else 'B' if lo>=-g else 'unresolved'
+            refined=True
         history.append(dict(draws=n,successes=k,estimate=center,
             statistical_radius=max(center-sl,su-center),statistical_lower=sl,statistical_upper=su,
-            approximation_radius=poly['epsilon'],lower=lo,upper=hi,labels=oracle.count,
-            choice=choice,interval='CP',alpha=delta/len(checks)))
+            approximation_radius=epsilon,lower=lo,upper=hi,labels=oracle.count,
+            choice=choice,interval='CP',alpha=delta/len(checks),refined=refined))
         if choice!='unresolved':break
     return dict(choice=choice,lower=lo,upper=hi,estimate=center,draws=n,
-        seconds=time.perf_counter()-start,history=history,mapping_error_bound=drift)
+        seconds=time.perf_counter()-start,history=history,mapping_error_bound=drift,
+        epsilon=epsilon)

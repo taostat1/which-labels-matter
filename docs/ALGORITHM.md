@@ -35,7 +35,7 @@ Thus `g = 0.005` allows a relative decrease of at most `1 - exp(-0.005)`, or abo
 |---|---|
 | `n`, `r`, `B` | Training objects per fit, attributes per object, and splits |
 | `Delta_V` | Exact candidate-A-minus-candidate-B score on the fixed plan |
-| `T`, `epsilon` | Queryable approximate score difference and its uniform error bound |
+| `T`, `epsilon_0`, `epsilon_N` | Fixed approximate score difference, public error bound, and cache-refined bound |
 | `a_k`, `psi_k` | Public coefficient and signed-label product |
 | `S1`, `p_k` | Sum of absolute coefficients and term-query probabilities |
 | `g`, `delta` | Excess-risk tolerance and selection-error probability bound |
@@ -64,7 +64,7 @@ Diagonal products equal one and enter `c0`. Public matrices also give a uniform 
 
 ## Queries and decisions
 
-The 14 numbered steps below match the paper's Algorithm 1. The three stages separate public preparation, sequential querying, and final training. The small numerical guard used by the implementation is omitted from the mathematical display. The matching LaTeX source is [ALGORITHM1.tex](ALGORITHM1.tex); its equation reference uses the paper's definition of the CP limits.
+The steps below follow the paper's Algorithm 1. The three stages separate public preparation, sequential querying, and final training. The small numerical guard used by the implementation is omitted from the mathematical display. The matching LaTeX source is [ALGORITHM1.tex](ALGORITHM1.tex).
 
 ```text
 Input: public designs, fixed CV plan, lambda, g, delta, inspections N_1,...,N_J, final subset.
@@ -78,13 +78,15 @@ Stage 2: Sequential Label Queries
  6.   Query: extend independent K_i ~ p draws to N; buy and cache missing labels.
  7.   Count: C_N = sum_{i=1}^N 1{sign(a[K_i])*psi[K_i] = 1}.
  8.   CP limits: compute (ell_N,u_N) with error probability delta/J.
- 9.   Risk interval: I = [c0+S1*(2*ell_N-1)-epsilon, c0+S1*(2*u_N-1)+epsilon].
-10.   Stop: if upper(I) <= g or lower(I) >= -g, break.
-11. End for.
+ 9.   Refine epsilon using cached labels if the raw CP interval supports a choice
+      but its enlargement by the current epsilon does not; retain the running minimum.
+10.   Risk interval: I = [c0+S1*(2*ell_N-1)-epsilon, c0+S1*(2*u_N-1)+epsilon].
+11.   Stop: if upper(I) <= g or lower(I) >= -g, break.
+12. End for.
 Stage 3: Selection and Final Training
-12. If unresolved, complete exact CV through C; obtain I with numerical radius <= g.
-13. Select A if upper(I) <= g; otherwise select B.
-14. Buy missing final-subset labels through C and fit the selected candidate.
+13. If unresolved, complete exact CV through C; obtain I with numerical radius <= g.
+14. Select A if upper(I) <= g; otherwise select B.
+15. Buy missing final-subset labels through C and fit the selected candidate.
 Output: selected candidate, supporting interval I, and distinct-label count |C|.
 ```
 
@@ -106,13 +108,19 @@ u_N=\operatorname{Beta}^{-1}_{1-q}(C_N+1,N-C_N),$$
 
 with `ell_N = 0` at zero successes and `u_N = 1` at `N` successes. The beta quantiles invert binomial tails; they are not Bayesian credible limits. Mapping back to the score and adding the approximation bound gives
 
-$$I_N=[c_0+S_1(2\ell_N-1)-\varepsilon,\ c_0+S_1(2u_N-1)+\varepsilon].$$
+$$I_N=[c_0+S_1(2\ell_N-1)-\varepsilon_N,\ c_0+S_1(2u_N-1)+\varepsilon_N].$$
+
+At a refinement, `_cache_bounds.py` encloses the Newton scores for every binary completion agreeing with the acquired labels. Local curvature and gradient bounds control the resulting risk error. The algorithm retains
+
+$$\varepsilon_N=\min\{\varepsilon_{N^-},\varepsilon_{\rm loc}(\mathcal C_N)\}.$$
+
+The true labels belong to that completion set, including after adaptive purchases. Thus this deterministic bound can use the same labels as the CP statistic without a new independence assumption or error allocation. The code refines only when the raw sampling interval could support a decision. At other checkpoints it keeps the preceding bound. This schedule leaves the polynomial, proposal, and cumulative counts unchanged.
 
 Each inspection receives total error probability `delta/J`. The union bound therefore covers all prescribed looks with probability at least `1-delta`. Stopping at a supported look preserves the choice guarantee. The failure probability applies separately to each specified comparison; it is not a promise that every simulated path has zero error.
 
 CP is generally asymmetric about the sample mean. Decisions use the returned lower and upper endpoints directly. For interpretation only, the exact interval before adding `epsilon` has midpoint `m_N = c0 + S1*(ell_N + u_N - 1)` and half-length `h_N = S1*(u_N - ell_N)`. It supports a choice precisely when `h_N + epsilon <= g + abs(m_N)`.
 
-`N` counts sampled terms, not new labels. A term needs at most two labels. Query probabilities stay fixed; the estimate, interval, and continuation decision update after each batch. The API keeps its original inspection schedule, whose first count is at least two. A zero coefficient mass bypasses sampling and uses the public-range or exact-completion branch.
+`N` counts sampled terms, not new labels. A term needs at most two labels. Query probabilities stay fixed; the estimate, error bound, interval, and continuation decision can update after each batch. The API keeps its original inspection schedule, whose first count is at least two. A zero coefficient mass bypasses sampling and uses the public-range or exact-completion branch. With the same random stream and final subset, the refined rule acquires no more labels than `refine_error=False`.
 
 The implementation adds outward numerical padding and checks that its fixed floating-point sampling distribution differs from the ideal coefficient law by less than the numerical guard. The mathematical interval above omits those small guards.
 

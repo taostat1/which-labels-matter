@@ -104,11 +104,14 @@ def audit_score(prepared, labels):
 
 def compare(prepared, cache, final_indices, *, tolerance, delta=0.05,
             inspections=(128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768),
-            seed=1, method='selective', error_bound='paired'):
+            seed=1, method='selective', error_bound='paired', refine_error=True):
     """Run a fixed-CV decision and fit the selected candidate once at the end.
 
     method is 'selective' (Algorithm 1) or 'active_cv' (paper comparator).
     error_bound='separate' is the matched approximation-bound ablation.
+    refine_error uses acquired labels to tighten the deterministic error bound
+    when that refinement could support a decision. Set it to False to reproduce
+    the earlier fixed-bound ablation. Neither option changes the query law.
     Returned label counts are the cache union, including final training.
     The finite-plan guarantee is conditional on the pool, labels and designs.
     """
@@ -150,8 +153,14 @@ def compare(prepared, cache, final_indices, *, tolerance, delta=0.05,
             estimate=center, draws=0, history=[])
         branch = 'public_range'
         if choice == 'unresolved' and mass:
+            refine_bound = None
+            if refine_error:
+                from ._cache_bounds import approximation_bound
+                refine_bound = lambda: approximation_bound(prepared, cache._values,
+                    separate=(error_bound == 'separate'))
             trial = query_trial(poly, prepared.proposal, cache, np.random.default_rng(seed),
-                list(map(int, checks)), tolerance, delta)
+                list(map(int, checks)), tolerance, delta, refine_bound=refine_bound)
+            eps = trial['epsilon']
             branch = 'selective_moments'
         if trial['choice'] == 'unresolved':
             value, radius = _exact_score(prepared, cache, 'exact_cv_fallback')
@@ -169,6 +178,8 @@ def compare(prepared, cache, final_indices, *, tolerance, delta=0.05,
     assert cache.count == sum(cache.stage_counts.values())
     return dict(method=method, choice=trial['choice'], interval=[trial['lower'], trial['upper']],
         tolerance=float(tolerance), delta=float(delta), approximation_error_bound=float(eps),
+        initial_approximation_error_bound=float(poly['epsilon']),
+        refine_error=bool(refine_error and method == 'selective'),
         branch=branch, fallback=bool(fallback), comparison_labels=before_final,
         new_final_training_labels=cache.count-before_final, total_labels=cache.count,
         stage_labels=dict(cache.stage_counts), requests=dict(cache.requests),

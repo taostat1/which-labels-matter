@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "case": "text_strong_separated",
+  "group": 0,
+  "fields": [
+    "labels",
+    "stage_labels",
+    "choice",
+    "interval",
+    "epsilon",
+    "blocks",
+    "fallback",
+    "history",
+    "calibrations",
+    "refit_history",
+    "final_new_labels"
+  ],
+  "labels": 34402
+}

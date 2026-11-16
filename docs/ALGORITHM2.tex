@@ -3,23 +3,28 @@
 \small
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmiccomment}[1]{\hfill\textnormal{\# #1}}
 \begin{algorithmic}[1]
-\Require Sampling access to $P,Q$, public features, $n,\lambda,g$, error allocations $\delta_c+\delta_s+\delta_r\le\delta$, inspection grid, preparation and query budgets
-\Statex\textbf{Stage 1: Independent Preparation}
-\State Buy pilot labels and fit anchors $\theta_{A0},\theta_{B0}$; initialize $I\gets\R$ and store purchases in $\mathcal C$.
-\State \textbf{Calibrate:} bound the score and gradient moments; set $\varepsilon\gets\varepsilon_A+\varepsilon_B$.
-\State Fix product predictors and the range-constrained query rule from preparation.
-\Statex\textbf{Stage 2: Selective Comparison}
-\For{permitted inspections $N$ within the moment-trial budget, if $\varepsilon<g$}
- \State \textbf{Query:} extend independent blocks to $N$; buy uncached labels and compute \eqref{eq:prediction_query}.
- \State \textbf{Risk interval:} $I\gets[\overline Z_N-h_N^{\rm pop}-\varepsilon,\ \overline Z_N+h_N^{\rm pop}+\varepsilon]$ using $\delta_s$.
+\Require $P,Q$, public features, $n,\lambda,g$, $\delta_c+\delta_s+\delta_r\le\delta$, fractions $\mathcal G$, inspections and query/refit caps
+\Statex\textbf{Stage 1: Label-free Preparation}
+\State \textbf{Initialize:} set $\theta_{j0}\gets0$ for $j=A,B$ and $\mathcal C\gets\varnothing$.
+\State \textbf{Approximation:} obtain $Z_t$ in \eqref{eq:population_phase_query}, $M$, and $\varepsilon\gets\varepsilon_0$. \Comment{random training sets}
+\State \textbf{Public interval:} $J\gets[-M,M]$; $I\gets[-M-\varepsilon,M+\varepsilon]$.
+\State \textbf{Check:} proceed to Stage 3 if $\sup I\le g$, $\inf I\ge-g$, or $\varepsilon_0\ge g$.
+\State \textbf{Sampling law:} $p_{t,k}\propto|a_{t,k}|$ after cache substitution. \Comment{block-specific weights}
+\Statex\textbf{Stage 2: Sequential Label Queries}
+\For{inspections $N$ within the query cap}
+ \State \textbf{Query:} extend fresh blocks to $N$; buy uncached labels and retain all $Z_t$.
+ \State \textbf{Betting:} $J\gets J\cap\{m:K_N^\pm(m)\le2/\delta_s\}$; if empty, $I\gets\R$ and break. \Comment{bounded mean}
+ \State \textbf{Refine:} $\varepsilon\gets\min\{\varepsilon,\varepsilon_{\rm cache}(\mathcal C)\}$ for known finite pools. \Comment{score-moment bounds}
+ \State \textbf{Risk interval:} $I\gets[\inf J-\varepsilon,\sup J+\varepsilon]$.
  \State \textbf{Stop:} if $\sup I\le g$ or $\inf I\ge-g$, break.
 \EndFor
-\Statex\textbf{Stage 3: Refits and Final Training}
-\State If unresolved, switch to independent paired refits with separate statistics and error probability $\delta_r$; update $I$, including numerical error, until a choice is supported or the budget ends.
+\Statex\textbf{Stage 3: Selection and Final Training}
+\State \textbf{Fallback:} if unresolved, use independent paired refits at level $\delta_r$ until a choice or cap.
 \State If still unresolved, return \textsc{Unresolved} and $|\mathcal C|$.
 \State \textbf{Select:} $j\gets A$ if $\sup I\le g$; otherwise $j\gets B$.
-\State Draw an independent size-$n$ final sample, buy its uncached labels, and fit $j$.
-\Ensure Selected candidate $j$, supporting interval $I$, and total distinct labels $|\mathcal C|$
+\State Buy missing labels for a new size-$n$ sample and fit $j$. \Comment{independent final sample}
+\Ensure Candidate $j$ and interval $I$, or \textsc{Unresolved}; total distinct labels $|\mathcal C|$
 \end{algorithmic}
 \end{algorithm}

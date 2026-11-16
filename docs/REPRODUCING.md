@@ -1,85 +1,44 @@
-# Reproduce the manuscript
+# Reproduce the 11.17 manuscript
 
-This guide accompanies **Label-Efficient Comparison of Shared Logistic Models with Finite-Sample Guarantees**, revised 12 November 2026. LEC's installable API implements Algorithm 1. [Algorithm 2](POPULATION.md) describes the population program-risk extension. The code version remains 0.2.1.
-
-The current [results guide](RESULTS.md) separates the three real-data settings and links the compact CP summary included in this repository. It uses the current manuscript's method names; frozen source records retain their original method identifiers.
-
-| Manuscript study | Source and evidence |
-|---|---|
-| Main controlled simulation | `Simulation_Refinement_20261106.zip` |
-| Repeated splits with a fixed training budget | `CP_Revision_20261106.zip`, real-data attribution experiment |
-| Full validation coverage at a fixed training size | `CP_Revision_20261106.zip`, real-data coverage experiment |
-| Population program risk (Algorithm 2) | `CP_Revision_20261106.zip`, population experiment |
-| Weak-penalty simulations, ordinary fivefold, and cache ablations | Appendix checks in `CP_Revision_20261106.zip` |
-
-The companion ZIP files are supplied separately from this checkout. The repository includes their index, the installable API, a self-contained demo, and historical experiment scripts; it does not currently host the full companion archives or raw datasets.
-
-## Current CP revision
-
-Versions 0.2.0 and 0.2.1 use CP intervals for the fixed-CV signed-product sampler. Version 0.2.1 adds exact cancellation when the training designs coincide; all reported experiment paths retain their results. The current manuscript uses two separate companion archives:
-
-- `Simulation_Refinement_20261106.zip` contains the current main simulation: penalties 0.25, 0.5, and 2; two candidate differences; two signal levels; and 100 independent pools. Its twelve cells produce 4,800 method runs. Follow the root README in that archive.
-- `CP_Revision_20261106.zip` contains the repeated-split and full-coverage comparisons, fivefold checks, cache ablations, and population extension. Its earlier simulation includes penalty 0.125; it is the source for the retained weak-penalty appendix results, not the current main simulation table.
-
-The local index `paper_reproduction/cp_revision_20261106/README.txt` identifies these archives. General-valued population statistics, uniform-term sampling, and the active-CV comparator retain their applicable bounded-variable intervals.
-
-The executable public API is `whichlabels.compare`; `python -m whichlabels.demo` uses the current CP implementation. The folders and commands below preserve the earlier EB experiments. Running them reproduces that historical version, not the revised CP tables.
-
-## Historical EB reproduction routes
-
-There are two software routes. The installable `whichlabels` package is a clean algorithm interface. `paper_reproduction` preserves the original relative imports and protocols for rerunning the archived experiment design. Function-level source hashes are in `source_provenance.json`.
-
-Three reporting scripts now create their output directories explicitly, so a fresh checkout can generate figures and tables. These filesystem-only changes are recorded in `packaging_changes.json`; the experiment algorithms and frozen protocols are unchanged.
-
-### Historical controlled simulation
-
-Install the reproduction dependencies, then use a fresh result directory:
+The current entry point is `paper_reproduction/current/reproduce.py`. It requires no external ZIP or raw data to reconstruct **Tables 1–8, Figure 3, and the reported audit summaries** from committed path-level records.
 
 ```bash
 python -m pip install -e ".[reproduce]"
-cd paper_reproduction/simulation
-python experiments/shared_resource/logistic_simulation_20261101/run.py --smoke
+python paper_reproduction/current/reproduce.py --output build/paper
 ```
 
-The smoke mode evaluates one separate pool across the twelve grid cells. The formal protocol uses 100 independent pools and four methods (4800 method runs):
+Outputs include numbered TeX tables, the manuscript's `full_coverage_table.tex` TikZ figure, a standalone `Figure_3.pdf` displaying the same values, unrounded `summary.json`, `population_paths.csv`, `audit.json`, and an output hash manifest. Compile the TikZ source inside the manuscript to reproduce its exact layout. The reporter checks input hashes, distinct-label accounting, decisions, and saved cache-refinement records.
+
+## Run new acquisitions and mathematical checks
 
 ```bash
-python experiments/shared_resource/logistic_simulation_20261101/run.py --workers 4
-python experiments/shared_resource/logistic_simulation_20261101/summarize.py
-python experiments/shared_resource/logistic_simulation_20261101/time_serial.py
-python experiments/shared_resource/logistic_simulation_20261101/artifacts.py
+python -m unittest discover -s tests -v
+python -m whichlabels.demo --output build/demo
+python paper_reproduction/current/audits/independent_cache_math_check.py
+node paper_reproduction/current/audits/verify_dense_conditions.mjs
 ```
 
-The 12 cells vary candidate interpolation, regularization, and signal strength. All cells are retained. The smoke example is separate from the formal evidence. Completed formal pool files are reused on restart; use a new working copy for a new independent rerun. Plot generation may require LaTeX.
+The demo freshly fits candidates, runs LEC and active CV, and performs a separate all-label audit. It is illustrative; it is not a replacement for the formal manuscript experiments. The tests include exhaustive small-label cache checks, simultaneous CP coverage, and finite-path checks of adaptive bounded-mean betting. Node.js is required only for the dense-design rational-arithmetic certificate.
 
-### Historical text and image comparison
+## Current evidence
 
-The archived tolerance-grid experiment is the tolerance-grid and matched-ablation run:
+| Manuscript artifact | Committed records |
+|---|---|
+| Tables 1–2, 6, 8; Figure 3 | `data/fixed_records.json.gz` and `data/cache_normalized.json.gz` |
+| Table 3 | `data/geometry_pools.json` |
+| Table 4 | `data/population_zero.json.gz` and `data/population_baselines.json.gz` |
+| Table 5 | `data/matched_protocol.json` and `data/risk_audit.json` |
+| Table 7 | `data/population_zero.json.gz` and `data/population_paid.json.gz` |
+| Fivefold and reanchoring checks | fixed records and `data/reanchor_screen.json` |
 
-```bash
-cd paper_reproduction/main_cv
-python experiments/shared_resource/logistic_cv_attribution_20261031/run.py --smoke
-python experiments/shared_resource/logistic_cv_attribution_20261031/run.py
-python experiments/shared_resource/logistic_cv_attribution_20261031/summarize.py
-python experiments/shared_resource/logistic_cv_attribution_20261031/plot_results.py
-```
+Paths are relative to `paper_reproduction/current`. `manifest.json` hashes the record files and retained research sources. Twelve matched population paths per configuration use groups 6–17 and the seed formulas in `matched_protocol.json`. All four initialization/cache arms share the current cumulative interval. The paid arms reproduce the earlier preparation procedure while holding current inference fixed. The external baseline replay contains 288 new executions with independently stopped Newton fits; label counts and choices match the earlier records. The two paid T4 fallback paths reuse exact-fit statistics from the identical seed streams and recompute their label unions.
 
-Set `LOGISTIC_DATA_ROOT` before running. It must contain:
+Saved-record checks reconstruct reporting and verify recorded algebra and bookkeeping. They do not rerun all original feature extraction and optimizer calls. [PROOF_AUDIT.md](PROOF_AUDIT.md) describes the independent mathematical review and its scope.
 
-```text
-goemotions_comparison_20261028/prepared/features_public.npz
-goemotions_comparison_20261028/prepared/labels_oracle.npz
-cross_backbone_20261028/prepared/features_public.npz
-cross_backbone_20261028/prepared/labels_oracle.npz
-```
+## Rerun original experiments from features
 
-The loader matches object IDs between feature and label files. Text and backbone caches contain `a`, `other`, `ids`, and `roles` in the feature file; the label file contains `ids` and signed binary `y`. The original loader converts signed responses to 0/1. Hashes and expected sizes are in `paper_evidence/data_manifest.json`.
+`paper_reproduction/current/reference/` preserves the research modules and their relative imports. The simulation, fixed-plan, zero-anchor population, paired-bound, and matched-ablation sources are retained there. Their original absolute output paths and environment-specific caches are research configuration, not package defaults. A full fresh replay requires the frozen feature arrays, synthetic design schedules, and query-input files identified in those protocols. These large files are not all committed. The historical simulation runner under `paper_reproduction/simulation/` reproduces an older experiment version; use the current records for current paper tables.
 
-The paper describes frozen text feature extraction, image feature extraction, and attribute construction. This release starts from those prepared caches. Dataset downloads, pretrained weights, and feature-extraction pipelines are outside this compact algorithm package. Users can also construct their own normalized `(objects, attributes, coefficients)` arrays and call the public API directly.
+Prepared real-data cache formats and hashes are documented in `paper_evidence/data_manifest.json`. GoEmotions provides eight emotion attributes per comment; ADE20K provides six semantic-presence attributes per image. The original datasets remain available from their providers. Raw datasets, pretrained weights, and per-object real-data feature/label arrays are excluded from this compact repository.
 
-The primary run uses 20 pools per domain, three query paths per pool, 32 splits, and the prespecified tolerance grid. Full-label audits and acquisition policies remain separate. `run.py` refuses to overwrite completed formal evidence.
-
-### Additional evidence
-
-The separate `CP_Revision_20261106.zip` holds the full rerun evidence. The Overleaf archive contains the manuscript and compact summaries. Ordinary-fivefold checks, the cache ablation, information-bound checks, and the population-risk extension are not prerequisites for running Algorithm 1. In particular, the historical paid-pilot/planner scripts should not be used as the entry point for the main fixed-CV method.
-
+For a new application, provide normalized arrays of shape `(objects, attributes, coefficients)`, a fixed split plan, a label provider, and a final-training subset to `whichlabels.compare`. Its default uses a fixed zero anchor, cumulative CP intervals, and free cache refinement. Algorithm 2 is a research implementation rather than an additional public API.

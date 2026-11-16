@@ -3,3 +3,9 @@
 *.md text eol=lf
 *.toml text eol=lf
 paper_evidence/cp_20261106/*.csv text eol=lf
+
+*.json text eol=lf
+*.tex text eol=lf
+*.tikz text eol=lf
+*.mjs text eol=lf
+*.gz binary

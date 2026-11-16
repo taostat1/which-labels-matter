@@ -1,0 +1,735 @@
+{
+  "configurations": 43,
+  "checks": [
+    {
+      "job": {
+        "family": "attribution",
+        "domain": "image",
+        "case": "image",
+        "g": 0.0025,
+        "lam": 0.5,
+        "pool": 0,
+        "alpha": 1.0,
+        "id": 0
+      },
+      "refitted_target": -0.004103108956275997,
+      "frozen_target": -0.004103108956275997,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "attribution",
+        "domain": "image",
+        "case": "image",
+        "g": 0.00375,
+        "lam": 0.5,
+        "pool": 0,
+        "alpha": 1.0,
+        "id": 20
+      },
+      "refitted_target": -0.004103108956275997,
+      "frozen_target": -0.004103108956275997,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "attribution",
+        "domain": "image",
+        "case": "image",
+        "g": 0.005,
+        "lam": 0.5,
+        "pool": 0,
+        "alpha": 1.0,
+        "id": 40
+      },
+      "refitted_target": -0.004103108956275997,
+      "frozen_target": -0.004103108956275997,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "attribution",
+        "domain": "text",
+        "case": "text",
+        "g": 0.005,
+        "lam": 0.125,
+        "pool": 0,
+        "alpha": 0.1,
+        "id": 60
+      },
+      "refitted_target": 0.003595618112480395,
+      "frozen_target": 0.003595618112480395,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "coverage",
+        "domain": "image",
+        "case": "image",
+        "g": 0.0025,
+        "lam": 0.5,
+        "pool": 0,
+        "alpha": 1.0,
+        "id": 80
+      },
+      "refitted_target": -0.004279022237635075,
+      "frozen_target": -0.004279022237635075,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "coverage",
+        "domain": "image",
+        "case": "image",
+        "g": 0.00375,
+        "lam": 0.5,
+        "pool": 0,
+        "alpha": 1.0,
+        "id": 100
+      },
+      "refitted_target": -0.004279022237635075,
+      "frozen_target": -0.004279022237635075,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "coverage",
+        "domain": "image",
+        "case": "image",
+        "g": 0.005,
+        "lam": 0.5,
+        "pool": 0,
+        "alpha": 1.0,
+        "id": 120
+      },
+      "refitted_target": -0.004279022237635075,
+      "frozen_target": -0.004279022237635075,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "coverage",
+        "domain": "text",
+        "case": "text",
+        "g": 0.005,
+        "lam": 0.125,
+        "pool": 0,
+        "alpha": 0.1,
+        "id": 140
+      },
+      "refitted_target": 0.0032185711270231315,
+      "frozen_target": 0.0032185711270231315,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "cache",
+        "domain": "text",
+        "case": "T1",
+        "g": 0.005,
+        "lam": 2.0,
+        "pool": 0,
+        "alpha": 1.0,
+        "id": 160
+      },
+      "refitted_target": 0.04456812944774928,
+      "frozen_target": 0.04456812944774928,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "cache",
+        "domain": "text",
+        "case": "T2",
+        "g": 0.005,
+        "lam": 2.0,
+        "pool": 0,
+        "alpha": 0.1,
+        "id": 168
+      },
+      "refitted_target": 0.0001741371190603462,
+      "frozen_target": 0.0001741371190603462,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "cache",
+        "domain": "text",
+        "case": "T3",
+        "g": 0.02,
+        "lam": 0.5,
+        "pool": 0,
+        "alpha": 1.0,
+        "id": 176
+      },
+      "refitted_target": 0.13119772474187766,
+      "frozen_target": 0.13119772474187766,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "cache",
+        "domain": "text",
+        "case": "T4",
+        "g": 0.005,
+        "lam": 0.125,
+        "pool": 0,
+        "alpha": 0.1,
+        "id": 184
+      },
+      "refitted_target": 0.0031802307802200024,
+      "frozen_target": 0.0031802307802200024,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "cache",
+        "domain": "image",
+        "case": "V1",
+        "g": 0.005,
+        "lam": 2.0,
+        "pool": 0,
+        "alpha": 1.0,
+        "id": 192
+      },
+      "refitted_target": 0.0017094349504463008,
+      "frozen_target": 0.0017094349504463008,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "cache",
+        "domain": "image",
+        "case": "V2",
+        "g": 0.005,
+        "lam": 0.5,
+        "pool": 0,
+        "alpha": 1.0,
+        "id": 200
+      },
+      "refitted_target": 0.006127314972642073,
+      "frozen_target": 0.006127314972642073,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "cache",
+        "domain": "image",
+        "case": "V3",
+        "g": 0.005,
+        "lam": 0.125,
+        "pool": 0,
+        "alpha": 0.05,
+        "id": 208
+      },
+      "refitted_target": -0.002223040374908121,
+      "frozen_target": -0.0022230403740292858,
+      "difference": 8.788351990585141e-13,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "cache",
+        "domain": "backbone",
+        "case": "V4",
+        "g": 0.0025,
+        "lam": 0.5,
+        "pool": 0,
+        "alpha": 1.0,
+        "id": 216
+      },
+      "refitted_target": -0.003844631710741054,
+      "frozen_target": -0.003844631710741054,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "cache",
+        "domain": "backbone",
+        "case": "V4",
+        "g": 0.00375,
+        "lam": 0.5,
+        "pool": 0,
+        "alpha": 1.0,
+        "id": 224
+      },
+      "refitted_target": -0.003844631710741054,
+      "frozen_target": -0.003844631710741054,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "cache",
+        "domain": "backbone",
+        "case": "V4",
+        "g": 0.005,
+        "lam": 0.5,
+        "pool": 0,
+        "alpha": 1.0,
+        "id": 232
+      },
+      "refitted_target": -0.003844631710741054,
+      "frozen_target": -0.003844631710741054,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "cache",
+        "domain": "text",
+        "case": "T4-separated",
+        "g": 0.005,
+        "lam": 0.125,
+        "pool": 0,
+        "alpha": 0.2,
+        "id": 240
+      },
+      "refitted_target": 0.016741772305968124,
+      "frozen_target": 0.016741772305968124,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "fivefold",
+        "domain": "text",
+        "case": "T1",
+        "scenario": "KFold_n64",
+        "si": 0,
+        "ci": 0,
+        "g": 0.005,
+        "lam": 2.0,
+        "alpha": 1.0,
+        "pool": 0,
+        "id": 248
+      },
+      "refitted_target": 0.045668708171858044,
+      "frozen_target": 0.045668708171858044,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "fivefold",
+        "domain": "text",
+        "case": "T2",
+        "scenario": "KFold_n64",
+        "si": 0,
+        "ci": 1,
+        "g": 0.005,
+        "lam": 2.0,
+        "alpha": 0.1,
+        "pool": 0,
+        "id": 251
+      },
+      "refitted_target": 0.00032428540992734955,
+      "frozen_target": 0.00032428540992734955,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "fivefold",
+        "domain": "text",
+        "case": "T3",
+        "scenario": "KFold_n64",
+        "si": 0,
+        "ci": 2,
+        "g": 0.02,
+        "lam": 0.5,
+        "alpha": 1.0,
+        "pool": 0,
+        "id": 254
+      },
+      "refitted_target": 0.1331533896894683,
+      "frozen_target": 0.1331533896894683,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "fivefold",
+        "domain": "text",
+        "case": "T4",
+        "scenario": "KFold_n64",
+        "si": 0,
+        "ci": 3,
+        "g": 0.005,
+        "lam": 0.125,
+        "alpha": 0.1,
+        "pool": 0,
+        "id": 257
+      },
+      "refitted_target": 0.0052042229572893065,
+      "frozen_target": 0.0052042229572893065,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "fivefold",
+        "domain": "text",
+        "case": "T1",
+        "scenario": "KFold_n256",
+        "si": 1,
+        "ci": 0,
+        "g": 0.005,
+        "lam": 2.0,
+        "alpha": 1.0,
+        "pool": 0,
+        "id": 260
+      },
+      "refitted_target": 0.04418547938673236,
+      "frozen_target": 0.04418547938673236,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "fivefold",
+        "domain": "text",
+        "case": "T2",
+        "scenario": "KFold_n256",
+        "si": 1,
+        "ci": 1,
+        "g": 0.005,
+        "lam": 2.0,
+        "alpha": 0.1,
+        "pool": 0,
+        "id": 263
+      },
+      "refitted_target": 6.624848584446674e-06,
+      "frozen_target": 6.624848584446674e-06,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "fivefold",
+        "domain": "text",
+        "case": "T3",
+        "scenario": "KFold_n256",
+        "si": 1,
+        "ci": 2,
+        "g": 0.02,
+        "lam": 0.5,
+        "alpha": 1.0,
+        "pool": 0,
+        "id": 266
+      },
+      "refitted_target": 0.12991364141261091,
+      "frozen_target": 0.12991364141261091,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "fivefold",
+        "domain": "text",
+        "case": "T4",
+        "scenario": "KFold_n256",
+        "si": 1,
+        "ci": 3,
+        "g": 0.005,
+        "lam": 0.125,
+        "alpha": 0.1,
+        "pool": 0,
+        "id": 269
+      },
+      "refitted_target": 0.0016992544204730065,
+      "frozen_target": 0.0016992544204730065,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "simulation",
+        "domain": "synthetic",
+        "case": "a0.1_l0.25_s0.0",
+        "alpha": 0.1,
+        "lam": 0.25,
+        "signal": 0.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 272
+      },
+      "refitted_target": 7.483891933896675e-05,
+      "frozen_target": 7.483891933896675e-05,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "simulation",
+        "domain": "synthetic",
+        "case": "a0.1_l0.25_s4.0",
+        "alpha": 0.1,
+        "lam": 0.25,
+        "signal": 4.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 372
+      },
+      "refitted_target": -0.006340563071693291,
+      "frozen_target": -0.006340563066675339,
+      "difference": 5.017951332231263e-12,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "simulation",
+        "domain": "synthetic",
+        "case": "a0.1_l0.5_s0.0",
+        "alpha": 0.1,
+        "lam": 0.5,
+        "signal": 0.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 472
+      },
+      "refitted_target": 3.423177074710765e-05,
+      "frozen_target": 3.423177074710765e-05,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "simulation",
+        "domain": "synthetic",
+        "case": "a0.1_l0.5_s4.0",
+        "alpha": 0.1,
+        "lam": 0.5,
+        "signal": 4.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 572
+      },
+      "refitted_target": -0.003682788832207108,
+      "frozen_target": -0.003682788832207108,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "simulation",
+        "domain": "synthetic",
+        "case": "a0.1_l2.0_s0.0",
+        "alpha": 0.1,
+        "lam": 2.0,
+        "signal": 0.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 672
+      },
+      "refitted_target": 7.64665213469351e-06,
+      "frozen_target": 7.64665213469351e-06,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "simulation",
+        "domain": "synthetic",
+        "case": "a0.1_l2.0_s4.0",
+        "alpha": 0.1,
+        "lam": 2.0,
+        "signal": 4.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 772
+      },
+      "refitted_target": -0.0010369835335160005,
+      "frozen_target": -0.0010369835335160005,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "simulation",
+        "domain": "synthetic",
+        "case": "a0.6_l0.25_s0.0",
+        "alpha": 0.6,
+        "lam": 0.25,
+        "signal": 0.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 872
+      },
+      "refitted_target": 0.0004257741194211295,
+      "frozen_target": 0.0004257741194211295,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "simulation",
+        "domain": "synthetic",
+        "case": "a0.6_l0.25_s4.0",
+        "alpha": 0.6,
+        "lam": 0.25,
+        "signal": 4.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 972
+      },
+      "refitted_target": -0.031168749172513846,
+      "frozen_target": -0.031168749167097103,
+      "difference": 5.416743442676619e-12,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "simulation",
+        "domain": "synthetic",
+        "case": "a0.6_l0.5_s0.0",
+        "alpha": 0.6,
+        "lam": 0.5,
+        "signal": 0.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 1072
+      },
+      "refitted_target": 0.00020681515211982276,
+      "frozen_target": 0.00020681515211982276,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "simulation",
+        "domain": "synthetic",
+        "case": "a0.6_l0.5_s4.0",
+        "alpha": 0.6,
+        "lam": 0.5,
+        "signal": 4.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 1172
+      },
+      "refitted_target": -0.01708010371267911,
+      "frozen_target": -0.01708010371267911,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "simulation",
+        "domain": "synthetic",
+        "case": "a0.6_l2.0_s0.0",
+        "alpha": 0.6,
+        "lam": 2.0,
+        "signal": 0.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 1272
+      },
+      "refitted_target": 4.9924824962854775e-05,
+      "frozen_target": 4.9924824962854775e-05,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "simulation",
+        "domain": "synthetic",
+        "case": "a0.6_l2.0_s4.0",
+        "alpha": 0.6,
+        "lam": 2.0,
+        "signal": 4.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 1372
+      },
+      "refitted_target": -0.004594509729989524,
+      "frozen_target": -0.004594509729989524,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "boundary",
+        "domain": "synthetic",
+        "case": "a0.1_l0.125_s0.0",
+        "alpha": 0.1,
+        "lam": 0.125,
+        "signal": 0.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 1472
+      },
+      "refitted_target": 0.0002595591254042351,
+      "frozen_target": 0.00025955912533123793,
+      "difference": 7.299716386910404e-14,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "boundary",
+        "domain": "synthetic",
+        "case": "a0.1_l0.125_s4.0",
+        "alpha": 0.1,
+        "lam": 0.125,
+        "signal": 4.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 1572
+      },
+      "refitted_target": -0.009425829961817574,
+      "frozen_target": -0.009425829961817574,
+      "difference": 0.0,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "boundary",
+        "domain": "synthetic",
+        "case": "a0.6_l0.125_s0.0",
+        "alpha": 0.6,
+        "lam": 0.125,
+        "signal": 0.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 1672
+      },
+      "refitted_target": 0.0013605807108532375,
+      "frozen_target": 0.001360580710729531,
+      "difference": 1.2370660051885807e-13,
+      "passed": true
+    },
+    {
+      "job": {
+        "family": "boundary",
+        "domain": "synthetic",
+        "case": "a0.6_l0.125_s4.0",
+        "alpha": 0.6,
+        "lam": 0.125,
+        "signal": 4.0,
+        "g": 0.01,
+        "pool": 0,
+        "id": 1772
+      },
+      "refitted_target": -0.05301820188845217,
+      "frozen_target": -0.05301820188977316,
+      "difference": 1.3209919269563386e-12,
+      "passed": true
+    }
+  ],
+  "max_difference": 5.416743442676619e-12,
+  "passed": true
+}

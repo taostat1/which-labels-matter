@@ -1,0 +1,108 @@
+{
+  "cases": [
+    {
+      "id": "text_strong_separated",
+      "domain": "text",
+      "n": 64,
+      "lam": 2.0,
+      "alpha": 1.0,
+      "g": 0.005
+    },
+    {
+      "id": "text_strong_nearby",
+      "domain": "text",
+      "n": 64,
+      "lam": 2.0,
+      "alpha": 0.1,
+      "g": 0.005
+    },
+    {
+      "id": "text_moderate",
+      "domain": "text",
+      "n": 64,
+      "lam": 0.5,
+      "alpha": 1.0,
+      "g": 0.02
+    },
+    {
+      "id": "text_weak_nearby",
+      "domain": "text",
+      "n": 64,
+      "lam": 0.125,
+      "alpha": 0.1,
+      "g": 0.005
+    },
+    {
+      "id": "image_strong",
+      "domain": "image",
+      "n": 128,
+      "lam": 2.0,
+      "alpha": 1.0,
+      "g": 0.005
+    },
+    {
+      "id": "image_moderate",
+      "domain": "image",
+      "n": 128,
+      "lam": 0.5,
+      "alpha": 1.0,
+      "g": 0.005
+    },
+    {
+      "id": "image_weak_nearby",
+      "domain": "image",
+      "n": 128,
+      "lam": 0.125,
+      "alpha": 0.05,
+      "g": 0.005
+    },
+    {
+      "id": "image_backbone",
+      "domain": "backbone",
+      "n": 128,
+      "lam": 0.5,
+      "alpha": 1.0,
+      "g": 0.005
+    }
+  ],
+  "groups": [
+    0,
+    1,
+    2
+  ],
+  "paths_per_group": 1,
+  "methods": [
+    "zero_public_first",
+    "paid_public_first",
+    "zero_calibrated"
+  ],
+  "reference": "Frozen paid512 + mandatory calibration + fixed anchor + remaining contributions, from the preceding matched experiment.",
+  "target": "Same declared population program risk: expected test BCE after exact training on size-n iid draws.",
+  "primary": "Zero pilot vs 512 paid pilot draws; both first evaluate the same response-uniform public moment/error formulas and skip calibration when epsilon<g.",
+  "diagnostic": "Zero pilot with mandatory calibration differs from the frozen paid-calibrated control only in the pilot/anchor.",
+  "paid_pilot": "Same original 512 training draw indices; all acquired attributes count once and are cached.",
+  "anchors": "Fixed after initialization. No sequential refitting; this comparison isolates whether initial pilot purchases pay off.",
+  "public_certificate": "Enumerate 2^r hypothetical label vectors per public feature object to bound score norm and second moment; bound score mean using public Gram/coordinate envelopes. Insert in the existing global/local population theorems. No oracle labels are used.",
+  "calibration": "Original phase-0 fresh draws and .01*WEIGHTS[0] allocation, 2048/8192/32768 training, 2048 test. Public-first takes min(public, calibrated).",
+  "inference": "Unchanged fresh-phase empirical Bernstein, remaining-term reduction, phase alpha=.02*WEIGHTS[phase]; same capped exact-refit fallback with .02.",
+  "inspections": [
+    256,
+    512,
+    1024,
+    2048,
+    4096,
+    8192,
+    16384,
+    32768
+  ],
+  "delta": 0.05,
+  "error_budgets": {
+    "calibration": 0.01,
+    "queries": 0.02,
+    "refits": 0.02
+  },
+  "seeds": "Same as preceding experiment, including independent calibration, comparison, refit, and final-fit streams.",
+  "outcome": "Total distinct pilot+calibration+comparison+refit+final-training labels. Pilot is worthwhile iff subsequent label savings exceed its newly acquired pilot labels.",
+  "audit": "Frozen independent 2048-fit mean and SE, not exact population truth.",
+  "scope": "Eight unchanged configurations, three matched preparation/query paths per configuration; all reported."
+}

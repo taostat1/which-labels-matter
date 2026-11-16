@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "score_inequality_checks": 18432,
+  "exact_population_comparisons": 1536,
+  "details": [
+    {
+      "lam": 0.125,
+      "anchor": "zero",
+      "label_completions": 256,
+      "training_samples_enumerated": 4,
+      "public_epsilon": 6.19400849467312,
+      "max_exact_expected_risk_error": 0.020782084232652598,
+      "max_moment_excess": -1.1321499293615034e-12
+    },
+    {
+      "lam": 0.125,
+      "anchor": "nonzero",
+      "label_completions": 256,
+      "training_samples_enumerated": 4,
+      "public_epsilon": 11.479693334249257,
+      "max_exact_expected_risk_error": 0.019583244203119632,
+      "max_moment_excess": -1.1473738625866758e-12
+    },
+    {
+      "lam": 0.5,
+      "anchor": "zero",
+      "label_completions": 256,
+      "training_samples_enumerated": 4,
+      "public_epsilon": 0.014126591119415315,
+      "max_exact_expected_risk_error": 0.0004694289174604904,
+      "max_moment_excess": -1.1321499293615034e-12
+    },
+    {
+      "lam": 0.5,
+      "anchor": "nonzero",
+      "label_completions": 256,
+      "training_samples_enumerated": 4,
+      "public_epsilon": 0.12426493098233611,
+      "max_exact_expected_risk_error": 0.0022721158369574113,
+      "max_moment_excess": -1.1473738625866758e-12
+    },
+    {
+      "lam": 2.0,
+      "anchor": "zero",
+      "label_completions": 256,
+      "training_samples_enumerated": 4,
+      "public_epsilon": 4.611061236928886e-05,
+      "max_exact_expected_risk_error": 4.602287841715125e-06,
+      "max_moment_excess": -1.1321499293615034e-12
+    },
+    {
+      "lam": 2.0,
+      "anchor": "nonzero",
+      "label_completions": 256,
+      "training_samples_enumerated": 4,
+      "public_epsilon": 0.006208961288795174,
+      "max_exact_expected_risk_error": 0.0007988159183431875,
+      "max_moment_excess": -1.1473738625866758e-12
+    }
+  ],
+  "interpretation": "Exhaustive numerical implementation checks; analytical justification is in public_bound_note.txt."
+}

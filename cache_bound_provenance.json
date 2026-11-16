@@ -1,0 +1,62 @@
+{
+  "version": "0.3.0",
+  "checks": [
+    {
+      "source": "logistic_manuscript_paid_anchor_20261114/anchor_core.py",
+      "function": "sigmoid_weight",
+      "ast_sha256": "bb47befcf659a7e816cf35666831eeaf1634ba0a5f6fc1df95f4a8ed88f4c339",
+      "passed": true
+    },
+    {
+      "source": "logistic_manuscript_paid_anchor_20261114/anchor_core.py",
+      "function": "candidate_geometry",
+      "ast_sha256": "f7289a5ad6b2d09832f5485568b0d449ed5ea162d47136962413d095be455758",
+      "passed": true
+    },
+    {
+      "source": "logistic_manuscript_paid_anchor_20261114/anchor_core.py",
+      "function": "affine_difference",
+      "ast_sha256": "01ed0473922bb1832953eff186cdec8e1b0ec3efc33b7fc559e52061d21c3206",
+      "passed": true
+    },
+    {
+      "source": "logistic_manuscript_paid_anchor_20261114/anchor_core.py",
+      "function": "paired_certificate",
+      "ast_sha256": "b9edecc91ac27bd302e83ce586253c5aa8f0112f60db30deba302558d22ec8b7",
+      "passed": true
+    },
+    {
+      "source": "logistic_local_anchor_refinement_20261114/local_core.py",
+      "function": "residual_range",
+      "ast_sha256": "3ed030e365627d6a7a98429e7b55025519bef38b217b6702e85e436686a34406",
+      "passed": true
+    },
+    {
+      "source": "logistic_local_anchor_refinement_20261114/local_core.py",
+      "function": "norm_box",
+      "ast_sha256": "126c8da38ffc287fdca0537175d7db7a42bef7843baf1fcf6663534aba79b256",
+      "passed": true
+    },
+    {
+      "source": "logistic_local_anchor_refinement_20261114/local_core.py",
+      "function": "refine",
+      "ast_sha256": "242806ee83ed647581ee18f039da1e6c30b1dc85c048be9375b63db403cbea35",
+      "passed": true
+    },
+    {
+      "source": "logistic_local_anchor_refinement_20261114/local_core.py",
+      "function": "certificate",
+      "ast_sha256": "9e640d0180b5da50925e2ec61a15d6813b67939312a520651798381771d720f7",
+      "passed": true
+    },
+    {
+      "source": "logistic_all_scenarios_reanchor_20261114/fast_bound.py",
+      "function": "remainder",
+      "ast_sha256": "9bf0a6f3b114a9df17c0106db3bb53757deea2aa1a660722501930d0f93be95c",
+      "passed": true
+    }
+  ],
+  "policy": "Running minimum of certificates, evaluated only at decision-relevant prescribed inspections.",
+  "preserved": "Zero anchor, polynomial, proposal, cumulative CP counts, cache, final subset.",
+  "package_sha256": "330a919e510c372332702f65abfb4d21ca2ac69bc4bbd66d0928e55e9a42ebcb"
+}

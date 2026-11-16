@@ -1,0 +1,121 @@
+{
+  "cases": [
+    {
+      "id": "text_strong_separated",
+      "domain": "text",
+      "n": 64,
+      "lam": 2.0,
+      "alpha": 1.0,
+      "g": 0.005
+    },
+    {
+      "id": "text_strong_nearby",
+      "domain": "text",
+      "n": 64,
+      "lam": 2.0,
+      "alpha": 0.1,
+      "g": 0.005
+    },
+    {
+      "id": "text_moderate",
+      "domain": "text",
+      "n": 64,
+      "lam": 0.5,
+      "alpha": 1.0,
+      "g": 0.02
+    },
+    {
+      "id": "text_weak_nearby",
+      "domain": "text",
+      "n": 64,
+      "lam": 0.125,
+      "alpha": 0.1,
+      "g": 0.005
+    },
+    {
+      "id": "image_strong",
+      "domain": "image",
+      "n": 128,
+      "lam": 2.0,
+      "alpha": 1.0,
+      "g": 0.005
+    },
+    {
+      "id": "image_moderate",
+      "domain": "image",
+      "n": 128,
+      "lam": 0.5,
+      "alpha": 1.0,
+      "g": 0.005
+    },
+    {
+      "id": "image_weak_nearby",
+      "domain": "image",
+      "n": 128,
+      "lam": 0.125,
+      "alpha": 0.05,
+      "g": 0.005
+    },
+    {
+      "id": "image_backbone",
+      "domain": "backbone",
+      "n": 128,
+      "lam": 0.5,
+      "alpha": 1.0,
+      "g": 0.005
+    }
+  ],
+  "groups": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "methods": [
+    "zero_fixed",
+    "zero_cache",
+    "pilot_fixed",
+    "pilot_cache"
+  ],
+  "pilot_draws": 512,
+  "training_calibration_looks": [
+    2048,
+    8192,
+    32768
+  ],
+  "test_calibration_draws": 2048,
+  "nominal_error": 0.05,
+  "calibration_error": 0.005,
+  "query_error": 0.02,
+  "refit_error": 0.02,
+  "checkpoints": [
+    256,
+    512,
+    1024,
+    2048,
+    4096,
+    8192,
+    16384,
+    32768
+  ],
+  "label_budget_grid": [
+    10000,
+    20000,
+    40000,
+    80000
+  ],
+  "interval": "same cumulative bounded-mean betting mixture",
+  "initial_bound": "paid: independently calibrated nonzero-anchor bound; zero: public bound",
+  "baseline": "same 288 frozen comparator runs; same seed, final sample, audit and maximum query/refit horizon",
+  "change_from_historical": "legacy paid preparation, with the current cumulative interval to isolate preparation",
+  "audit": "independent 2048-fit mean and SE; read only after decisions",
+  "zero_source": "logistic_population_betting_revision_20261115/results"
+}

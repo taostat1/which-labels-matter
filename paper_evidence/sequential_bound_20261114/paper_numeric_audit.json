@@ -1,0 +1,643 @@
+{
+  "scope": "Read-only audit of current fixed-plan numeric claims and generated displays against all1872 replay files; population values cross-checked to the current supplied tables and separate population audit.",
+  "status": "passed",
+  "critical_numeric_issues": [],
+  "clarity_notes": [],
+  "checked": [
+    {
+      "check": "Complete rerun",
+      "passed": true,
+      "evidence": {
+        "attribution": 80,
+        "coverage": 80,
+        "cache": 88,
+        "fivefold": 24,
+        "simulation": 1200,
+        "boundary": 400
+      }
+    },
+    {
+      "check": "Updated paths",
+      "passed": true,
+      "evidence": {
+        "new_runs": 6504,
+        "new_acceptable": 6500,
+        "new_covered": 6465,
+        "new_fallback": 76
+      }
+    },
+    {
+      "check": "Abstract full annotation savings",
+      "passed": true,
+      "evidence": {
+        "image_0.0025": 0.7052015516493055,
+        "image_0.00375": 0.7640875922309027,
+        "image_0.005": 0.8144870334201388,
+        "text_0.005": 0.8451583862304688
+      }
+    },
+    {
+      "check": "Repeated active CV savings",
+      "passed": true,
+      "evidence": [
+        {
+          "saving": 0.5809385238116687,
+          "saving_ci95": [
+            0.52262921911814,
+            0.6373788799520504
+          ],
+          "better_pools": 20,
+          "tied_pools": 0
+        },
+        {
+          "saving": 0.6603398002165854,
+          "saving_ci95": [
+            0.6210980859473106,
+            0.6986412335296295
+          ],
+          "better_pools": 20,
+          "tied_pools": 0
+        },
+        {
+          "saving": 0.7407535058053121,
+          "saving_ci95": [
+            0.6992471683111668,
+            0.7805399899826637
+          ],
+          "better_pools": 20,
+          "tied_pools": 0
+        },
+        {
+          "saving": 0.6997842602502665,
+          "saving_ci95": [
+            0.6526696681020749,
+            0.7408267240819404
+          ],
+          "better_pools": 20,
+          "tied_pools": 0
+        }
+      ]
+    },
+    {
+      "check": "Repeated choice and interval coverage",
+      "passed": true,
+      "evidence": [
+        {
+          "runs": 60,
+          "acceptable": 60,
+          "covered": 58,
+          "fallback": 0
+        },
+        {
+          "runs": 60,
+          "acceptable": 60,
+          "covered": 58,
+          "fallback": 0
+        },
+        {
+          "runs": 60,
+          "acceptable": 60,
+          "covered": 58,
+          "fallback": 0
+        },
+        {
+          "runs": 60,
+          "acceptable": 60,
+          "covered": 60,
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "check": "Full coverage choices and intervals",
+      "passed": true,
+      "evidence": [
+        {
+          "runs": 240,
+          "covered": 238,
+          "acceptable": 240,
+          "errors": 0,
+          "fallback": 0
+        },
+        {
+          "runs": 240,
+          "covered": 234,
+          "acceptable": 236,
+          "errors": 4,
+          "fallback": 0
+        },
+        {
+          "runs": 240,
+          "covered": 234,
+          "acceptable": 240,
+          "errors": 0,
+          "fallback": 0
+        },
+        {
+          "runs": 240,
+          "covered": 240,
+          "acceptable": 240,
+          "errors": 0,
+          "fallback": 0
+        }
+      ]
+    },
+    {
+      "check": "Full coverage bootstrap CIs",
+      "passed": true,
+      "evidence": [
+        {
+          "saving": 0.6963826978550425,
+          "saving_ci95": [
+            0.656913888012427,
+            0.7333279971227574
+          ],
+          "better_pools": 20,
+          "tied_pools": 0
+        },
+        {
+          "saving": 0.7570303059934484,
+          "saving_ci95": [
+            0.726021672398627,
+            0.7860390800258457
+          ],
+          "better_pools": 20,
+          "tied_pools": 0
+        },
+        {
+          "saving": 0.8089374393216598,
+          "saving_ci95": [
+            0.7911416542127224,
+            0.8259896472088893
+          ],
+          "better_pools": 20,
+          "tied_pools": 0
+        },
+        {
+          "saving": 0.7328535600395238,
+          "saving_ci95": [
+            0.6929967598865058,
+            0.7685582762952556
+          ],
+          "better_pools": 20,
+          "tied_pools": 0
+        }
+      ]
+    },
+    {
+      "check": "Full coverage savings decomposition",
+      "passed": true,
+      "evidence": {
+        "touched_fraction": 0.5991170247395833,
+        "attributes_per_touched": 1.8578637453392106,
+        "untouched_saving": 0.4008829752604167,
+        "missing_attribute_saving": 0.41360405815972207
+      }
+    },
+    {
+      "check": "Displayed fixed-plan counts",
+      "passed": true,
+      "evidence": {
+        "attribution": {
+          "runs": 1200,
+          "covered": 1182,
+          "acceptable": 1200,
+          "fallback": 0
+        },
+        "coverage": {
+          "runs": 960,
+          "covered": 946,
+          "acceptable": 956,
+          "fallback": 0
+        },
+        "cache": {
+          "runs": 528,
+          "covered": 523,
+          "acceptable": 527,
+          "fallback": 0
+        },
+        "fivefold": {
+          "runs": 480,
+          "covered": 480,
+          "acceptable": 480,
+          "fallback": 0
+        },
+        "simulation": {
+          "runs": 4800,
+          "covered": 4794,
+          "acceptable": 4800,
+          "fallback": 0
+        },
+        "boundary": {
+          "runs": 1600,
+          "covered": 1600,
+          "acceptable": 1600,
+          "fallback": 76
+        }
+      }
+    },
+    {
+      "check": "Simulation minima, ties and savings",
+      "passed": true,
+      "evidence": {
+        "minima": 12,
+        "ties": 10,
+        "positive_saving_cells": 10,
+        "saving_range": [
+          27.93994730264363,
+          85.2361062937389
+        ]
+      }
+    },
+    {
+      "check": "Simulation simultaneous-reached coverage",
+      "passed": true,
+      "evidence": {
+        "('simulation', 'paired_weighted')": {
+          "runs": 1200,
+          "stopping_covered": 1197,
+          "all_reached_covered": 1197
+        },
+        "('simulation', 'paired_uniform')": {
+          "runs": 1200,
+          "stopping_covered": 1200,
+          "all_reached_covered": 1200
+        },
+        "('simulation', 'separate_weighted')": {
+          "runs": 1200,
+          "stopping_covered": 1197,
+          "all_reached_covered": 1197
+        }
+      }
+    },
+    {
+      "check": "Boundary exception",
+      "passed": true,
+      "evidence": [
+        {
+          "alpha": 0.1,
+          "signal": 0.0,
+          "LEC": 1737.79,
+          "ActiveCV": 3760.17,
+          "uniform_fallback": 0
+        },
+        {
+          "alpha": 0.1,
+          "signal": 4.0,
+          "LEC": 1037.44,
+          "ActiveCV": 3759.15,
+          "uniform_fallback": 0
+        },
+        {
+          "alpha": 0.6,
+          "signal": 0.0,
+          "LEC": 4499.81,
+          "ActiveCV": 3763.0,
+          "uniform_fallback": 76
+        },
+        {
+          "alpha": 0.6,
+          "signal": 4.0,
+          "LEC": 1046.19,
+          "ActiveCV": 3955.9,
+          "uniform_fallback": 0
+        }
+      ]
+    },
+    {
+      "check": "No old-version comparator in attribution_table.tex",
+      "passed": true,
+      "evidence": {
+        "file": "attribution_table.tex"
+      }
+    },
+    {
+      "check": "No old-version comparator in simulation_label_table.tex",
+      "passed": true,
+      "evidence": {
+        "file": "simulation_label_table.tex"
+      }
+    },
+    {
+      "check": "No old-version comparator in simulation_boundary_table.tex",
+      "passed": true,
+      "evidence": {
+        "file": "simulation_boundary_table.tex"
+      }
+    },
+    {
+      "check": "No old-version comparator in fivefold_table.tex",
+      "passed": true,
+      "evidence": {
+        "file": "fivefold_table.tex"
+      }
+    },
+    {
+      "check": "No old-version comparator in cache_summary_table.tex",
+      "passed": true,
+      "evidence": {
+        "file": "cache_summary_table.tex"
+      }
+    },
+    {
+      "check": "No old-version comparator in full_coverage_table.tex",
+      "passed": true,
+      "evidence": {
+        "file": "full_coverage_table.tex"
+      }
+    },
+    {
+      "check": "Allocation and interval difference disclosed",
+      "passed": true,
+      "evidence": {
+        "uniform_interval": "empirical Bernstein",
+        "weighted_interval": "CP"
+      }
+    },
+    {
+      "check": "Remaining-contribution variant disclosed",
+      "passed": true,
+      "evidence": {
+        "variant": "phasewise sampling and inference, public approximation bound"
+      }
+    }
+  ],
+  "source_sha256": {
+    "abstract.tex": "8e34bd16baf80e4d6134c1fcad4c245a720d8776718ca4426f30203b1ef6fad8",
+    "introduction.tex": "c4691b4d1dea37b89baae45be1a52a92749eed7abc1addf661431090c46540e3",
+    "discussion.tex": "40270a84f7d0b37558eb4a9c80054eb7b44ccbbb2975563d37cc2be4ddd5d8dc",
+    "experiments.tex": "f0139195598dd15b3b471d7cfbe14bc9746d705720810a01f2345fd24e849b7b",
+    "simulations.tex": "f050d4c870f90cfe3d41344e69f8a3ebc6571fb92f13e8576c39fa879b41d681",
+    "experiment_details.tex": "06532c474c669c9c2c04abc31588d571f48cbaf8c2b4602ecff3a1a750eff97c",
+    "simulation_details.tex": "f517a35bb9f49931588101657f93b8fc861b9bb43fa9a16439e55c1cb9a9b488",
+    "attribution_table.tex": "3fd8b80be2f3947ca65421be53f7b998e3ec4be2673dbc127b743eac0023fdf9",
+    "simulation_label_table.tex": "7f0036b9590fbd896602ec20bd82708edbbe2262007f1c80c2ac086240e2442c",
+    "simulation_boundary_table.tex": "19798ce549b4e01547c60d7fb5ed8068ab333a191df64dede7a9375a5b145abd",
+    "fivefold_table.tex": "7a15a62ca85e1ac4ac767734a492ca6ed082e80706674ba7492d9b98fad9d8eb",
+    "cache_summary_table.tex": "ac2fa2ba59bd90f6333a5156a590cfc2e6afbc2ddb7324076742306fcedf0250",
+    "full_coverage_table.tex": "8f9e5a5e0186c1b2236fcead8b2a5681e68744b0960fda20e30fbcecfab31ee8",
+    "full_coverage_bars.tikz": "450bbb30815c8f5ed63e6b6525b8c3ac92224387e9ccfc4c05a6b65c34c94a73",
+    "diagnostic_results.tex": "e598d1f20bdca9a3f01b4497bdd5e985b0ccdd5701ca5d4ea1513624cb900947"
+  },
+  "new_experiment_paths": {
+    "runs": 6504,
+    "covered": 6465,
+    "acceptable": 6500,
+    "fallback": 76
+  },
+  "displayed_fixed_plan_family_counts": {
+    "attribution": {
+      "runs": 1200,
+      "covered": 1182,
+      "acceptable": 1200,
+      "fallback": 0
+    },
+    "coverage": {
+      "runs": 960,
+      "covered": 946,
+      "acceptable": 956,
+      "fallback": 0
+    },
+    "cache": {
+      "runs": 528,
+      "covered": 523,
+      "acceptable": 527,
+      "fallback": 0
+    },
+    "fivefold": {
+      "runs": 480,
+      "covered": 480,
+      "acceptable": 480,
+      "fallback": 0
+    },
+    "simulation": {
+      "runs": 4800,
+      "covered": 4794,
+      "acceptable": 4800,
+      "fallback": 0
+    },
+    "boundary": {
+      "runs": 1600,
+      "covered": 1600,
+      "acceptable": 1600,
+      "fallback": 76
+    }
+  },
+  "displayed_fixed_plan_totals": {
+    "runs": 9568,
+    "covered": 9525,
+    "acceptable": 9563,
+    "fallback": 76
+  },
+  "count_explanation": "6504 counts newly recomputed affected methods. Displayed families also include valid unchanged baseline methods, omit old fixed-bound LEC, and normalize cache entry. Totals do not include population-risk experiments; budget columns reuse the same population paths.",
+  "all_reached_coverage": {
+    "('attribution', 'selective_paired')": {
+      "runs": 240,
+      "stopping_covered": 234,
+      "all_reached_covered": 234
+    },
+    "('attribution', 'whole_object_purchases')": {
+      "runs": 240,
+      "stopping_covered": 234,
+      "all_reached_covered": 234
+    },
+    "('attribution', 'separate_bound')": {
+      "runs": 240,
+      "stopping_covered": 234,
+      "all_reached_covered": 234
+    },
+    "('coverage', 'selective_paired')": {
+      "runs": 240,
+      "stopping_covered": 233,
+      "all_reached_covered": 231
+    },
+    "('coverage', 'whole_object_purchases')": {
+      "runs": 240,
+      "stopping_covered": 233,
+      "all_reached_covered": 231
+    },
+    "('cache', 'current')": {
+      "runs": 264,
+      "stopping_covered": 263,
+      "all_reached_covered": 263
+    },
+    "('fivefold', 'paired_moments')": {
+      "runs": 240,
+      "stopping_covered": 240,
+      "all_reached_covered": 240
+    },
+    "('simulation', 'paired_weighted')": {
+      "runs": 1200,
+      "stopping_covered": 1197,
+      "all_reached_covered": 1197
+    },
+    "('simulation', 'paired_uniform')": {
+      "runs": 1200,
+      "stopping_covered": 1200,
+      "all_reached_covered": 1200
+    },
+    "('simulation', 'separate_weighted')": {
+      "runs": 1200,
+      "stopping_covered": 1197,
+      "all_reached_covered": 1197
+    },
+    "('boundary', 'paired_weighted')": {
+      "runs": 400,
+      "stopping_covered": 400,
+      "all_reached_covered": 400
+    },
+    "('boundary', 'paired_uniform')": {
+      "runs": 400,
+      "stopping_covered": 400,
+      "all_reached_covered": 400
+    },
+    "('boundary', 'separate_weighted')": {
+      "runs": 400,
+      "stopping_covered": 400,
+      "all_reached_covered": 400
+    }
+  },
+  "decision_regimes": {
+    "('attribution', 'image', 0.0025)": {
+      "A_only": 20
+    },
+    "('attribution', 'image', 0.00375)": {
+      "A_only": 19,
+      "both": 1
+    },
+    "('attribution', 'image', 0.005)": {
+      "both": 20
+    },
+    "('attribution', 'text', 0.005)": {
+      "both": 20
+    },
+    "('coverage', 'image', 0.0025)": {
+      "A_only": 20
+    },
+    "('coverage', 'image', 0.00375)": {
+      "A_only": 18,
+      "both": 2
+    },
+    "('coverage', 'image', 0.005)": {
+      "both": 20
+    },
+    "('coverage', 'text', 0.005)": {
+      "both": 20
+    },
+    "('cache', 'T1', 0.005)": {
+      "B_only": 8
+    },
+    "('cache', 'T2', 0.005)": {
+      "both": 8
+    },
+    "('cache', 'T3', 0.02)": {
+      "B_only": 8
+    },
+    "('cache', 'T4', 0.005)": {
+      "both": 8
+    },
+    "('cache', 'V1', 0.005)": {
+      "both": 8
+    },
+    "('cache', 'V2', 0.005)": {
+      "B_only": 8
+    },
+    "('cache', 'V3', 0.005)": {
+      "both": 8
+    },
+    "('cache', 'V4', 0.0025)": {
+      "A_only": 8
+    },
+    "('cache', 'V4', 0.00375)": {
+      "A_only": 7,
+      "both": 1
+    },
+    "('cache', 'V4', 0.005)": {
+      "both": 8
+    },
+    "('cache', 'T4-separated', 0.005)": {
+      "B_only": 8
+    },
+    "('fivefold', 'T1', 0.005)": {
+      "B_only": 6
+    },
+    "('fivefold', 'T2', 0.005)": {
+      "both": 6
+    },
+    "('fivefold', 'T3', 0.02)": {
+      "B_only": 6
+    },
+    "('fivefold', 'T4', 0.005)": {
+      "B_only": 1,
+      "both": 5
+    },
+    "('simulation', 'a0.1_l0.25_s0.0', 0.01)": {
+      "both": 100
+    },
+    "('simulation', 'a0.1_l0.25_s4.0', 0.01)": {
+      "both": 100
+    },
+    "('simulation', 'a0.1_l0.5_s0.0', 0.01)": {
+      "both": 100
+    },
+    "('simulation', 'a0.1_l0.5_s4.0', 0.01)": {
+      "both": 100
+    },
+    "('simulation', 'a0.1_l2.0_s0.0', 0.01)": {
+      "both": 100
+    },
+    "('simulation', 'a0.1_l2.0_s4.0', 0.01)": {
+      "both": 100
+    },
+    "('simulation', 'a0.6_l0.25_s0.0', 0.01)": {
+      "both": 100
+    },
+    "('simulation', 'a0.6_l0.25_s4.0', 0.01)": {
+      "A_only": 100
+    },
+    "('simulation', 'a0.6_l0.5_s0.0', 0.01)": {
+      "both": 100
+    },
+    "('simulation', 'a0.6_l0.5_s4.0', 0.01)": {
+      "A_only": 100
+    },
+    "('simulation', 'a0.6_l2.0_s0.0', 0.01)": {
+      "both": 100
+    },
+    "('simulation', 'a0.6_l2.0_s4.0', 0.01)": {
+      "both": 100
+    },
+    "('boundary', 'a0.1_l0.125_s0.0', 0.01)": {
+      "both": 100
+    },
+    "('boundary', 'a0.1_l0.125_s4.0', 0.01)": {
+      "both": 62,
+      "A_only": 38
+    },
+    "('boundary', 'a0.6_l0.125_s0.0', 0.01)": {
+      "both": 100
+    },
+    "('boundary', 'a0.6_l0.125_s4.0', 0.01)": {
+      "A_only": 100
+    }
+  },
+  "external_population_checks": {
+    "table_budget_80000": {
+      "text_completed_percent": 75,
+      "image_completed_percent": 100,
+      "active_testing_completed_percent": 0,
+      "AMS_completed_percent": 0
+    },
+    "initialization_table": {
+      "configurations": 8,
+      "variants": 6,
+      "paths_each": 3,
+      "total_paths": 144
+    },
+    "separate_audits": [
+      "population_proof_audit.json",
+      "final_theory_consistency_review.json"
+    ]
+  },
+  "rounding": "Reported savings use ratios of unrounded means; SDs are across pool means, except fivefold path SDs and population matched-path SDs. Coverage rates refer to exact fixed-plan scores; population acceptability refers to the independent audit with its Monte Carlo uncertainty."
+}

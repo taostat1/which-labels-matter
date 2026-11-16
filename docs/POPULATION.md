@@ -1,57 +1,43 @@
-# Algorithm 2: LEC for Population Risk
+# Algorithm 2: LEC for population risk
 
-Algorithm 2 is the population-risk extension in Section 4.4 of **Label-Efficient Comparison of Shared Logistic Models with Finite-Sample Guarantees**. It compares training rules that will be reused on random training sets of a fixed size. The installable `whichlabels.compare` API implements [Algorithm 1](ALGORITHM.md); population experiments use the research scripts in the companion archive listed in [REPRODUCING.md](REPRODUCING.md).
+Algorithm 2 compares expected test risk over random training sets of fixed size. Algorithm 1 conditions on a fixed cross-validation plan. Both now start from **zero anchors and an empty label cache**. The installable `whichlabels.compare` API implements Algorithm 1; Algorithm 2 uses the research sources in [current reproduction](../paper_reproduction/current).
 
-## Target and preparation
+## Target and initialization
 
-For training law `P`, test law `Q`, and training size `n`, the target is
+For training law P, test law Q, and training size n,
 
-$$R_j(n)=\mathbb E_{S\sim P^n}L_j(\widehat\theta_j(S)),
-\qquad L_j(\theta)=\mathbb E_{W\sim Q}\ell_j(\theta;W),
-\qquad \Delta_n=R_A(n)-R_B(n).$$
+$$R_j(n)=\mathbb E_{S\sim P^n}\mathbb E_{W\sim Q}\ell_j(\widehat\theta_j(S);W),\qquad\Delta_n=R_A(n)-R_B(n).$$
 
-Algorithm 1 conditions on a fixed pool and CV plan. Algorithm 2 averages test risk over random training sets. This additional randomness requires independent calibration of the approximation error. A fixed-plan interval supports a conclusion about that plan; transferring it to `Delta_n` also requires controlling variation under data sampling.
+Training draws are independent, and test draws are independent of training. Attributes on one object may be dependent. For the finite-pool experiments, P and Q are the fixed complete empirical laws, sampled with replacement. Conditioning on the acquired-label history does not redefine this target.
 
-The extension uses normalized public features, binary attributes, and a positive L2 penalty. Training observations are independent, test observations are independent of training observations, and pilot, calibration, and comparison blocks use independent draws. Attributes within an object may be dependent. Public test-feature expectations are available or supplied with certified integration errors.
+Public features supply score-moment, curvature, and paired approximation bounds. Exact public sums have no certification error; Monte Carlo integration over public designs uses a preassigned error probability and is frozen before querying. The default buys **no pilot or calibration labels**. If its public interval supports a choice, it proceeds to final training. An unresolved case with epsilon_0 >= g goes to independent paired refits; otherwise it queries in batches.
 
-An independent pilot fits anchors `theta_A0` and `theta_B0`. Separate calibration bounds score and gradient moments, giving
+## Cumulative queries and interval
 
-$$|\Delta_n-\widetilde\Delta_n|\le\varepsilon,
-\qquad \varepsilon=\varepsilon_A+\varepsilon_B.$$
+Theorem 7 represents the approximate population risk difference through one test object and two training positions. Its coefficients use all n public training features. Each sampled product requests at most two labels.
 
-Here `tilde_Delta_n` is the mean approximate risk difference conditional on preparation. The bound includes any certified feature-integration error. Theorem 5 supplies a global approximation bound, and Theorem 6 refines it using local curvature and calibrated moments.
+On a fresh independent feature block, substitute cached labels exactly and collect the remaining polynomial. For known constant c_t and remaining coefficients a_(t,k),
 
-## Query statistic and interval
+$$Z_t=c_t+\frac{a_{t,K}\psi_{t,K}}{p_{t,K}},\qquad p_{t,k}\propto|a_{t,k}|.$$
 
-Theorem 7 represents the approximate risk difference using one test object and two distinct training positions. Its coefficients use all training features, the pilot, and public test-feature expectations. Sampling one term needs at most two labels. Prediction assistance uses
+If no terms remain, use c_t. Averaging over the query and fresh block gives E(Z_t | history) = mu, the same approximate risk mean at every step. A public envelope bounds |Z_t| <= M even after cache substitution.
 
-$$Z_{\mathrm{pred}}
-=a_0+\sum_k a_km_k(H)
-+\frac{a_K}{p_K(H)}\{\psi_K-m_K(H)\}.$$
+Algorithm 1 has fixed two-point contributions, enabling cumulative Clopper–Pearson intervals. Algorithm 2 has changing contribution magnitudes and uses cumulative **bounded-mean betting**. For fixed fractions c in G,
 
-`H` contains public features and preparation quantities; `m_k(H)` predicts a signed-label product; `p_k(H)` is its known positive query probability. The inverse-probability residual correction preserves the mean of the approximate statistic.
+$$K_N^\pm(m)=\frac1{|G|}\sum_{c\in G}\prod_{t=1}^N\left(1\pm\frac{c(Z_t-m)}{M\pm m}\right),\qquad -M<m<M.$$
 
-The coefficients vary across feature blocks. The statistic therefore generally takes more than the two fixed values used by Algorithm 1's Clopper-Pearson (CP) construction. Algorithm 2 uses an empirical Bernstein interval for bounded variables. For certified range width `W`, unbiased sample variance `v_hat_N`, and `J` prescribed inspections,
+Invert both capitals at 2/delta_s and intersect over inspections to obtain J_N. Each batch retains every earlier factor. Endpoint means are retained only when all observations equal that endpoint; if M = 0, J_N = {0}.
 
-$$h_N^{\mathrm{pop}}
-=\sqrt{\frac{2\widehat v_N\log(4J/\delta_s)}{N}}
-+\frac{7W\log(4J/\delta_s)}{3(N-1)},\qquad N\ge2.$$
+For a known finite pool, acquired labels restrict feasible completions. Public plus cached score bounds hold for every compatible completion, so their running minimum epsilon_N is valid after adaptive queries without additional purchases or error allocation. The exact-risk interval is
 
-At each inspection it uses
+$$I_N=[\inf J_N-\varepsilon_N,\ \sup J_N+\varepsilon_N].$$
 
-$$I_N=[\overline Z_N-h_N^{\mathrm{pop}}-\varepsilon,\,
-\overline Z_N+h_N^{\mathrm{pop}}+\varepsilon].$$
+An upper endpoint <= g supports A; a lower endpoint >= -g supports B. Empty or unresolved capped intervals invoke paired refits with separate error allocation and numerical-error correction. An independent final training sample shares the same purchase cache. Total labels count distinct acquisitions across all stages.
 
-The error allocation satisfies `delta_c + delta_s + delta_r <= delta` for calibration, sampling, and paired refits, respectively. Candidate A is supported if `upper(I_N) <= g`, and B if `lower(I_N) >= -g`.
+## Matched preparation and cache ablation
 
-## Three stages
+Table 7 uses four arms: paid independent pilot / zero anchor, each with a fixed / cache-refined error bound. All use the current cumulative interval, the same 12 query seeds per configuration, final samples, caps, and independent audit.
 
-1. **Independent preparation.** Acquire pilot and calibration labels, fit anchors, certify the approximation bound, and fix product predictors and the range-constrained query rule.
-2. **Selective comparison.** If `epsilon < g`, query independent blocks in batches within the trial budget. Update the bounded-variable interval and check whether it supports a choice.
-3. **Refits and final training.** If still unresolved, switch to independent paired exact refits with separate statistics and error allocation. Stop with a supported choice or return `Unresolved` when the budget ends. For a supported choice, draw an independent final sample of size `n`, acquire its missing labels, and fit the selected candidate.
+Paid preparation fits on 512 pilot draws and calibrates independently. Its means range from 20,839 to 236,859 labels; zero-anchor LEC ranges from 1,022 to 14,857. Cache refinement changes only V4's population stopping time, reducing its mean by 1.91%. The main advantage therefore comes from avoiding complete training-label purchases and preparation. All 384 ablation choices are acceptable relative to the audit mean; each paid arm has two T4 refit fallbacks.
 
-Preparation, queries, refits, and final training share the label cache. The total count is the number of distinct labels acquired. The exact manuscript pseudocode is [ALGORITHM2.tex](ALGORITHM2.tex); its equation reference is resolved within the paper.
-
-## Reproduction
-
-The current extension experiments are in `CP_Revision_20261106.zip`, distributed separately from this compact package. The archive preserves the population scripts and preparation schedule. See [the reproduction guide](REPRODUCING.md) for the archive index and data-cache requirements.
+Theorems 5–6 and Appendix C give the bounds; Theorem 7 gives the unbiased approximate-risk statistic. Appendix C.7 proves the adaptive-cache betting argument, endpoint rules, and total error allocation. [ALGORITHM2.tex](ALGORITHM2.tex) contains the manuscript pseudocode. Reanchoring is a phased ablation, not the main algorithm.

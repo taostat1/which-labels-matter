@@ -6,30 +6,38 @@
 
 Model selection can consume labels beyond those needed for the final fit. In a multi-label task, each object also has several attributes that can be annotated separately. LEC compares two shared logistic training rules **before acquiring all labels in a prescribed cross-validation (CV) plan**. Public features determine a weighted sum of label products and an approximation error bound. Each draw queries at most two labels, and a shared cache avoids repeat purchases.
 
-Algorithm 1 has three stages: **label-free preparation, sequential label queries, and selection with final training**. Its [14-step pseudocode](docs/ALGORITHM.md#queries-and-decisions) and [LaTeX source](docs/ALGORITHM1.tex) follow the manuscript.
+Algorithm 1 has three stages: **label-free preparation, sequential label queries, and selection with final training**. Its [pseudocode](docs/ALGORITHM.md#queries-and-decisions) and [LaTeX source](docs/ALGORITHM1.tex) follow the manuscript.
 
-The main method starts at a zero anchor and needs **no pilot labels**. It uses a Clopper--Pearson (CP) exact binomial interval at each prespecified inspection, with error probability `delta/J` per look. Adding the approximation error bound gives simultaneous coverage of the exact CV score difference with probability at least `1-delta` across the prescribed inspections. The interval supports a choice when its upper endpoint is at most `g`, or its lower endpoint is at least `-g`. Unresolved trials complete exact CV through the same cache before final training.
+The main method starts at a zero anchor and needs **no pilot labels**. It uses a Clopper--Pearson (CP) exact binomial interval at each prespecified inspection, with error probability `delta/J` per look. Acquired labels also tighten the approximation error bound over all completions of the remaining unknown labels. The anchor, risk polynomial, sampling probabilities, and accumulated CP counts stay fixed. The interval supports a choice when its upper endpoint is at most `g`, or its lower endpoint is at least `-g`. Unresolved trials complete exact CV through the same cache before final training.
 
 ## Two comparison targets
 
 | Target | Procedure | Entry point |
 |---|---|---|
-| Fixed CV plan | Public zero anchor, feature-based paired bound, exact binomial intervals, and exact-CV fallback | **Algorithm 1**, implemented by `whichlabels.compare` |
-| Expected test risk over random training sets | Independent pilot and calibration, prediction-assisted queries, bounded-variable intervals, and paired-refit fallback | **Algorithm 2**, described in [POPULATION.md](docs/POPULATION.md); experiment scripts are in the companion archive |
+| Fixed CV plan | Zero anchor, cache-refined approximation bound, exact binomial intervals, and exact-CV fallback | **Algorithm 1**, implemented by `whichlabels.compare` |
+| Expected test risk over random training sets | Zero anchors, public and cache-refined error bounds, cumulative bounded-mean betting, and paired-refit fallback | **Algorithm 2**, described in [POPULATION.md](docs/POPULATION.md); research scripts and matched records are in [current reproduction](paper_reproduction/current) |
 
 The paper also derives necessary label-information bounds for fixed feature designs. Sensitivity, dispersion, and approximation conditions yield matching inverse-square dependence on tolerance, with a logarithmic confidence factor. The sequential algorithm uses `log(2J/delta)` in place of `log(1/delta)`, where `J` is the number of inspections. See [the theory map and results](docs/RESULTS.md).
 
 ## Manuscript results
 
-The current manuscript studies simulations, repeated random splits, full validation coverage at a fixed training size, and population program risk.
+The experiments evaluate LEC on simulations, repeated random splits, full validation coverage, and population program risk.
 
-- **Repeated splits:** mean total labels fall by **58.1%–73.8%** for images and **64.6%** for text relative to sequential CV with active attribute evaluation.
-- **Full validation coverage:** every object enters validation once. Mean total labels fall by **70.5%–83.2%** relative to full annotation and **69.6%–80.9%** relative to active CV.
-- **Complete accounting:** counts include distinct labels acquired for preparation, comparison, fallback, and final training. The full-coverage LEC runs return acceptable choices on **238/240** paths at `delta = 0.05`.
+- **Repeated splits:** mean total labels are 58.1%–74.1% lower than active CV.
+- **Full validation coverage:** mean savings relative to full annotation are 70.5%–84.5%; 238/240 LEC choices are acceptable.
+- **Population risk:** LEC uses 93.4%–99.6% fewer labels than the lowest-count external baseline across eight configurations. All 384 method choices are acceptable relative to the independent audit mean.
+- **Complete accounting:** comparison, fallback, and final training share one cache. Whole-object, uniform-query, and separate-bound ablations use the same acquisition permissions and accounting.
 
-[RESULTS.md](docs/RESULTS.md) gives the configurations, complete counts, decision outcomes, and corresponding frozen summaries. These are the paper's recorded experiments; the small demo below illustrates the API.
+[RESULTS.md](docs/RESULTS.md) reports exact counts, interval coverage, and comparator definitions. The executable package is **0.3.1**.
 
-Documentation follows the 50-page manuscript revised on **12 November 2026**. The executable package remains **0.2.1**; this documentation update does not change its sampling or decision rules.
+## Reproduce current tables and audits
+
+```bash
+python -m pip install -e ".[reproduce]"
+python paper_reproduction/current/reproduce.py --output build/paper
+```
+
+This generates Tables 1–8, Figure 3, and audit summaries from committed path-level records. The self-contained demo below runs fresh acquisitions; rerunning real-data fits additionally requires the documented frozen feature/label caches. [Reproduction details](docs/REPRODUCING.md).
 
 ## Installation
 
@@ -102,6 +110,7 @@ The approximation is not an unbiased estimator of the exact logistic score. Samp
 | `src/whichlabels/api.py` | Prepare, query, stop, fall back, and train the selected candidate |
 | `src/whichlabels/labels.py` | Callback-based label acquisition and distinct-label accounting |
 | `src/whichlabels/_bounds.py` | Feature-only paired and separate approximation bounds |
+| `src/whichlabels/_cache_bounds.py` | Uniform bounds over completions of the acquired-label cache |
 | `src/whichlabels/_moments.py` | Sparse label polynomial and fixed sampling probabilities |
 | `src/whichlabels/_intervals.py` | Exact binomial endpoints, numerical guard, and stopping |
 | `src/whichlabels/_active.py` | Same-permission active-CV comparator |
@@ -116,9 +125,9 @@ The private modules retain the public-feature and fitting implementations; `_int
 
 See [REPRODUCING.md](docs/REPRODUCING.md). The controlled simulation is self-contained. GoEmotions and ADE20K reruns require the documented prepared feature/label caches. Those datasets, model weights, and hidden label arrays are not bundled in this code repository.
 
-The revised experiment index is `paper_reproduction/cp_revision_20261106/README.txt`. The current main simulation uses `Simulation_Refinement_20261106.zip`. Real-data and extension runners use `CP_Revision_20261106.zip`. Each companion archive includes its execution commands and full result records. This keeps the installable package small. The older `paper_reproduction/simulation`, `paper_reproduction/main_cv`, and corresponding `paper_evidence` folders preserve the empirical-Bernstein (EB) version as historical evidence. Their percentages are not the CP revision results.
+The current index is [paper_reproduction/current](paper_reproduction/current). Its committed path records regenerate the manuscript tables and audit summaries without a separate archive. Older folders preserve historical experiment versions; the reproduction guide identifies their scope.
 
-The CP update keeps sampling probabilities, batches, inspection times, approximation bounds, caching, fallback, and final training unchanged. The active-CV comparator retains its original confidence sequences. Uniform-term and general prediction-assisted statistics retain their applicable bounded-variable intervals. Complete-label counts include final training; coverage and acceptable choices are reported separately.
+The cache-bound revision keeps sampling probabilities, batches, inspection times, caching, fallback, and final training unchanged. Refinement runs when the raw CP interval supports a choice but its current approximation enlargement does not. Otherwise the previous bound is retained. The active-CV comparator retains its original confidence sequences. Uniform-term and general prediction-assisted statistics retain their applicable bounded-variable intervals. Complete-label counts include final training; coverage and acceptable choices are reported separately.
 
 ## Citation and license
 
