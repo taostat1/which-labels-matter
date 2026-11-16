@@ -1,0 +1,241 @@
+{
+  "source_commit": "13910dcc6c9fb7e483307c1f69a616066290066c",
+  "package_version": "0.3.1",
+  "test_context": "fresh local Git clone; editable installation in an isolated virtual environment with installed scientific dependencies",
+  "checks": [
+    {
+      "command": "-m pip install -e .[reproduce] --no-deps --no-build-isolation",
+      "exit_code": 0
+    },
+    {
+      "command": "-c import whichlabels; print(whichlabels.__file__); print(whichlabels.__version__)",
+      "exit_code": 0
+    },
+    {
+      "command": "-m unittest discover -s tests -v",
+      "exit_code": 0
+    },
+    {
+      "command": "-m whichlabels.demo --output build/demo",
+      "exit_code": 0
+    },
+    {
+      "command": "paper_reproduction/current/reproduce.py --output build/paper",
+      "exit_code": 0
+    },
+    {
+      "command": "paper_reproduction/current/audits/independent_cache_math_check.py",
+      "exit_code": 0
+    },
+    {
+      "command": "node verify_dense_conditions.mjs",
+      "exit_code": 0
+    }
+  ],
+  "unit_tests": 20,
+  "fresh_demo": {
+    "lec_labels": 685,
+    "active_cv_labels": 1998,
+    "scope": "illustrative simulation, not a manuscript result"
+  },
+  "reproduction": {
+    "tables": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "figure": 3,
+    "record_level_checks": {
+      "fixed": {
+        "simulation": {
+          "runs": 4800,
+          "covered": 4794,
+          "acceptable": 4800,
+          "fallback": 0
+        },
+        "boundary": {
+          "runs": 1600,
+          "covered": 1600,
+          "acceptable": 1600,
+          "fallback": 76
+        },
+        "attribution": {
+          "runs": 1200,
+          "covered": 1182,
+          "acceptable": 1200,
+          "fallback": 0
+        },
+        "coverage": {
+          "runs": 960,
+          "covered": 946,
+          "acceptable": 956,
+          "fallback": 0
+        },
+        "cache": {
+          "runs": 528,
+          "covered": 523,
+          "acceptable": 527,
+          "fallback": 0
+        },
+        "fivefold": {
+          "runs": 480,
+          "covered": 480,
+          "acceptable": 480,
+          "fallback": 0
+        }
+      },
+      "population": {
+        "runs": 384,
+        "acceptable": 384,
+        "covered": 384
+      },
+      "matched": {
+        "runs": 384,
+        "acceptable": 384,
+        "covered": 384
+      },
+      "budgets": {
+        "lec": {
+          "10000": 84,
+          "20000": 95,
+          "40000": 96,
+          "80000": 96
+        },
+        "fixed_bound": {
+          "10000": 84,
+          "20000": 95,
+          "40000": 96,
+          "80000": 96
+        },
+        "pilot_fixed": {
+          "10000": 0,
+          "20000": 0,
+          "40000": 76,
+          "80000": 84
+        },
+        "pilot_cache": {
+          "10000": 0,
+          "20000": 0,
+          "40000": 76,
+          "80000": 84
+        }
+      },
+      "record_checks": {
+        "completed_designs": 1872,
+        "expected_designs": 1872,
+        "families": {
+          "attribution": 80,
+          "coverage": 80,
+          "cache": 88,
+          "fivefold": 24,
+          "simulation": 1200,
+          "boundary": 400
+        },
+        "paths": 6504,
+        "baseline_parity_passed": 6504,
+        "label_nonincrease_passed": 6504,
+        "approximation_checks_passed": 22364,
+        "refined_paths": 1575,
+        "saved_paths": 1144,
+        "failures": [],
+        "complete": true
+      }
+    }
+  },
+  "baseline_replay": {
+    "runs": 288,
+    "acceptable": 288,
+    "covered": 288,
+    "changed_labels_or_choices": [],
+    "max_mean_change": 6.590518061844186e-13,
+    "max_residual": 9.999990655902104e-11
+  },
+  "solver_grouping_checks": [
+    {
+      "lam": 0.001,
+      "fit_difference": 0.0,
+      "proposal_difference": 0.0,
+      "max_residual": 4.3881903011856214e-11,
+      "iterations": [
+        3,
+        3,
+        4,
+        3,
+        3,
+        3,
+        4,
+        4,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "lam": 0.125,
+      "fit_difference": 0.0,
+      "proposal_difference": 0.0,
+      "max_residual": 2.210741881094548e-11,
+      "iterations": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "lam": 0.5,
+      "fit_difference": 0.0,
+      "proposal_difference": 0.0,
+      "max_residual": 6.003196001401131e-16,
+      "iterations": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "lam": 2.0,
+      "fit_difference": 0.0,
+      "proposal_difference": 0.0,
+      "max_residual": 2.6352135448418115e-17,
+      "iterations": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "scope": "Current manuscript artifacts regenerated from saved path records. Independent cache/dense-design checks and a fresh demo also executed. Full real-data feature extraction was not rerun."
+}
