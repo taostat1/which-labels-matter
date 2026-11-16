@@ -17,6 +17,8 @@ Appendix B provides four dense, full-column-rank feature matrices and a tied int
 
 The copies must use distinct labels. Requerying the same labels does not disperse their effect. Some matrices have orthogonal columns in the displayed example; strict inequalities and continuity also give nearby designs with nonorthogonal columns.
 
+A second implementation, `paper_reproduction/current/audits/recheck_dense_fractions.py`, uses Python fractions, generic Gaussian elimination, all 256 label vectors, and exact product-law expectations. It reproduces the published `B1 = 0.0013546069039013769` and `g = 9.202937589231276e-6`; its intermediate means and gradient are recorded in `paper_evidence/dense_fraction_recheck_20261117.json`.
+
 ## Executable checks
 
 `independent_cache_math_check.py` derives formulas separately from the experiment implementation and enumerates compatible cache completions for fixed-plan and finite-pool population bounds. `test_population_interval.py` enumerates adaptive common-mean paths and checks betting capital and inversion, including endpoint cases. Package tests also check simultaneous CP coverage and parity with the research code.
