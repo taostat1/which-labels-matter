@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Replace author placeholders and add the manuscript URL before using this as CITATION.cff."
 title: "Label-Efficient Comparison of Shared Logistic Models with Finite-Sample Guarantees"
 type: software
-version: 0.3.1
+version: 0.4.0
 repository-code: "https://github.com/taostat1/which-labels-matter"
 authors:
   - family-names: REPLACE_WITH_FAMILY_NAME

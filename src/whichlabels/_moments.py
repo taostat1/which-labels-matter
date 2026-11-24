@@ -9,7 +9,7 @@ def decision(lo,hi,g):return 'A' if hi<=g else 'B' if lo>=-g else 'unresolved'
 
 def polynomial(a,b,splits,lam):
     """Exact sparse polynomial of the zero-anchor one-step quadratic CV score."""
-    tick=time.perf_counter();p=a.shape[0]*a.shape[1];r=a.shape[1];d=a.shape[-1]
+    tick=time.perf_counter();p=a.shape[0]*a.shape[1];r=a.shape[1]
     row_parts=[];col_parts=[];value_parts=[];constant=0.;bounds=[]
     surrogate_parameters=[]
     for tr,te in splits:
@@ -19,6 +19,7 @@ def polynomial(a,b,splits,lam):
         quad=np.zeros((len(trainkeys),len(trainkeys)));cross=np.zeros((len(testkeys),len(trainkeys)))
         allowance=0.;ls=[]
         for sign,z in ((1.,a),(-1.,b)):
+            d = z.shape[-1]
             zt=z[tr].reshape(-1,d);zq=z[te].reshape(-1,d)
             H=lam*np.eye(d)+zt.T@zt/(4*len(zt))
             L=np.linalg.solve(H,zt.T)/(2*len(zt))

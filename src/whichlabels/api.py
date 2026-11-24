@@ -40,15 +40,19 @@ def _ids(values, size, name):
 def prepare_comparison(a, b, splits, penalty):
     """Compute coefficients and error bounds using public features only.
 
-    a and b have shape (objects, attributes, shared_coefficients). Every row
-    has norm at most one. Both candidates use the same coefficient coordinates.
+    a and b have shapes (objects, attributes, d_a) and (objects, attributes, d_b)
+    with matching object and attribute order. Each feature row has norm at most
+    one. Equal widths use common coefficient coordinates for the paired bound.
+    For unequal widths the error bound is the sum of the two candidate bounds.
     Each split is a pair (training_indices, evaluation_indices). Splits and
     final training indices must be fixed independently of acquisition labels.
     """
     start = time.perf_counter()
     a, b = np.array(a, dtype=float, copy=True), np.array(b, dtype=float, copy=True)
-    if a.ndim != 3 or a.shape != b.shape or min(a.shape) < 1:
-        raise ValueError('both designs must have the same nonempty three-dimensional shape')
+    if any(z.ndim != 3 or 0 in z.shape for z in (a, b)):
+        raise ValueError('each design must have nonempty object, attribute and coefficient axes')
+    if a.shape[:2] != b.shape[:2]:
+        raise ValueError('both designs must have the same object and attribute counts')
     if not np.isfinite(penalty) or penalty <= 0:
         raise ValueError('penalty must be positive')
     for z in (a, b):
@@ -65,8 +69,13 @@ def prepare_comparison(a, b, splits, penalty):
         raise ValueError('a nonempty plan with a common training size is required')
     plan = tuple(plan)
     bounds = public_bounds(a, b, plan, penalty)
-    pairs = [paired_preconditioned(a[tr], b[tr], a[te], b[te], penalty) for tr, te in plan]
-    epsilon = min(float(np.mean([v['epsilon'] for v in pairs])), bounds['epsilon'])
+    epsilon = bounds['epsilon']
+    if a.shape[-1] == b.shape[-1]:
+        paired_bounds = [
+            paired_preconditioned(a[tr], b[tr], a[te], b[te], penalty)['epsilon']
+            for tr, te in plan
+        ]
+        epsilon = min(float(np.mean(paired_bounds)), epsilon)
     poly = polynomial(a, b, plan, penalty)
     poly['epsilon'] = epsilon
     mass = float(np.abs(poly['coef']).sum())
@@ -108,7 +117,8 @@ def compare(prepared, cache, final_indices, *, tolerance, delta=0.05,
     """Run a fixed-CV decision and fit the selected candidate once at the end.
 
     method is 'selective' (Algorithm 1) or 'active_cv' (paper comparator).
-    error_bound='separate' is the matched approximation-bound ablation.
+    error_bound='separate' uses the sum of the two candidate error bounds.
+    For unequal widths the default also uses this sum, including at refinement.
     refine_error uses acquired labels to tighten the deterministic error bound
     when that refinement could support a decision. Set it to False to reproduce
     the earlier fixed-bound ablation. Neither option changes the query law.

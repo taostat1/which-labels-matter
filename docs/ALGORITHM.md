@@ -8,7 +8,7 @@ Model comparison needs a reliable estimate of the performance difference. With p
 
 ## Statistical target
 
-There are `m` objects and `r` binary attributes per object. Candidate `j` has public feature rows `z_j(i,a)` in a shared coefficient space. Each row has norm at most one. All coefficients receive an L2 penalty `lambda > 0`. Cross-validation (CV) refers to the prescribed training/evaluation splits below.
+There are `m` objects and `r` binary attributes per object. Candidate `j` uses a public feature row `z_j(i,a)` of length `d_j` for each object and attribute. Its coefficient vector is shared across attributes. The two candidates may use different feature widths. Each row has norm at most one. All coefficients receive an L2 penalty `lambda > 0`. Cross-validation (CV) refers to the prescribed training/evaluation splits below.
 
 For a training subset `S`, the exact parameter minimizes
 
@@ -60,7 +60,7 @@ After averaging over splits and combining repeated label pairs,
 
 $$T=c_0+\sum_k a_k\psi_k,\qquad\psi_k=x_{i_k}x_{j_k},\qquad S_1=\sum_k|a_k|.$$
 
-Diagonal products equal one and enter `c0`. Public matrices also give a uniform bound `|Delta_V - T| <= epsilon`. `_bounds.py` evaluates the detailed paired bound. It preserves cancellation between candidates and takes the smaller of the valid paired and separate bounds. This step reads **no labels**.
+Diagonal products equal one and enter `c0`. Both `Q_A` and `Q_B` map the same training labels to the same validation rows, so their difference is defined for any feature widths. Public matrices give a uniform bound `|Delta_V - T| <= epsilon`. With common coefficient coordinates, LEC computes the paired and separate bounds and uses the tighter valid bound. With different widths, it adds the two individual loss-error bounds. Cache refinement uses the same rule after labels arrive.
 
 ## Queries and decisions
 

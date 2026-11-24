@@ -20,13 +20,24 @@ def public_bounds(a,b,splits,lam):
         for k,detail in zip(ks,details):
             s=detail['radius'];dist=min(k*s**3/48,k*s*s/(12*np.sqrt(3)))/lam
             norms.append(min(.5*np.sqrt(k)/lam,np.sqrt(2*np.log(2)/lam),s+dist))
-        da=op_gram(a[tr]-b[tr]);dq=op_gram(a[te]-b[te]);ta,tb=norms;ka,kb=ks;qa,qb=kqs
-        pd=min(ta+tb,np.sqrt(da)*(expit(tb)+.25*np.sqrt(kb)*tb)/lam,
-               np.sqrt(da)*(expit(ta)+.25*np.sqrt(ka)*ta)/lam)
-        paired=expit(max(ta,tb))*min(np.sqrt(qa)*pd+np.sqrt(dq)*tb,np.sqrt(qb)*pd+np.sqrt(dq)*ta)
+        ta, tb = norms
+        qa, qb = kqs
         lo=-.5*np.sqrt(qa)*ta-.5*np.sqrt(qb)*tb-qb*tb*tb/8
         hi=.5*np.sqrt(qa)*ta+.5*np.sqrt(qb)*tb+qa*ta*ta/8
-        out.append(dict(lower=max(lo,-paired)-2e-9,upper=min(hi,paired)+2e-9,
+        paired = None
+        if a.shape[-1] == b.shape[-1]:
+            ka, kb = ks
+            train_gap = np.sqrt(op_gram(a[tr] - b[tr]))
+            eval_gap = np.sqrt(op_gram(a[te] - b[te]))
+            parameter_gap = min(
+                ta + tb,
+                train_gap * (expit(tb) + .25 * np.sqrt(kb) * tb) / lam,
+                train_gap * (expit(ta) + .25 * np.sqrt(ka) * ta) / lam,
+            )
+            paired = expit(max(ta, tb)) * min(np.sqrt(qa) * parameter_gap + eval_gap * tb,
+                                               np.sqrt(qb) * parameter_gap + eval_gap * ta)
+            lo, hi = max(lo, -paired), min(hi, paired)
+        out.append(dict(lower=lo-2e-9,upper=hi+2e-9,
                         epsilon=sum(x['epsilon'] for x in details),norms=norms,paired_bound=paired))
     return dict(lower=np.array([x['lower'] for x in out]),upper=np.array([x['upper'] for x in out]),
                 epsilon=float(np.mean([x['epsilon'] for x in out])),details=out,seconds=time.perf_counter()-tick)

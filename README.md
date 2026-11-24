@@ -28,7 +28,7 @@ The experiments evaluate LEC on simulations, repeated random splits, full valida
 - **Population risk:** LEC uses 93.4%–99.6% fewer labels than the lowest-count external baseline across eight configurations. All 384 method choices are acceptable relative to the independent audit mean.
 - **Complete accounting:** comparison, fallback, and final training share one cache. Whole-object, uniform-query, and separate-bound ablations use the same acquisition permissions and accounting.
 
-[RESULTS.md](docs/RESULTS.md) reports exact counts, interval coverage, and comparator definitions. The executable package is **0.3.1**.
+[RESULTS.md](docs/RESULTS.md) reports exact counts, interval coverage, and comparator definitions. The executable package is **0.4.0**.
 
 ## Reproduce current tables and audits
 
@@ -74,7 +74,7 @@ It writes `results.json`, `summary.csv`, and `progress.json`. Results include th
 ```python
 from whichlabels import prepare_comparison, compare, LabelCache
 
-# a, b: arrays of shape (objects, attributes, coefficients).
+# a.shape == (objects, attributes, d_a), b.shape == (objects, attributes, d_b).
 # plan: fixed list of (training_object_ids, evaluation_object_ids).
 # Each feature row has Euclidean norm at most one.
 prepared = prepare_comparison(a, b, plan, penalty=0.5)
@@ -93,7 +93,9 @@ print(result['choice'], result['interval'], result['total_labels'])
 
 `annotation_service`, the feature arrays, the fixed plan, and `final_indices` are supplied by the caller. The provider is called only for distinct, unbought labels. For a labeled dataset replay, `ArrayLabelProvider(y)` supplies the same interface.
 
-The final subset has the same training size as the CV splits and must be fixed before acquisition. Both candidates share coefficient coordinates and dimensions. All coefficients, including any attribute intercepts, receive the L2 penalty.
+Match the object and attribute order in both arrays. Each candidate fits its own coefficient vector. For example, designs of shape `(100, 6, 3)` and `(100, 6, 4)` compare predictions for the same 600 labels. With different widths, LEC adds the two candidate error bounds at preparation and at cache refinement. With equal widths, it also computes the paired bound in the supplied coordinates and uses the tighter valid bound.
+
+The final subset has the same training size as the CV splits and must be fixed before acquisition. All coefficients, including any attribute intercepts, receive the L2 penalty.
 
 ## What the decision means
 

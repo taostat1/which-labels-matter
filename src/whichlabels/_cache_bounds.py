@@ -202,6 +202,7 @@ def approximation_bound(prepared, known_values, *, separate=False):
         raise ValueError('known values must be binary; use NaN for unknown labels')
     x = np.where(known, 2*values-1, np.nan)
     r = prepared.a.shape[1]
+    separate_only = separate or prepared.a.shape[-1] != prepared.b.shape[-1]
     result = []
     for train, evaluation in prepared.splits:
         tk = (train[:, None]*r + np.arange(r)).ravel()
@@ -209,6 +210,10 @@ def approximation_bound(prepared, known_values, *, separate=False):
         designs = [candidate_geometry(z[train], z[evaluation],
                    np.zeros(z.shape[-1]), prepared.penalty, x[tk])
                    for z in (prepared.a, prepared.b)]
-        refined = certificate(*designs, prepared.penalty, x[ek])[1]
-        result.append(refined['separate' if separate else 'epsilon'])
+        if separate_only:
+            epsilon = sum(refine(design, prepared.penalty, x[ek])['separate']
+                          for design in designs)
+        else:
+            epsilon = certificate(*designs, prepared.penalty, x[ek])[1]['epsilon']
+        result.append(epsilon)
     return float(np.mean(result))

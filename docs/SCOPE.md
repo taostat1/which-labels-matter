@@ -2,7 +2,7 @@
 
 - The public API implements the zero-anchor **fixed finite CV** algorithm. It does not treat a finite-plan confidence interval as a population-risk interval.
 - Responses are binary. The API uses mean binary cross-entropy and a strictly positive L2 penalty on every coefficient.
-- Both designs use the same objects, attributes, coefficient dimensions, and aligned coordinates. Feature rows have norm at most one.
+- Both designs use the same objects and attributes in the same order. Each feature row has norm at most one. Candidates with different coefficient dimensions use separate error bounds. Equal widths enable the paired bound in common coordinates.
 - The plan, inspection schedule, and final training subset are fixed before label acquisition. Within each split, training and evaluation subsets are disjoint. Overlap across different splits is allowed.
 - `delta` applies to one comparison. Simultaneous decisions across multiple feature pairs or tolerances need a joint error allocation.
 - Conditional on the fixed pool labels, the term draws are independent. The same object or attribute can appear in many terms. The cache reuses the label but does not remove the draw from the estimator.
