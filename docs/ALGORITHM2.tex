@@ -1,4 +1,4 @@
-\begin{algorithm}[htbp]
+\begin{algorithm}[H]
 \caption{Label-Efficient Comparison (LEC) for Population Risk}\label{alg:population}
 \small
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
@@ -8,23 +8,23 @@
 \Require $P,Q$, public features, $n,\lambda,g$, $\delta_c+\delta_s+\delta_r\le\delta$, fractions $\mathcal G$, inspections and query/refit caps
 \Statex\textbf{Stage 1: Label-free Preparation}
 \State \textbf{Initialize:} set $\theta_{j0}\gets0$ for $j=A,B$ and $\mathcal C\gets\varnothing$.
-\State \textbf{Approximation:} obtain $Z_t$ in \eqref{eq:population_phase_query}, $M$, and $\varepsilon\gets\varepsilon_0$. \Comment{random training sets}
-\State \textbf{Public interval:} $J\gets[-M,M]$; $I\gets[-M-\varepsilon,M+\varepsilon]$.
-\State \textbf{Check:} proceed to Stage 3 if $\sup I\le g$, $\inf I\ge-g$, or $\varepsilon_0\ge g$.
-\State \textbf{Sampling law:} $p_{t,k}\propto|a_{t,k}|$ after cache substitution. \Comment{block-specific weights}
+\State \textbf{Approximation:} compute the public bounds $M$ and $\varepsilon_0$. Set $\varepsilon\gets\varepsilon_0$. \Comment{random training sets}
+\State \textbf{Public interval:} set $J\gets[-M,M]$ and $I\gets[-M-\varepsilon,M+\varepsilon]$.
+\State \textbf{Check:} proceed to Stage 3 if $\sup I\le g$ or $\inf I\ge-g$.
+\State \textbf{Sampling law:} use $p_{t,k}\propto|a_{t,k}|$ in each new block. \Comment{block-specific weights}
 \Statex\textbf{Stage 2: Sequential Label Queries}
 \For{inspections $N$ within the query cap}
- \State \textbf{Query:} extend fresh blocks to $N$; buy uncached labels and retain all $Z_t$.
- \State \textbf{Betting:} $J\gets J\cap\{m:K_N^\pm(m)\le2/\delta_s\}$; if empty, $I\gets\R$ and break. \Comment{bounded mean}
+ \State \textbf{Query:} draw blocks through $N$, buy missing labels, and record each $Z_t$ by \eqref{eq:population_draw}.
+ \State \textbf{Betting:} $J\gets J\cap\{m:K_N^\pm(m)\le2/\delta_s\}$. \Comment{bounded mean}
  \State \textbf{Refine:} $\varepsilon\gets\min\{\varepsilon,\varepsilon_{\rm cache}(\mathcal C)\}$ for known finite pools. \Comment{score-moment bounds}
- \State \textbf{Risk interval:} $I\gets[\inf J-\varepsilon,\sup J+\varepsilon]$.
+ \State \textbf{Risk interval:} set $I\gets[\inf J-\varepsilon,\sup J+\varepsilon]$ if $J\ne\varnothing$, and $I\gets\mathbb R$ otherwise.
  \State \textbf{Stop:} if $\sup I\le g$ or $\inf I\ge-g$, break.
 \EndFor
 \Statex\textbf{Stage 3: Selection and Final Training}
-\State \textbf{Fallback:} if unresolved, use independent paired refits at level $\delta_r$ until a choice or cap.
-\State If still unresolved, return \textsc{Unresolved} and $|\mathcal C|$.
-\State \textbf{Select:} $j\gets A$ if $\sup I\le g$; otherwise $j\gets B$.
+\State \textbf{Fallback:} if undecided at the query cap, update $I$ by independent paired refits at level $\delta_r$.
+\State If still undecided at the refit cap, return \textsc{Unresolved} and $|\mathcal C|$.
+\State \textbf{Select:} choose $j=A$ if $\sup I\le g$ and $j=B$ otherwise.
 \State Buy missing labels for a new size-$n$ sample and fit $j$. \Comment{independent final sample}
-\Ensure Candidate $j$ and interval $I$, or \textsc{Unresolved}; total distinct labels $|\mathcal C|$
+\Ensure Decision $(j,I)$ or \textsc{Unresolved}, and distinct label count $|\mathcal C|$.
 \end{algorithmic}
 \end{algorithm}

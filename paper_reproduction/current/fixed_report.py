@@ -387,24 +387,23 @@ def normalized_cache(documents):
 
 
 def cache_table(cases):
-    lines=[r'\begin{table}[htbp]\centering\small',
-           r'\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.08}',
-           r'\begin{tabularx}{\linewidth}{@{}lr*{2}{>{\centering\arraybackslash}X}r@{}}\toprule',
-           r'Case & $g$ & \textbf{LEC} & \shortstack{Remaining\\contributions} & Saving (\%)\\\midrule']
-    for c in cases:
-        ms=c['methods'];names=['cache_refined','historical_residual_sampling']
-        best=min(ms[m]['mean'] for m in names)
-        cells=[cell(ms[m],bold=abs(ms[m]['mean']-best)<1e-8) for m in names]
-        label=c['case'].replace('T4-separated',r'T4 ($\alpha=.2$)')
-        saving=1-ms['cache_refined']['mean']/ms['historical_residual_sampling']['mean']
-        lines.append(label+f' & {c["g"]:g} & '+' & '.join(cells)+f' & {100*saving:.1f}'+r'\\')
-    runs=sum(c['methods']['cache_refined']['runs'] for c in cases)
-    good=sum(c['methods']['cache_refined']['acceptable'] for c in cases)
-    fallback=sum(c['methods']['cache_refined']['fallback'] for c in cases)
-    ending=f'All {runs} LEC choices are acceptable' if good==runs else f'{good} of {runs} LEC choices are acceptable'
-    ending+=', with no fallback.' if fallback==0 else f'; {fallback} paths use fallback.'
-    lines += [r'\bottomrule\end{tabularx}',
-              r'\caption{Complete labels over eight pools and three paths per pool. Grey subscripts give standard deviations of pool means; bold marks row minima. The remaining-contribution variant rebuilds its sampling representation in phases and uses the public approximation bound. Savings compare LEC with this variant. '+ending+'}',
+    lines = [r'\begin{table}[htbp]\centering\small',
+             r'\begin{tabular}{@{}lrrr@{}}\toprule',
+             r'Setting, $g$ & LEC & Fixed bound & Phased sampling\\\midrule']
+    for case in cases:
+        label = r'T4$^\ast$' if case['case']=='T4-separated' else case['case']
+        row = [f"{label}, {case['g']:g}".replace(', 0.', ', .')]
+        methods = [case['methods'][m] for m in
+                   ('cache_refined','fixed_bound','historical_residual_sampling')]
+        best = min(m['mean'] for m in methods)
+        for m in methods:
+            mean = f"{m['mean']:.1f}"
+            if abs(m['mean']-best)<1e-8:
+                mean = r'\textbf{' + mean + '}'
+            row.append(f"{mean} ({m['pool_sd']:.1f})")
+        lines.append(" & ".join(row) + r"\\")
+    lines += [r'\bottomrule\end{tabular}',
+              r'\caption{Mean distinct labels (pool standard deviation) across eight pools per setting, with three paths per pool. Bold marks all minima. Table~\ref{tab:configs} defines the candidates. T4$^\ast$ uses $\alpha=.2$.}',
               r'\label{tab:cache_ablation}',r'\end{table}']
     write('cache_summary_table.tex',lines)
 

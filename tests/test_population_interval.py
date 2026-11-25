@@ -7,8 +7,26 @@ import numpy as np
 SOURCE=Path(__file__).resolve().parents[1]/'paper_reproduction/current/reference/logistic_population_betting_20261115/intervals.py'
 spec=importlib.util.spec_from_file_location('population_intervals',SOURCE)
 iv=importlib.util.module_from_spec(spec);spec.loader.exec_module(iv)
+policy_spec = importlib.util.spec_from_file_location(
+    'population_stopping', SOURCE.parents[1] / 'population_stopping.py')
+policy = importlib.util.module_from_spec(policy_spec)
+policy_spec.loader.exec_module(policy)
 
 class PopulationIntervalChecks(unittest.TestCase):
+    def test_wide_approximation_bound_can_still_certify_a_direction(self):
+        epsilon, tolerance = 0.06, 0.05
+        entry, _ = policy.assess_interval((-1, 1), epsilon, tolerance)
+        self.assertEqual(entry, 'unresolved')
+        choice, risk = policy.assess_interval((-0.2, -0.1), epsilon, tolerance)
+        self.assertEqual(choice, 'A')
+        self.assertLess(risk[1], tolerance)
+
+    def test_an_empty_betting_intersection_cannot_support_a_choice(self):
+        # Widening these crossed endpoints first would incorrectly certify A.
+        choice, risk = policy.assess_interval((0.01, -0.01), 0.04, 0.05)
+        self.assertEqual(choice, 'unresolved')
+        self.assertEqual(risk, [None, None])
+
     def test_boundary_and_degenerate_ranges(self):
         self.assertEqual(iv.interval([],1),(-1,1))
         self.assertEqual(iv.interval([0,0],0),(0,0))

@@ -15,7 +15,7 @@ The main method starts at a zero anchor and needs **no pilot labels**. It uses a
 | Target | Procedure | Entry point |
 |---|---|---|
 | Fixed CV plan | Zero anchor, cache-refined approximation bound, exact binomial intervals, and exact-CV fallback | **Algorithm 1**, implemented by `whichlabels.compare` |
-| Expected test risk over random training sets | Zero anchors, public and cache-refined error bounds, cumulative bounded-mean betting, and paired-refit fallback | **Algorithm 2**, described in [POPULATION.md](docs/POPULATION.md); research scripts and matched records are in [current reproduction](paper_reproduction/current) |
+| Expected test risk over random training sets | An unresolved public check starts batched queries. Cumulative betting and finite-pool cache bounds guide stopping. An unresolved choice at the query cap triggers paired refits. | **Algorithm 2** and its [research implementation](paper_reproduction/current) are described in [POPULATION.md](docs/POPULATION.md). |
 
 The paper also derives necessary label-information bounds for fixed feature designs. Sensitivity, dispersion, and approximation conditions yield matching inverse-square dependence on tolerance, with a logarithmic confidence factor. The sequential algorithm uses `log(2J/delta)` in place of `log(1/delta)`, where `J` is the number of inspections. See [the theory map and results](docs/RESULTS.md).
 
@@ -25,7 +25,7 @@ The experiments evaluate LEC on simulations, repeated random splits, full valida
 
 - **Repeated splits:** mean total labels are 58.1%–74.1% lower than active CV.
 - **Full validation coverage:** mean savings relative to full annotation are 70.5%–84.5%; 238/240 LEC choices are acceptable.
-- **Population risk:** LEC uses 93.4%–99.6% fewer labels than the lowest-count external baseline across eight configurations. All 384 method choices are acceptable relative to the independent audit mean.
+- **Population risk:** LEC used 93.2%–99.1% fewer distinct labels than the least costly of four external baselines in each configuration. All 96 main LEC paths reached a decision during comparison without paired refits.
 - **Complete accounting:** comparison, fallback, and final training share one cache. Whole-object, uniform-query, and separate-bound ablations use the same acquisition permissions and accounting.
 
 [RESULTS.md](docs/RESULTS.md) reports exact counts, interval coverage, and comparator definitions. The executable package is **0.4.0**.
@@ -129,7 +129,7 @@ See [REPRODUCING.md](docs/REPRODUCING.md). The controlled simulation is self-con
 
 The current index is [paper_reproduction/current](paper_reproduction/current). Its committed path records regenerate the manuscript tables and audit summaries without a separate archive. Older folders preserve historical experiment versions; the reproduction guide identifies their scope.
 
-The cache-bound revision keeps sampling probabilities, batches, inspection times, caching, fallback, and final training unchanged. Refinement runs when the raw CP interval supports a choice but its current approximation enlargement does not. Otherwise the previous bound is retained. The active-CV comparator retains its original confidence sequences. Uniform-term and general prediction-assisted statistics retain their applicable bounded-variable intervals. Complete-label counts include final training; coverage and acceptable choices are reported separately.
+For fixed CV, each batch uses the same public sampling probabilities and preserves all earlier draws. Refinement runs when the raw CP interval supports a choice but its current approximation enlargement does not. Otherwise the previous bound is retained. The active-CV comparator retains its original confidence sequences. Uniform-term and general prediction-assisted statistics retain their applicable bounded-variable intervals. Complete-label counts include final training; coverage and acceptable choices are reported separately.
 
 ## Citation and license
 

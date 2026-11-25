@@ -7,12 +7,12 @@
 ## 先看这几个文件
 
 1. `README.md`：英文项目主页及安装说明。
-2. `docs/ALGORITHM.md`：与论文 Algorithm 1 对应的公式和三阶段、十五步流程。
+2. `docs/ALGORITHM.md`：与论文 Algorithm 1 对应的公式和三阶段、十六步流程。
 3. `src/whichlabels/api.py`：公共特征准备、查询、停止、回退及最终训练。
 4. `src/whichlabels/labels.py`：真实标签接口与去重记账。
 5. `docs/REPRODUCING.md`：模拟和真实数据实验入口。
 6. `VALIDATION.json`：当前 CP 版本的软件检查及此前版本的历史记录。
-7. `docs/POPULATION.md`：Algorithm 2 的总体程序风险目标、独立准备与一般有界统计量区间。
+7. `docs/POPULATION.md`：Algorithm 2 的总体风险目标、零先导启动、累计投注区间和预算用尽后的重拟合。
 8. `docs/RESULTS.md`：当前论文结果和定理作用；`paper_evidence/cp_20261106/real_summary.csv` 保留对应的完整数值。
 
 ## 本地运行

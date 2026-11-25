@@ -8,11 +8,16 @@ into a still-running arm. Oracle risk audits are read only after all decisions.
 from pathlib import Path
 import os, sys, json, time, argparse, subprocess, inspect
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'): os.environ[k]='1'
-ROOT=Path(__file__).resolve().parent; SHARED=ROOT.parent
+ROOT = Path(__file__).resolve().parent
+REFERENCE = ROOT.parent
+SHARED = Path(os.environ.get('LEC_SHARED', REFERENCE)).resolve()
 sys.path.insert(0,str(SHARED/'logistic_population_betting_20261115'))
+sys.path.insert(0, str(REFERENCE))
+from population_stopping import assess_interval
 import experiment as e
 pop,np,intervals=e.pop,e.np,e.intervals
-OUT=ROOT/'matched_population'; OUT.mkdir(exist_ok=True)
+OUT = Path(os.environ.get('LEC_PAID_OUTPUT', ROOT / 'query_first_paid_results')).resolve()
+for subdir in ('results','draws','logs'): (OUT/subdir).mkdir(parents=True,exist_ok=True)
 # Freeze the existing sampler verbatim, changing only its explicit anchor input.
 src=inspect.getsource(e.draw_phase).replace('phase,size,seed):','phase,size,seed,anchors):').replace('zero=[np.zeros(a.shape[-1]),np.zeros(b.shape[-1])]','zero=anchors')
 import hashlib
@@ -39,12 +44,12 @@ def run(ci,group):
     methods=('pilot_fixed','pilot_cache');rows={};hist={m:[] for m in methods}
     final=np.random.default_rng(pop.s.SEED+9000000+ci*100000+40000+group).choice(pools['training'],case['n'])
     vals=[];previous=0;phases=[]
-    entry=pop.s.decision(-M-eps,M+eps,case['g'])
+    entry, public_interval = assess_interval((-M, M), eps, case['g'])
     if entry!='unresolved':
         for m in methods:
-            r=dict(method=m,choice=entry,interval=[-M-eps,M+eps],stopping_blocks=0,fallback=False,epsilon=eps,history=[])
+            r=dict(method=m,choice=entry,interval=public_interval,stopping_blocks=0,fallback=False,epsilon=eps,history=[])
             e.finish(r,cache,final,a,b,case);rows[m]=r
-    if epsilon0<case['g']:
+    else:
         for phase,end in enumerate(pop.p.CHECKS):
             if len(rows)==2:break
             vv,detail=draw_phase(a,b,pools,case,par,cache,phase,end-previous,seed,anchors)
@@ -55,11 +60,11 @@ def run(ci,group):
             phases.append(dict(blocks=end,labels=cache.count,epsilon=eps,**detail))
             for m in methods:
                 if m in rows:continue
-                ee=eps if m=='pilot_cache' else epsilon0;L,U=running[0]-ee,running[1]+ee
-                choice=pop.s.decision(L,U,case['g']) if L<=U else 'unresolved'
-                hist[m].append(dict(blocks=end,labels=cache.count,epsilon=ee,interval=[L,U],choice=choice))
+                ee = eps if m == 'pilot_cache' else epsilon0
+                choice, risk_interval = assess_interval(running, ee, case['g'])
+                hist[m].append(dict(blocks=end,labels=cache.count,epsilon=ee,interval=risk_interval,choice=choice))
                 if choice!='unresolved':
-                    r=dict(method=m,choice=choice,interval=[L,U],stopping_blocks=end,fallback=False,epsilon=ee,history=hist[m])
+                    r=dict(method=m,choice=choice,interval=risk_interval,stopping_blocks=end,fallback=False,epsilon=ee,history=hist[m])
                     e.finish(r,cache,final,a,b,case);rows[m]=r
     if len(rows)<2:
         archive=SHARED/'logistic_adaptive_initialization_20261115/population_results'/f'case_{ci:02d}_{group:02d}.json'
@@ -103,7 +108,7 @@ def run(ci,group):
                  covered_audit_mean=bool(L<=gap<=U),error_probability=.045,
                  calibration=cal,anchor_norms=[float(np.linalg.norm(t)) for t in anchors])
         assert r['labels']==sum(r['stage_labels'].values())
-    assert rows['pilot_cache']['labels']<=rows['pilot_fixed']['labels']
+    assert all(not r['fallback'] or r['stopping_blocks']==pop.p.CHECKS[-1] for r in rows.values())
     pop.save(path,dict(case=case,case_index=ci,group=group,seed=seed,records=list(rows.values()),phase_records=phases,seconds=time.time()-tick))
     np.savez_compressed(OUT/'draws'/f'case_{ci:02d}_{group:02d}.npz',z=np.array(vals))
     print(ci,group,[(m,rows[m]['labels'],rows[m]['fallback']) for m in methods],flush=True)
@@ -116,7 +121,7 @@ def batch(workers):
       nominal_error=.05,calibration_error=.005,query_error=.02,refit_error=.02,checkpoints=pop.p.CHECKS,
       label_budget_grid=[10000,20000,40000,80000],interval='same cumulative bounded-mean betting mixture',
       initial_bound='paid: independently calibrated nonzero-anchor bound; zero: public bound',
-      baseline='same 288 frozen comparator runs; same seed, final sample, audit and maximum query/refit horizon',
+      baseline='matched seeds, final samples, audits and query/refit caps across the initialization arms',
       change_from_historical='legacy paid preparation, with the current cumulative interval to isolate preparation',
       audit='independent 2048-fit mean and SE; read only after decisions',
       zero_source='logistic_population_betting_revision_20261115/results')

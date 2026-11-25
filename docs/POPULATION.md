@@ -10,7 +10,9 @@ $$R_j(n)=\mathbb E_{S\sim P^n}\mathbb E_{W\sim Q}\ell_j(\widehat\theta_j(S);W),\
 
 Training draws are independent, and test draws are independent of training. Attributes on one object may be dependent. For the finite-pool experiments, P and Q are the fixed complete empirical laws, sampled with replacement. Conditioning on the acquired-label history does not redefine this target.
 
-Public features supply score-moment, curvature, and paired approximation bounds. Exact public sums have no certification error; Monte Carlo integration over public designs uses a preassigned error probability and is frozen before querying. The default buys **no pilot or calibration labels**. If its public interval supports a choice, it proceeds to final training. An unresolved case with epsilon_0 >= g goes to independent paired refits; otherwise it queries in batches.
+The zero anchors need **no pilot or calibration labels**. If the public interval supports a choice, LEC proceeds to final training. Every unresolved comparison starts querying, including when the initial approximation bound is at least the tolerance. New blocks can establish a sufficiently large loss difference even if the approximation bound stays wide.
+
+Public features bound the approximation error for each candidate. Distinct coefficient dimensions admit the sum of these two bounds. Common coefficient coordinates also admit a paired bound, and LEC keeps the tightest available bound. Monte Carlo integration over public designs uses a prespecified error allocation and is completed before querying.
 
 ## Cumulative queries and interval
 
@@ -32,12 +34,14 @@ For a known finite pool, acquired labels restrict feasible completions. Public p
 
 $$I_N=[\inf J_N-\varepsilon_N,\ \sup J_N+\varepsilon_N].$$
 
-An upper endpoint <= g supports A; a lower endpoint >= -g supports B. Empty or unresolved capped intervals invoke paired refits with separate error allocation and numerical-error correction. An independent final training sample shares the same purchase cache. Total labels count distinct acquisitions across all stages.
+An upper endpoint at most g supports A. A lower endpoint at least −g supports B. An empty betting intersection supports neither choice, so the scheduled batches continue. A comparison still open at the query cap passes to independent paired refits with their own error allocation and numerical-error correction. If the refit budget expires without a decision, LEC reports unresolved. Final training on a new sample reuses all labels already acquired.
 
 ## Matched preparation and cache ablation
 
 Table 7 uses four arms: paid independent pilot / zero anchor, each with a fixed / cache-refined error bound. All use the current cumulative interval, the same 12 query seeds per configuration, final samples, caps, and independent audit.
 
-Paid preparation fits on 512 pilot draws and calibrates independently. Its means range from 20,839 to 236,859 labels; zero-anchor LEC ranges from 1,022 to 14,857. Cache refinement changes only V4's population stopping time, reducing its mean by 1.91%. The main advantage therefore comes from avoiding complete training-label purchases and preparation. All 384 ablation choices are acceptable relative to the audit mean; each paid arm has two T4 refit fallbacks.
+Paid preparation uses 512 pilot draws followed by independent calibration. In T4 two pilot samples gave initial bounds just above g = .005. Both paid variants chose B after 8,192 query blocks on each path, with the bound still above g. Each paid variant averaged 206,964 distinct labels across all 12 T4 paths. All 384 initialization and bound comparisons chose an acceptable candidate under the independent audit.
+
+The separate-bound ablation in Table 4 illustrates the other outcome. In T4 and V3 all 24 paths used their 32,768 query blocks before requiring paired refits. The 96 main LEC paths across the eight settings all reached a choice during the query stage.
 
 Theorems 5–6 and Appendix C give the bounds; Theorem 7 gives the unbiased approximate-risk statistic. Appendix C.7 proves the adaptive-cache betting argument, endpoint rules, and total error allocation. [ALGORITHM2.tex](ALGORITHM2.tex) contains the manuscript pseudocode. Reanchoring is a phased ablation, not the main algorithm.

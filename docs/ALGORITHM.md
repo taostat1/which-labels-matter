@@ -10,6 +10,12 @@ Model comparison needs a reliable estimate of the performance difference. With p
 
 There are `m` objects and `r` binary attributes per object. Candidate `j` uses a public feature row `z_j(i,a)` of length `d_j` for each object and attribute. Its coefficient vector is shared across attributes. The two candidates may use different feature widths. Each row has norm at most one. All coefficients receive an L2 penalty `lambda > 0`. Cross-validation (CV) refers to the prescribed training/evaluation splits below.
 
+The prediction is $\widehat p_{ja}(X)=\sigma(z_{ja}(X)^\top\widehat\theta_j)$. Changing candidates changes the feature map and its fitted coefficient vector. Within a candidate, changing attributes changes the feature row while retaining the same vector. Three applications illustrate these distinctions.
+
+- Dehghani et al. compare five ViT representations on the same CelebA faces for each of two attributes, attractiveness and smiling. This illustrates comparing feature maps with a common response. [ICML 2023, Figure 7](https://proceedings.mlr.press/v202/dehghani23a/dehghani23a.pdf#page=7)
+- MedKLIP applies one two-class linear head to disease-specific representations of a chest radiograph. The difference between its two weight vectors gives the shared logistic direction. [Wu et al., ICCV 2023, Eq. 6](https://openaccess.thecvf.com/content/ICCV2023/papers/Wu_MedKLIP_Medical_Knowledge_Enhanced_Language-Image_Pre-Training_for_X-ray_Diagnosis_ICCV_2023_paper.pdf#page=4) · [Author implementation](https://github.com/MediaBrain-SJTU/MedKLIP/blob/adc2eb8672a37ad7e41b365aea41ac3af29878e2/PreTrain_MedKLIP/models/model_MedKLIP.py#L181)
+- RAM++ applies the same scalar linear head and sigmoid to every tag representation. Two tags on the same image can therefore receive different probabilities from the same scoring vector. RAM++ trains with asymmetric loss. LEC fits a ridge-penalized binary logistic loss on fixed features. [Huang et al., ACM Multimedia 2025](https://doi.org/10.1145/3746027.3755316) · [Author implementation](https://github.com/xinyu1205/recognize-anything/blob/560542c0f4c5f0f60480de3fa9ea6cf483b50bb3/ram/models/ram_plus.py#L311-L325)
+
 For a training subset `S`, the exact parameter minimizes
 
 $$
@@ -17,6 +23,8 @@ $$
 \frac{1}{|S|r}\sum_{i\in S,a}\left[\log(1+e^{z_j(i,a)^\top\theta})-Y_{ia}z_j(i,a)^\top\theta\right]
 +\frac\lambda2\|\theta\|^2\right\}.
 $$
+
+With label factors held fixed, Yu et al. obtain a ridge-penalized logistic fit on observed object-attribute pairs. They sum losses over pairs, so the numerical penalty scale depends on the loss normalization. [ICML 2014, Eq. (6)](https://proceedings.mlr.press/v32/yu14.pdf#page=4)
 
 A fixed plan contains `B` pairs of training and evaluation subsets. Its target difference is
 
@@ -69,24 +77,25 @@ The steps below follow the paper's Algorithm 1. The three stages separate public
 ```text
 Input: public designs, fixed CV plan, lambda, g, delta, inspections N_1,...,N_J, final subset.
 Stage 1: Label-free Preparation
- 1. Approximation: obtain T = c0 + sum(a_k psi_k) and error bound epsilon.
- 2. Set S1 = sum(abs(a_k)), cache C = {}, and I = [c0-S1-epsilon, c0+S1+epsilon].
- 3. Go to Stage 3 if upper(I) <= g, lower(I) >= -g, or S1 = 0.
- 4. Sampling law: set p_k = abs(a_k)/S1.
+ 1. Initialize both anchors to zero and create an empty cache C.
+ 2. Approximation: obtain T = c0 + sum(a_k psi_k) and error bound epsilon.
+ 3. Set S1 = sum(abs(a_k)), and I = [c0-S1-epsilon, c0+S1+epsilon].
+ 4. Go to Stage 3 if upper(I) <= g, lower(I) >= -g, or S1 = 0.
+ 5. Sampling law: set p_k = abs(a_k)/S1.
 Stage 2: Sequential Label Queries
- 5. For each prescribed inspection N:
- 6.   Query: extend independent K_i ~ p draws to N; buy and cache missing labels.
- 7.   Count: C_N = sum_{i=1}^N 1{sign(a[K_i])*psi[K_i] = 1}.
- 8.   CP limits: compute (ell_N,u_N) with error probability delta/J.
- 9.   Refine epsilon using cached labels if the raw CP interval supports a choice
+ 6. For each prescribed inspection N:
+ 7.   Query: extend independent K_i ~ p draws to N; buy and cache missing labels.
+ 8.   Count: C_N = sum_{i=1}^N 1{sign(a[K_i])*psi[K_i] = 1}.
+ 9.   CP limits: compute (ell_N,u_N) with error probability delta/J.
+10.   Refine epsilon using cached labels if the raw CP interval supports a choice
       but its enlargement by the current epsilon does not; retain the running minimum.
-10.   Risk interval: I = [c0+S1*(2*ell_N-1)-epsilon, c0+S1*(2*u_N-1)+epsilon].
-11.   Stop: if upper(I) <= g or lower(I) >= -g, break.
-12. End for.
+11.   Risk interval: I = [c0+S1*(2*ell_N-1)-epsilon, c0+S1*(2*u_N-1)+epsilon].
+12.   Stop: if upper(I) <= g or lower(I) >= -g, break.
+13. End for.
 Stage 3: Selection and Final Training
-13. If unresolved, complete exact CV through C; obtain I with numerical radius <= g.
-14. Select A if upper(I) <= g; otherwise select B.
-15. Buy missing final-subset labels through C and fit the selected candidate.
+14. If unresolved, complete exact CV through C; obtain I with numerical radius <= g.
+15. Select A if upper(I) <= g; otherwise select B.
+16. Buy missing final-subset labels through C and fit the selected candidate.
 Output: selected candidate, supporting interval I, and distinct-label count |C|.
 ```
 

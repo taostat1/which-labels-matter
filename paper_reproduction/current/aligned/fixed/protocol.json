@@ -1,0 +1,648 @@
+{
+  "attribution": {
+    "domains": [
+      {
+        "name": "image",
+        "data": "ADE20K",
+        "feature_domain": "backbone",
+        "attributes": 6,
+        "dimension": 22,
+        "candidate_A": "DINOv2-S/14",
+        "candidate_B": "DINOv2-B/14",
+        "interpolation": false,
+        "train_size": 128,
+        "test_size": 128,
+        "lam": 0.5,
+        "tolerances": [
+          0.0025,
+          0.00375,
+          0.005
+        ]
+      },
+      {
+        "name": "text",
+        "data": "GoEmotions",
+        "feature_domain": "text",
+        "attributes": 8,
+        "dimension": 20,
+        "candidate_A": "mean pooling",
+        "candidate_B": "0.9 mean pooling + 0.1 first token",
+        "interpolation": true,
+        "alpha": 0.1,
+        "train_size": 64,
+        "test_size": 128,
+        "lam": 0.125,
+        "tolerances": [
+          0.005
+        ]
+      }
+    ],
+    "paths_per_pool": 3,
+    "pools_per_domain": 20,
+    "pool_size": 4096,
+    "splits": 32,
+    "delta": 0.05,
+    "query_checks": [
+      128,
+      256,
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      16384,
+      32768
+    ],
+    "active_initial_draws": 32,
+    "active_max_draws_per_fold": 4096,
+    "inner_lambdas": [
+      0.005,
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      0.95
+    ],
+    "outer_betting_fractions": [
+      0.05,
+      0.1,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      0.95
+    ],
+    "pool_seed": 202610313101,
+    "split_seed": 202610313102,
+    "query_seed": 202610313103,
+    "public_designs": {
+      "image_00": {
+        "target": -0.004103108956275997,
+        "epsilon": 0.00010281741079607107,
+        "separate_epsilon": 0.00020011872410965637,
+        "terms": 27036183
+      },
+      "image_01": {
+        "target": -0.004146154037758008,
+        "epsilon": 0.00010081450258861776,
+        "separate_epsilon": 0.00019467750527980287,
+        "terms": 26962281
+      },
+      "image_02": {
+        "target": -0.00441420061420288,
+        "epsilon": 0.00010073393372948299,
+        "separate_epsilon": 0.0001931850047365791,
+        "terms": 27020061
+      },
+      "image_03": {
+        "target": -0.004353375189584403,
+        "epsilon": 9.996889092465132e-05,
+        "separate_epsilon": 0.00019286898310444365,
+        "terms": 27025086
+      },
+      "image_04": {
+        "target": -0.004537516420111014,
+        "epsilon": 0.00010249529422421658,
+        "separate_epsilon": 0.00020042524941130574,
+        "terms": 27064509
+      },
+      "image_05": {
+        "target": -0.004205027920925513,
+        "epsilon": 0.00010222116521548289,
+        "separate_epsilon": 0.00019941329114143722,
+        "terms": 27012471
+      },
+      "image_06": {
+        "target": -0.004507242844772073,
+        "epsilon": 0.00010091046279559843,
+        "separate_epsilon": 0.00019662846559875463,
+        "terms": 27013956
+      },
+      "image_07": {
+        "target": -0.0042557606922479715,
+        "epsilon": 0.00010499447622481973,
+        "separate_epsilon": 0.00020582056477788565,
+        "terms": 27059295
+      },
+      "image_08": {
+        "target": -0.004330126112328744,
+        "epsilon": 0.00010266696785792916,
+        "separate_epsilon": 0.00019955723867677593,
+        "terms": 27030933
+      },
+      "image_09": {
+        "target": -0.0044186747489816935,
+        "epsilon": 0.00010295194896286662,
+        "separate_epsilon": 0.0001999729255240105,
+        "terms": 27062223
+      },
+      "image_10": {
+        "target": -0.003986387185989069,
+        "epsilon": 0.00010259245732532738,
+        "separate_epsilon": 0.0002023666618936943,
+        "terms": 27031161
+      },
+      "image_11": {
+        "target": -0.004416092694085962,
+        "epsilon": 0.00010378458235103696,
+        "separate_epsilon": 0.00020416124882319006,
+        "terms": 27044139
+      },
+      "image_12": {
+        "target": -0.004634006622936091,
+        "epsilon": 0.00010068718600906903,
+        "separate_epsilon": 0.00019432531488379877,
+        "terms": 27042567
+      },
+      "image_13": {
+        "target": -0.004381289973517846,
+        "epsilon": 0.00010514738394708223,
+        "separate_epsilon": 0.00020799847605506119,
+        "terms": 27054837
+      },
+      "image_14": {
+        "target": -0.00458090992615327,
+        "epsilon": 0.00010316532232844321,
+        "separate_epsilon": 0.00020184011518313747,
+        "terms": 27065958
+      },
+      "image_15": {
+        "target": -0.0036101048253849508,
+        "epsilon": 0.00010228659042193331,
+        "separate_epsilon": 0.00019756942991487828,
+        "terms": 27049032
+      },
+      "image_16": {
+        "target": -0.0043566919238565115,
+        "epsilon": 0.00010102513070834991,
+        "separate_epsilon": 0.00019446563777866783,
+        "terms": 27085662
+      },
+      "image_17": {
+        "target": -0.0037688927165546345,
+        "epsilon": 9.98183130790929e-05,
+        "separate_epsilon": 0.0001922607156492551,
+        "terms": 27020928
+      },
+      "image_18": {
+        "target": -0.0039333719788611915,
+        "epsilon": 0.00010324689711586295,
+        "separate_epsilon": 0.00020180565576967264,
+        "terms": 27045873
+      },
+      "image_19": {
+        "target": -0.004600176422574431,
+        "epsilon": 0.00010314754376511098,
+        "separate_epsilon": 0.00020262396583184666,
+        "terms": 27067929
+      },
+      "text_00": {
+        "target": 0.003595618112480395,
+        "epsilon": 0.004368107505607181,
+        "separate_epsilon": 0.024976756755298826,
+        "terms": 20572856
+      },
+      "text_01": {
+        "target": 0.003564612583032919,
+        "epsilon": 0.004348904112130056,
+        "separate_epsilon": 0.0242329151435597,
+        "terms": 20573780
+      },
+      "text_02": {
+        "target": 0.0022275660228592703,
+        "epsilon": 0.004395779999195982,
+        "separate_epsilon": 0.02461776739265132,
+        "terms": 20539844
+      },
+      "text_03": {
+        "target": 0.0032005965794200987,
+        "epsilon": 0.004497175795260991,
+        "separate_epsilon": 0.026654835871461266,
+        "terms": 20573472
+      },
+      "text_04": {
+        "target": 0.002729899222560367,
+        "epsilon": 0.004459496135005953,
+        "separate_epsilon": 0.026477588145432544,
+        "terms": 20581076
+      },
+      "text_05": {
+        "target": 0.002480964129393911,
+        "epsilon": 0.004472622682149832,
+        "separate_epsilon": 0.025838012027117694,
+        "terms": 20563644
+      },
+      "text_06": {
+        "target": 0.0036736512424111224,
+        "epsilon": 0.004313990704955925,
+        "separate_epsilon": 0.024739538632862768,
+        "terms": 20561404
+      },
+      "text_07": {
+        "target": 0.003060194828542785,
+        "epsilon": 0.004483779752333557,
+        "separate_epsilon": 0.02668114799367903,
+        "terms": 20564784
+      },
+      "text_08": {
+        "target": 0.004040607010860377,
+        "epsilon": 0.004495305555773935,
+        "separate_epsilon": 0.026497944449705838,
+        "terms": 20577568
+      },
+      "text_09": {
+        "target": 0.0031045791204276883,
+        "epsilon": 0.004397489106105083,
+        "separate_epsilon": 0.02615141919207192,
+        "terms": 20554244
+      },
+      "text_10": {
+        "target": 0.0037541101574878714,
+        "epsilon": 0.004215031702447667,
+        "separate_epsilon": 0.023387993278045777,
+        "terms": 20563800
+      },
+      "text_11": {
+        "target": 0.0029826542638161715,
+        "epsilon": 0.004460974772452102,
+        "separate_epsilon": 0.026350334095526527,
+        "terms": 20549248
+      },
+      "text_12": {
+        "target": 0.002447846681018169,
+        "epsilon": 0.004524209900437191,
+        "separate_epsilon": 0.02685576471346671,
+        "terms": 20552232
+      },
+      "text_13": {
+        "target": 0.0029175068738399174,
+        "epsilon": 0.004316469788820056,
+        "separate_epsilon": 0.024664550644907954,
+        "terms": 20558900
+      },
+      "text_14": {
+        "target": 0.003152456583676466,
+        "epsilon": 0.004375918363760126,
+        "separate_epsilon": 0.025310807032478427,
+        "terms": 20557900
+      },
+      "text_15": {
+        "target": 0.0015995140106882105,
+        "epsilon": 0.004474070859685429,
+        "separate_epsilon": 0.02653217258279493,
+        "terms": 20562904
+      },
+      "text_16": {
+        "target": 0.002985308447372801,
+        "epsilon": 0.004288024176600522,
+        "separate_epsilon": 0.02409827297150888,
+        "terms": 20562024
+      },
+      "text_17": {
+        "target": 0.003865703798546564,
+        "epsilon": 0.004371915923137199,
+        "separate_epsilon": 0.024862585772265255,
+        "terms": 20562568
+      },
+      "text_18": {
+        "target": 0.0029353581621087317,
+        "epsilon": 0.004449447462247343,
+        "separate_epsilon": 0.025429826961981754,
+        "terms": 20553824
+      },
+      "text_19": {
+        "target": 0.0031850168037050076,
+        "epsilon": 0.004396986610308576,
+        "separate_epsilon": 0.024907148919946553,
+        "terms": 20546000
+      }
+    }
+  },
+  "coverage": {
+    "domains": [
+      {
+        "name": "image",
+        "data": "ADE20K",
+        "feature_domain": "backbone",
+        "attributes": 6,
+        "dimension": 22,
+        "candidate_A": "DINOv2-S/14",
+        "candidate_B": "DINOv2-B/14",
+        "interpolation": false,
+        "train_size": 128,
+        "test_size": 128,
+        "lam": 0.5,
+        "tolerances": [
+          0.0025,
+          0.00375,
+          0.005
+        ]
+      },
+      {
+        "name": "text",
+        "data": "GoEmotions",
+        "feature_domain": "text",
+        "attributes": 8,
+        "dimension": 20,
+        "candidate_A": "mean pooling",
+        "candidate_B": "0.9 mean pooling + 0.1 first token",
+        "interpolation": true,
+        "alpha": 0.1,
+        "train_size": 64,
+        "test_size": 128,
+        "lam": 0.125,
+        "tolerances": [
+          0.005
+        ]
+      }
+    ],
+    "paths_per_pool": 3,
+    "pools_per_domain": 20,
+    "pool_size": 4096,
+    "splits": 32,
+    "delta": 0.05,
+    "query_checks": [
+      128,
+      256,
+      512,
+      1024,
+      2048,
+      4096,
+      8192,
+      16384,
+      32768
+    ],
+    "active_initial_draws": 32,
+    "active_max_draws_per_fold": 4096,
+    "inner_lambdas": [
+      0.005,
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      0.95
+    ],
+    "outer_betting_fractions": [
+      0.05,
+      0.1,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      0.95
+    ],
+    "pool_seed": 202610313101,
+    "split_seed": 202611020401,
+    "query_seed": 202611020402,
+    "public_designs": {
+      "image_00": {
+        "target": -0.004279022237635075,
+        "epsilon": 0.00010283363862102932,
+        "separate_epsilon": 0.00020147245644317399,
+        "terms": 28299264
+      },
+      "image_01": {
+        "target": -0.0041253672608995776,
+        "epsilon": 0.00010156764358625295,
+        "separate_epsilon": 0.00019701635859775362,
+        "terms": 28299264
+      },
+      "image_02": {
+        "target": -0.004613010152334816,
+        "epsilon": 0.00010169454792416073,
+        "separate_epsilon": 0.00019699771080608215,
+        "terms": 28299264
+      },
+      "image_03": {
+        "target": -0.004497656223020341,
+        "epsilon": 0.00010202417673172898,
+        "separate_epsilon": 0.00019911428079712846,
+        "terms": 28299264
+      },
+      "image_04": {
+        "target": -0.0041748834080207325,
+        "epsilon": 0.0001005459559963675,
+        "separate_epsilon": 0.00019531699695819965,
+        "terms": 28299264
+      },
+      "image_05": {
+        "target": -0.004254720305185939,
+        "epsilon": 0.00010196386775962777,
+        "separate_epsilon": 0.0001983718219809428,
+        "terms": 28299264
+      },
+      "image_06": {
+        "target": -0.0044193002874874515,
+        "epsilon": 0.00010056244504858534,
+        "separate_epsilon": 0.00019435492406164344,
+        "terms": 28299264
+      },
+      "image_07": {
+        "target": -0.004299819547668317,
+        "epsilon": 0.00010277026514079298,
+        "separate_epsilon": 0.00019812994243802087,
+        "terms": 28299264
+      },
+      "image_08": {
+        "target": -0.00419271026713745,
+        "epsilon": 0.00010155269864625134,
+        "separate_epsilon": 0.00019668471551763633,
+        "terms": 28299264
+      },
+      "image_09": {
+        "target": -0.004468218405139831,
+        "epsilon": 0.00010307884422451575,
+        "separate_epsilon": 0.00020126214440630263,
+        "terms": 28299264
+      },
+      "image_10": {
+        "target": -0.004185996273433301,
+        "epsilon": 0.00010329436605240261,
+        "separate_epsilon": 0.00020381931363165222,
+        "terms": 28299264
+      },
+      "image_11": {
+        "target": -0.004375155083238744,
+        "epsilon": 0.00010292795549965786,
+        "separate_epsilon": 0.00020194423158167117,
+        "terms": 28299264
+      },
+      "image_12": {
+        "target": -0.004577136186143454,
+        "epsilon": 0.0001020274257209734,
+        "separate_epsilon": 0.00019884588906369626,
+        "terms": 28299264
+      },
+      "image_13": {
+        "target": -0.004442454531751235,
+        "epsilon": 0.00010315878556670547,
+        "separate_epsilon": 0.00020101320420434765,
+        "terms": 28299264
+      },
+      "image_14": {
+        "target": -0.004308928806675553,
+        "epsilon": 0.00010231007602796885,
+        "separate_epsilon": 0.00019961678095174534,
+        "terms": 28299264
+      },
+      "image_15": {
+        "target": -0.003478878654354752,
+        "epsilon": 0.00010287970521857247,
+        "separate_epsilon": 0.00020111050891103853,
+        "terms": 28299264
+      },
+      "image_16": {
+        "target": -0.004417662920669405,
+        "epsilon": 0.00010258701005256192,
+        "separate_epsilon": 0.000199169634359872,
+        "terms": 28299264
+      },
+      "image_17": {
+        "target": -0.0036674017747938756,
+        "epsilon": 0.00010036074636115288,
+        "separate_epsilon": 0.0001945899203891257,
+        "terms": 28299264
+      },
+      "image_18": {
+        "target": -0.004499731223322492,
+        "epsilon": 0.0001039019884335448,
+        "separate_epsilon": 0.00020407662673837303,
+        "terms": 28299264
+      },
+      "image_19": {
+        "target": -0.00434815479081687,
+        "epsilon": 0.00010255102471903257,
+        "separate_epsilon": 0.0002006823665442143,
+        "terms": 28299264
+      },
+      "text_00": {
+        "target": 0.0032185711270231315,
+        "epsilon": 0.0043829090219930054,
+        "separate_epsilon": 0.025396609951673817,
+        "terms": 20963328
+      },
+      "text_01": {
+        "target": 0.0034404500090762687,
+        "epsilon": 0.00436014680901349,
+        "separate_epsilon": 0.0245468577304064,
+        "terms": 20963328
+      },
+      "text_02": {
+        "target": 0.0025467537771557136,
+        "epsilon": 0.00439464947114572,
+        "separate_epsilon": 0.024632601955088988,
+        "terms": 20963328
+      },
+      "text_03": {
+        "target": 0.0033522764840076998,
+        "epsilon": 0.004312557791965292,
+        "separate_epsilon": 0.02345791141440684,
+        "terms": 20963328
+      },
+      "text_04": {
+        "target": 0.0027802040748793264,
+        "epsilon": 0.004425974361017385,
+        "separate_epsilon": 0.02562370118384112,
+        "terms": 20963328
+      },
+      "text_05": {
+        "target": 0.0027678109022835247,
+        "epsilon": 0.004443400991441223,
+        "separate_epsilon": 0.02502667817320657,
+        "terms": 20963328
+      },
+      "text_06": {
+        "target": 0.003587954918323026,
+        "epsilon": 0.004389773813667324,
+        "separate_epsilon": 0.02556782994209245,
+        "terms": 20963328
+      },
+      "text_07": {
+        "target": 0.0031267316041435136,
+        "epsilon": 0.004390565112955217,
+        "separate_epsilon": 0.02527009128038779,
+        "terms": 20963328
+      },
+      "text_08": {
+        "target": 0.003417578411290107,
+        "epsilon": 0.004366648670014584,
+        "separate_epsilon": 0.023858685002880294,
+        "terms": 20963328
+      },
+      "text_09": {
+        "target": 0.0029150724889541978,
+        "epsilon": 0.004409756030215529,
+        "separate_epsilon": 0.02567324158944128,
+        "terms": 20963328
+      },
+      "text_10": {
+        "target": 0.003251923985396813,
+        "epsilon": 0.004263005125506586,
+        "separate_epsilon": 0.023391099243469996,
+        "terms": 20963328
+      },
+      "text_11": {
+        "target": 0.0026722886713866113,
+        "epsilon": 0.00434851908718289,
+        "separate_epsilon": 0.025273801250437142,
+        "terms": 20963328
+      },
+      "text_12": {
+        "target": 0.002648452740716987,
+        "epsilon": 0.004456266182389493,
+        "separate_epsilon": 0.025642083541941172,
+        "terms": 20963328
+      },
+      "text_13": {
+        "target": 0.0032919588218929922,
+        "epsilon": 0.004353085066191123,
+        "separate_epsilon": 0.025338730953201695,
+        "terms": 20963328
+      },
+      "text_14": {
+        "target": 0.0035270464018103825,
+        "epsilon": 0.004298445187667501,
+        "separate_epsilon": 0.023559802484502644,
+        "terms": 20963328
+      },
+      "text_15": {
+        "target": 0.0018642104599542117,
+        "epsilon": 0.0045203026622356,
+        "separate_epsilon": 0.026574665736361403,
+        "terms": 20963328
+      },
+      "text_16": {
+        "target": 0.003128673004634569,
+        "epsilon": 0.004318319418995539,
+        "separate_epsilon": 0.024191798024895426,
+        "terms": 20963328
+      },
+      "text_17": {
+        "target": 0.0040116268170043295,
+        "epsilon": 0.004338154885308499,
+        "separate_epsilon": 0.024096908216961158,
+        "terms": 20963328
+      },
+      "text_18": {
+        "target": 0.002889101333074958,
+        "epsilon": 0.004517211295508311,
+        "separate_epsilon": 0.026393969100985595,
+        "terms": 20963328
+      },
+      "text_19": {
+        "target": 0.0030116609567954165,
+        "epsilon": 0.004431163090217131,
+        "separate_epsilon": 0.025033944336306426,
+        "terms": 20963328
+      }
+    }
+  }
+}

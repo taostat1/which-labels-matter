@@ -1,5 +1,5 @@
 {
-  "version": "11.17",
+  "version": "11.25",
   "records": "saved path-level records, not fitted summary values",
   "hash_convention": "SHA256; normalize CRLF to LF for text, exact bytes for gzip",
   "files": {
@@ -13,7 +13,21 @@
     "data/population_protocol.json": "a90237c98bd53713bb9c7fa4e187284f310bfa9bd3c4aa5c7a5c528ae193d3e4",
     "data/population_zero.json.gz": "3395bd42951ded8b3426856ebeddcef5ac0635e59dc001f426fb935965b97f21",
     "data/reanchor_screen.json": "f4a4c96f85e4798230ff811b433b69a959f6883c2d72b183df0479aa7ca497cf",
-    "data/risk_audit.json": "26677d94ae98ecad89fcfe68c0d49783040241e69e7e7daac9a9ddddeda64df5"
+    "data/risk_audit.json": "26677d94ae98ecad89fcfe68c0d49783040241e69e7e7daac9a9ddddeda64df5",
+    "aligned/check_query_first.py": "b5963ca5248d12289de8101c79e1d37d745c06f03c62a5ad95f12ed6bd32b9bf",
+    "aligned/fixed/protocol.json": "385f2159aed67b33ed395b7d2936092df0fcf6786d06c7f3b633f7356034aa5f",
+    "aligned/full_coverage_table.tex": "eb80457698fd6b2f63bde22cab94ae3d6c7d51650e30b7442b503686b411b32f",
+    "aligned/initialization.py": "9ca4452f0ba8aa720fbfe001bc349675b575eeab4a6e62f4c4f2a3954ba5bfce",
+    "aligned/initialization_paths.csv.gz": "3bf2249846a0583bee7debebe8ce4f58352474dd921643e5576b41331b621624",
+    "aligned/interval_control.csv": "2d441bb70a48a1aa8e666049741b9d3737cc8af9335d77780a1ce5e727cd167d",
+    "aligned/paths.csv.gz": "8ca936d0c1ee9401b083491f524648e7f804fafbaa1469591e3fc29fb193bd6b",
+    "aligned/population/paths.csv.gz": "3d4fcaef12eb1cc192734b8771b800c7b43748a8b4c199196d7ce6f74766c4bc",
+    "aligned/population/query_first_history.json.gz": "8cc0ffe8f1655f92ada4f12e56a96fca12f6570ddac464ca7dd44ed39db33703",
+    "aligned/protocols/fixed.md": "6f8df3a3397e1151ff4babe5c76a2f3b76d3075613d4171024738b923c36aa62",
+    "aligned/protocols/population.md": "2170722e1718bbc2db23cc96073470fc5d162225e6d3b2bb8bf1a57318eafdf8",
+    "aligned/protocols/simulation.md": "c9a708a4b0072794ebb6a1d6b1aa1e31bfd6349429f3e4b3a656aed995d48285",
+    "aligned/render.py": "960670e79af9e44266d80467762e7cd1ca66366de4e60ded9171c512335b748a",
+    "aligned/report_checks.py": "457190ffd1f2387f49fd3715a97a1cc99de9cdf19c31c6a4ac7865ec18dae1fe"
   },
   "reference_sources": {
     "logistic_active_cv_budget_20261030/active_core.py": "73c3768540cedebe8197148a45ac66d6b4b25d63a89b1e20ee244164ac4fa605",
@@ -41,7 +55,7 @@
     "logistic_population_betting_20261115/experiment.py": "faba334a282546fc564aa3856c46c86317fd37ec004bb645bd598e0af0be28f6",
     "logistic_population_betting_20261115/intervals.py": "6c9b9f49d069a1ba0e6d91616f5f5bf670fc521aa0ad49ecc9950c351faedbb3",
     "logistic_population_betting_20261115/validate.py": "24a252d8b7ed761e90b0379878fc4af41d9d295e61e22a7222cb099bb8e37b55",
-    "logistic_population_betting_revision_20261115/run.py": "7142ef3581fc6cc83fb8ecd5d95d27c25d0492b1ffd99baed78beb9be02186e4",
+    "logistic_population_betting_revision_20261115/run.py": "cc00f45a070356c84e24f2e24ba326cbbc671558f3adc95e62bfb2cf04a5419b",
     "logistic_population_betting_revision_20261115/validate_revision.py": "47512b700276e5d156173a4081cd5c0584da99bcfaf1944445f3d28fa65949af",
     "logistic_population_cache_only_20261114/incremental.py": "654f0bb4b0823f354caece41f3839c34c721c73635dbc7921d842b47774ebb63",
     "logistic_population_comparators_20261114/run.py": "8d5eda987533e2ee6b5742dfcdd399d546a8ebefa449e634f90bccb7f1b3f0c1",
@@ -73,7 +87,7 @@
     "logistic_shufflesplit_20261030/cv_core.py": "f040dcf2eccc144ee43dfa1a8c96e32fa6a2f728338a6e8c650e7dbf095f8a24",
     "logistic_shufflesplit_20261030/diagnose.py": "56d3ab88c7b754064db6c63d397ff30f41362f642f5179a73ae0f1e2e83f65e4",
     "logistic_submission_audit_20261117/baselines/run.py": "791f2ff79e24d4cac9eb0c69ea21219a30318b11775aa0996300f11056543d4a",
-    "logistic_submission_audit_20261117/matched_population.py": "166c464106ce4b3118a13e63bfe4c58885cf9a385962120a5fa1501e2d89a43c",
+    "logistic_submission_audit_20261117/matched_population.py": "f263c4b3c84ec747b07172774fc39b3787b72f29904385bfed5f56dc6442a7fa",
     "shared_logistic_full_20261029/analyze.py": "9a1c371ddb8c1aa22b5ad184636f31529c7d899f8b2733f55c26dd76db57080b",
     "shared_logistic_full_20261029/audit.py": "e11052240fe3c99fcadf77b0a9c28835bdb011806c1b9d0bc33f51073f29813e",
     "shared_logistic_full_20261029/audit_label_protocol.py": "c81f5c66267f1506fb2feee6c68733c461da88409be949386e3392c5c6d75e83",
@@ -93,6 +107,10 @@
     "shared_logistic_full_20261029/study.py": "06e5662d3d1d4a0bba1d2fc0b904067b34ec82a4162ed22501e389ac9bf68c86",
     "shared_logistic_full_20261029/verify.py": "68997baeaffb3a486b5884ba7e7782c4c8f085b659009e518d5dcac1734d5ffa",
     "shared_logistic_full_20261029/verify_label_theory.py": "9e1da26f446c0a386c2b555ebc1b5e5e93e41d319b1476d2d11b8a327d65d77b",
-    "shared_logistic_full_20261029/verify_planner_revision.py": "e9c3b34a647dfe5e7034feda0188069f55a277af0f29d203af06b2f8e7a4ba2f"
+    "shared_logistic_full_20261029/verify_planner_revision.py": "e9c3b34a647dfe5e7034feda0188069f55a277af0f29d203af06b2f8e7a4ba2f",
+    "population_stopping.py": "423f05117b3d333a7b3f266e18fd973a30fdb24013b7401095282937773f5af4",
+    "aligned_20261121/population/kernel.py": "41a3c264b36b8731b165ae4ffa44ae3dcd3916b31b0d1c52c43b63fa1339acb8",
+    "aligned_20261121/population/mom.py": "3a16e5e1e62f865955e8a38dc8e31c8f3aed85384d98805b95623ea45ee2701b",
+    "aligned_20261121/population/replay_separate.py": "b49c5ecfe46942b9a28bb4f547b0aa0b2d54678cb4d94fcc4ee41c8ed978fced"
   }
 }

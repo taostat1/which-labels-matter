@@ -1,4 +1,4 @@
-\begin{algorithm}[t]
+\begin{algorithm}[H]
 \caption{Label-Efficient Comparison (LEC) for a Fixed CV Plan}\label{alg:full}
 \small
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
@@ -8,21 +8,21 @@
 \Statex\textbf{Stage 1: Label-free Preparation}
 \State \textbf{Initialize:} set $\theta_{j0}\gets0$ for $j=A,B$ and $\mathcal C\gets\varnothing$.
 \State \textbf{Approximation:} obtain $T=c_0+\sum_k a_k\psi_k$ and its public bound $\varepsilon\gets\varepsilon_0$.
-\State \textbf{Public interval:} $S_1\gets\sum_k|a_k|$; $I\gets[c_0-S_1-\varepsilon,c_0+S_1+\varepsilon]$.
+\State \textbf{Public interval:} set $S_1\gets\sum_k|a_k|$ and $I\gets[c_0-S_1-\varepsilon,c_0+S_1+\varepsilon]$.
 \State \textbf{Check:} proceed to Stage 3 if $\sup I\le g$, $\inf I\ge-g$, or $S_1=0$.
 \State \textbf{Sampling law:} set $p_k\gets|a_k|/S_1$.
 \Statex\textbf{Stage 2: Sequential Label Queries}
 \For{each inspection $N\in\{N_1,\ldots,N_J\}$}
- \State \textbf{Query:} extend independent $K_i\sim p$ draws to $N$; buy uncached labels in $\psi_{K_i}$.
- \State \textbf{Count:} $C_N\gets\sum_{i=1}^N\mathbf1\{\operatorname{sign}(a_{K_i})\psi_{K_i}=1\}$.
- \State \textbf{CP limits:} compute $(\ell_N,u_N)$ by \eqref{eq:cp_limits}, with error probability $\delta/J$.
+ \State \textbf{Query:} extend the independent draws from $p$ to $N$, buying missing labels.
+ \State \textbf{Count:} $C_N\gets\sum_{i=1}^N B_i$ using all draws in \eqref{eq:bernoulli_query}.
+ \State \textbf{CP limits:} set $[\ell_N,u_N]\gets\operatorname{CP}(C_N,N;\delta/J)$.
  \State \textbf{Refine:} if widening by $\varepsilon$ blocks a supported choice, set $\varepsilon\gets\min\{\varepsilon,\varepsilon_{\rm loc}(\mathcal C)\}$.
  \State \textbf{Risk interval:} $I\gets[c_0+S_1(2\ell_N-1)-\varepsilon,c_0+S_1(2u_N-1)+\varepsilon]$.
  \State \textbf{Stop:} if $\sup I\le g$ or $\inf I\ge-g$, break.
 \EndFor
 \Statex\textbf{Stage 3: Selection and Final Training}
 \State If unresolved, complete CV through $\mathcal C$ and obtain $I$ with numerical radius $\le g$.
-\State \textbf{Select:} $j\gets A$ if $\sup I\le g$; otherwise $j\gets B$.
+\State \textbf{Select:} choose $j=A$ if $\sup I\le g$ and $j=B$ otherwise.
 \State Buy missing final-subset labels through $\mathcal C$ and fit $j$ on that subset.
 \Ensure Selected candidate $j$, supporting interval $I$, and total distinct labels $|\mathcal C|$
 \end{algorithmic}

@@ -2,6 +2,8 @@
 
 Three independent agent reviews examined the cache proofs, population interval proofs, and nonempty matching conditions. They used the manuscript and code directly. Numerical checks supplement these analytic reviews; they do not establish a universal theorem by testing alone.
 
+The 11.25 query-first rule changes when Algorithm 2 invokes refits. Every unresolved public check enters the scheduled query batches. The betting interval covers simultaneously over those batches and each finite-pool cache bound covers every compatible completion. The same error allocations therefore apply when refits follow an unresolved final inspection.
+
 ## Clarifications included in the manuscript
 
 - **A.2:** cache bounds cover every compatible completion. Taking their running minimum is therefore valid after adaptive queries without allocating another failure probability.
