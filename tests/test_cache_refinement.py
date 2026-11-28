@@ -5,6 +5,7 @@ import numpy as np
 from whichlabels import prepare_comparison, compare, audit_score, LabelCache, ArrayLabelProvider
 from whichlabels._cache_bounds import approximation_bound
 from whichlabels._moments import audit_polynomial
+from whichlabels._prediction_bound import split_allowances
 from whichlabels.demo import synthetic_problem
 
 
@@ -17,7 +18,8 @@ class CacheRefinementChecks(unittest.TestCase):
         plan = [(np.array([0, 1, 2]), np.array([3, 4, 5]))]
         p = prepare_comparison(a, b, plan, .1)
         cache = np.array([1., np.nan, 0., np.nan, 1., np.nan])
-        paired = min(p.epsilon, approximation_bound(p, cache))
+        prediction = min(p.epsilon, split_allowances(a, b, plan, .1, cache).mean())
+        paired = min(p.legacy_paired_epsilon, approximation_bound(p, cache))
         separate = min(p.separate_epsilon, approximation_bound(p, cache, separate=True))
         for bits in itertools.product([0., 1.], repeat=3):
             y = cache.copy()
@@ -26,6 +28,7 @@ class CacheRefinementChecks(unittest.TestCase):
             exact = audit_score(p, y)
             approx = audit_polynomial(p.polynomial, y, plan, a, b, .1)['polynomial_delta']
             error = abs(exact['difference']-approx)
+            self.assertLessEqual(error, prediction+exact['numerical_radius'])
             self.assertLessEqual(error, paired+exact['numerical_radius'])
             self.assertLessEqual(error, separate+exact['numerical_radius'])
 

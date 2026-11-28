@@ -2,7 +2,7 @@
 
 - The public API implements the zero-anchor **fixed finite CV** algorithm. It does not treat a finite-plan confidence interval as a population-risk interval.
 - Responses are binary. The API uses mean binary cross-entropy and a strictly positive L2 penalty on every coefficient.
-- Both designs use the same objects and attributes in the same order. Each feature row has norm at most one. Candidates with different coefficient dimensions use separate error bounds. Equal widths enable the paired bound in common coordinates.
+- Both designs use the same objects and attributes in the same order. Each feature row has norm at most one. The default `error_bound='prediction'` uses the paired certificate in prediction space for any feature widths. Explicit `'paired'` and `'separate'` settings retain the November 25 controls.
 - The plan, inspection schedule, and final training subset are fixed before label acquisition. Within each split, training and evaluation subsets are disjoint. Overlap across different splits is allowed.
 - `delta` applies to one comparison. Simultaneous decisions across multiple feature pairs or tolerances need a joint error allocation.
 - Conditional on the fixed pool labels, the term draws are independent. The same object or attribute can appear in many terms. The cache reuses the label but does not remove the draw from the estimator.
@@ -11,7 +11,7 @@
 - The approximation error bound remains in every sampling interval. The acquired-label cache can reduce that bound uniformly over all compatible label completions. This does not change the zero anchor or risk polynomial. A low sampling variance alone does not remove approximation error.
 - The implementation checks the public range before sampling. It does not implement the experimental remaining-contribution sampler or a post-query deterministic cache stopping rule.
 - The CP probability endpoints receive `2e-12` outward padding. A CDF/grid check bounds drift from ideal coefficient sampling. The scalar `2e-9` is the numerical guard used in the experiments. The public wrapper also checks fitted gradients. Strong convexity bounds parameter error by `gradient_norm / lambda`; normalized evaluation rows bound the resulting BCE error. A failed numerical check raises an error rather than returning an unsupported decision.
-- The public API requires `g > 1e-8`, which leaves room for this numerical guard. Smaller tolerances require revisiting numerical precision.
+- The public API requires `g > 1e-8`, including after conversion from `relative_drop`. This leaves room for the numerical guard. Specify exactly one tolerance before querying.
 - The polynomial stores potentially many label pairs. With `B` splits, `n r` training rows and `q r` evaluation rows per split, construction can involve order `B[(nr)^2 + (nr)(qr)]` entries before duplicate aggregation. The demonstration uses small fixed training budgets.
 - Label count and computation time are different resources. This implementation reports both. It does not assign artificial annotation prices.
 - The code is a research implementation. Standard floating-point arithmetic is used; the reported intervals are not interval-arithmetic certificates for every floating-point operation.

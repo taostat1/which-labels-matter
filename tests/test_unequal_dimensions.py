@@ -5,8 +5,8 @@ import unittest
 import numpy as np
 
 from whichlabels import ArrayLabelProvider, LabelCache, audit_score, compare, prepare_comparison
-from whichlabels._cache_bounds import approximation_bound
 from whichlabels._moments import audit_polynomial
+from whichlabels._prediction_bound import bound, split_allowances
 
 
 class UnequalDimensionChecks(unittest.TestCase):
@@ -46,16 +46,37 @@ class UnequalDimensionChecks(unittest.TestCase):
                 elif branch == 'exact_cv_fallback':
                     self.assertEqual(result['total_labels'], self.y.size)
 
-    def test_default_queries_and_refines_with_separate_bounds(self):
-        settings = dict(tolerance=.05, inspections=(4, 16, 64, 256, 1024, 4096, 16384))
-        default = self.compare(**settings)
-        separate = self.compare(error_bound='separate', **settings)
-        self.assertEqual(self.prepared.epsilon, self.prepared.separate_epsilon)
+    def test_default_uses_prediction_bounds_for_public_and_cached_signs(self):
+        def split_mean(signs):
+            return np.mean([bound(self.a[tr], self.b[tr], self.a[ev], self.b[ev], .1,
+                                  signs[tr].ravel()) for tr, ev in self.plan])
+
+        signs = np.full(self.y.shape, np.nan)
+        expected = split_mean(signs)
+        default = self.compare(tolerance=.02, inspections=(4, 16, 64, 256, 1024, 4096))
+        self.assertAlmostEqual(default['initial_approximation_error_bound'], expected)
         self.assertEqual(default['branch'], 'selective_moments')
         self.assertTrue(any(row['refined'] for row in default['history']))
-        self.assertLess(default['approximation_error_bound'], self.prepared.epsilon)
+        rng = np.random.default_rng(13)
+        previous = 0
+        for row in default['history']:
+            draws = rng.random(row['draws'] - previous)
+            indices = np.searchsorted(self.prepared.proposal['cdf'], draws, side='right')
+            for side in ('left', 'right'):
+                keys = self.prepared.polynomial[side][indices]
+                signs.ravel()[keys] = 2 * self.y.ravel()[keys] - 1
+            if row['refined']:
+                expected = min(expected, split_mean(signs))
+            self.assertAlmostEqual(row['approximation_radius'], expected)
+            previous = row['draws']
+        self.assertLess(expected, self.prepared.epsilon)
+
+    def test_explicit_historical_controls_still_agree_at_unequal_widths(self):
+        settings = dict(tolerance=.05, inspections=(4, 16, 64, 256, 1024, 4096, 16384))
+        paired = self.compare(error_bound='paired', **settings)
+        separate = self.compare(error_bound='separate', **settings)
         for key in ['history', 'choice', 'interval', 'stage_labels', 'final_parameter']:
-            self.assertEqual(default[key], separate[key])
+            self.assertEqual(paired[key], separate[key])
 
     def test_bounds_and_polynomial_over_every_binary_labeling(self):
         rng = np.random.default_rng(24)
@@ -67,7 +88,7 @@ class UnequalDimensionChecks(unittest.TestCase):
         penalty = .25
         prepared = prepare_comparison(a, b, plan, penalty)
         cache = np.array([1., np.nan, 0., np.nan])
-        local = approximation_bound(prepared, cache)
+        local = split_allowances(a, b, plan, penalty, cache).mean()
         for bits in itertools.product((0., 1.), repeat=4):
             labels = np.array(bits)[:, None]
             audit = audit_score(prepared, labels)

@@ -1,6 +1,6 @@
 # 仓库维护说明
 
-当前论文标题为 **Label-Efficient Comparison of Shared Logistic Models with Finite-Sample Guarantees**，算法简称 **LEC**。公开包版本为 0.4.0。
+当前论文标题为 **Label-Efficient Comparison of Shared Logistic Models with Finite-Sample Guarantees**，算法简称 **LEC**。固定 CV 接口版本为 0.5.0。
 
 这个文件夹可以直接作为仓库根目录。它与 Overleaf 压缩包分开：这里主要放算法、演示、测试和复现入口，不放个人投稿信和大体积数据。
 
@@ -38,4 +38,4 @@ python -m unittest discover -s tests -v
 - `.gitignore` 已排除虚拟环境、特征缓存、标签数组和新运行结果。
 - 不要把投稿信、作者私人联系记录或本地完整研究文件夹一起上传。
 
-固定 CV 接口支持不同特征维数的候选，使用累计 CP 区间、已购标签收紧的误差界和完整标签记账。Algorithm 2 主流程同样从零锚点启动，采用公开误差界、缓存收紧及累计有界均值投注区间。当前图表与审计复现入口为 `paper_reproduction/current/reproduce.py`。
+11 月 28 日版固定 CV 接口支持不同特征维数的候选，使用累计 CP 区间、已购标签收紧的预测空间误差界和完整标签记账。11 月 25 日版图表与审计的归档复现入口为 `paper_reproduction/current/reproduce.py`。

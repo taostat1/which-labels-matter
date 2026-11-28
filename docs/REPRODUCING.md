@@ -1,6 +1,6 @@
 # Reproduce the 11.25 manuscript
 
-The current entry point is `paper_reproduction/current/reproduce.py`. It requires no external ZIP or raw data to reconstruct **Tables 1–8, Figure 3, and the reported audit summaries** from committed path-level records.
+The November 25 reporter is `paper_reproduction/current/reproduce.py`. It reconstructs **Tables 1–8, Figure 3, and the reported audit summaries** from committed path-level records. For new comparisons with the November 28 prediction bound and the relative-score tolerance, use the [fixed-plan API](ALGORITHM.md).
 
 ```bash
 python -m pip install -e ".[reproduce]"

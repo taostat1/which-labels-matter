@@ -4,26 +4,31 @@
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
 \begin{algorithmic}[1]
-\Require Public designs, CV plan $\mathcal V$, $\lambda,g,\delta$, inspections $N_1<\cdots<N_J$, final subset
-\Statex\textbf{Stage 1: Label-free Preparation}
-\State \textbf{Initialize:} set $\theta_{j0}\gets0$ for $j=A,B$ and $\mathcal C\gets\varnothing$.
-\State \textbf{Approximation:} obtain $T=c_0+\sum_k a_k\psi_k$ and its public bound $\varepsilon\gets\varepsilon_0$.
-\State \textbf{Public interval:} set $S_1\gets\sum_k|a_k|$ and $I\gets[c_0-S_1-\varepsilon,c_0+S_1+\varepsilon]$.
-\State \textbf{Check:} proceed to Stage 3 if $\sup I\le g$, $\inf I\ge-g$, or $S_1=0$.
-\State \textbf{Sampling law:} set $p_k\gets|a_k|/S_1$.
-\Statex\textbf{Stage 2: Sequential Label Queries}
-\For{each inspection $N\in\{N_1,\ldots,N_J\}$}
- \State \textbf{Query:} extend the independent draws from $p$ to $N$, buying missing labels.
- \State \textbf{Count:} $C_N\gets\sum_{i=1}^N B_i$ using all draws in \eqref{eq:bernoulli_query}.
- \State \textbf{CP limits:} set $[\ell_N,u_N]\gets\operatorname{CP}(C_N,N;\delta/J)$.
- \State \textbf{Refine:} if widening by $\varepsilon$ blocks a supported choice, set $\varepsilon\gets\min\{\varepsilon,\varepsilon_{\rm loc}(\mathcal C)\}$.
- \State \textbf{Risk interval:} $I\gets[c_0+S_1(2\ell_N-1)-\varepsilon,c_0+S_1(2u_N-1)+\varepsilon]$.
- \State \textbf{Stop:} if $\sup I\le g$ or $\inf I\ge-g$, break.
+\Require \begin{tabular}[t]{@{}l@{}}
+Public feature maps $Z_A,Z_B$ and CV plan $\mathcal V=\{(I_b,J_b)\}_{b=1}^B$.\\
+Training sets $I_b$ of size $n$, validation sets $J_b$, final label indices $\mathcal F$, and ridge penalty $\lambda$.\\
+Excess-loss tolerance $g$, error probability $\delta$, and cumulative draw counts $N_1<\cdots<N_J$.
+\end{tabular}
+\Statex\textbf{Decision:} $\Delta_{\mathcal V}$ is $A$'s loss minus $B$'s. Interval $I$ supports $A$ if $\sup I\le g$ and $B$ if $\inf I\ge-g$.
+\Statex\textbf{Stage 1: Label-free preparation}
+\State \textbf{Initialize:} Start both Newton steps at zero and set the object--attribute cache $\mathcal C\gets\varnothing$.
+\State \textbf{Approximate:} Form $T=c_0+\sum_k a_k\psi_k$ from public weights $a_k$ and signed label products $\psi_k$.
+\State \textbf{Bound:} Set $\varepsilon_0\gets B^{-1}\sum_b B_b(\varnothing)$ for $|\Delta_{\mathcal V}-T|$ and $S_1\gets\sum_k|a_k|$.
+\State \textbf{Check:} Set $I_0\gets[c_0-S_1-\varepsilon_0,c_0+S_1+\varepsilon_0]$. If it supports a rule or $S_1=0$, go to Stage 3.
+\Statex\textbf{Stage 2: Sequential label queries}
+\For{each inspection $N=N_1,\ldots,N_J$ with previous count $N^-$, initially zero}
+  \State \textbf{Sample:} Draw independent product indices with probabilities $p_k=|a_k|/S_1$ through draw $N$.
+  \State \textbf{Query:} Buy missing labels, store their signs in $\mathcal C_N$, and carry forward $\varepsilon_N\gets\varepsilon_{N^-}$.
+  \State \textbf{Count:} Let $C_N$ count the positive weighted products $a_k\psi_k$ among all $N$ draws.
+  \State \textbf{Estimate:} Compute the Clopper--Pearson limits $[\ell_N,u_N]\gets\operatorname{CP}(C_N,N;\delta/J)$.
+  \State \textbf{Refine:} If only $\varepsilon_N$ prevents a choice, set $\varepsilon_N\gets\min\{\varepsilon_{N^-},\,B^{-1}\sum_b B_b(\mathcal C_N)\}$.
+  \State \textbf{Widen:} Set $I_N\gets[c_0+S_1(2\ell_N-1)-\varepsilon_N,\ c_0+S_1(2u_N-1)+\varepsilon_N]$.
+  \State \textbf{Stop:} If $I_N$ supports a rule, break.
 \EndFor
-\Statex\textbf{Stage 3: Selection and Final Training}
-\State If unresolved, complete CV through $\mathcal C$ and obtain $I$ with numerical radius $\le g$.
-\State \textbf{Select:} choose $j=A$ if $\sup I\le g$ and $j=B$ otherwise.
-\State Buy missing final-subset labels through $\mathcal C$ and fit $j$ on that subset.
-\Ensure Selected candidate $j$, supporting interval $I$, and total distinct labels $|\mathcal C|$
+\Statex\textbf{Stage 3: Selection and final training}
+\State \textbf{Complete:} If undecided, obtain $I$ from exact CV with label reuse and numerical radius $\le g$.
+\State \textbf{Select:} Choose a rule $j$ supported by the latest $I$, taking $A$ if both qualify.
+\State \textbf{Fit:} Buy missing labels in $\mathcal F$ and fit $j$ on the prescribed $n$ objects.
+\Ensure Selected rule $j$, supporting interval $I$, and distinct labels purchased $|\mathcal C|$.
 \end{algorithmic}
 \end{algorithm}

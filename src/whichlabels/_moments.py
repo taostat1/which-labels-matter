@@ -2,7 +2,7 @@
 import time
 import numpy as np
 from scipy import sparse
-from ._bounds import bound
+from ._prediction_bound import split_allowances
 
 def decision(lo,hi,g):return 'A' if hi<=g else 'B' if lo>=-g else 'unresolved'
 
@@ -10,14 +10,15 @@ def decision(lo,hi,g):return 'A' if hi<=g else 'B' if lo>=-g else 'unresolved'
 def polynomial(a,b,splits,lam):
     """Exact sparse polynomial of the zero-anchor one-step quadratic CV score."""
     tick=time.perf_counter();p=a.shape[0]*a.shape[1];r=a.shape[1]
-    row_parts=[];col_parts=[];value_parts=[];constant=0.;bounds=[]
+    row_parts=[];col_parts=[];value_parts=[];constant=0.
+    bounds = split_allowances(a, b, splits, lam)
     surrogate_parameters=[]
     for tr,te in splits:
         trainkeys=(tr[:,None]*r+np.arange(r)).ravel()
         testkeys=(te[:,None]*r+np.arange(r)).ravel()
         u,v=np.triu_indices(len(trainkeys),1)
         quad=np.zeros((len(trainkeys),len(trainkeys)));cross=np.zeros((len(testkeys),len(trainkeys)))
-        allowance=0.;ls=[]
+        ls=[]
         for sign,z in ((1.,a),(-1.,b)):
             d = z.shape[-1]
             zt=z[tr].reshape(-1,d);zq=z[te].reshape(-1,d)
@@ -26,14 +27,14 @@ def polynomial(a,b,splits,lam):
             C=zq.T@zq/(4*len(zq))
             quad+=sign*.5*(L.T@C@L)
             cross-=sign*(zq@L)/(2*len(zq))
-            allowance+=bound(z[tr],z[te],lam)['epsilon'];ls.append(L)
+            ls.append(L)
         constant+=float(np.trace(quad))/len(splits)
         qvalues=(quad[u,v]+quad[v,u])/len(splits)
         row_parts.append(np.minimum(trainkeys[u],trainkeys[v]).astype(np.int32))
         col_parts.append(np.maximum(trainkeys[u],trainkeys[v]).astype(np.int32));value_parts.append(qvalues)
         left=np.repeat(testkeys,len(trainkeys));right=np.tile(trainkeys,len(testkeys))
         row_parts.append(np.minimum(left,right).astype(np.int32));col_parts.append(np.maximum(left,right).astype(np.int32))
-        value_parts.append(cross.ravel()/len(splits));bounds.append(allowance);surrogate_parameters.append(ls)
+        value_parts.append(cross.ravel()/len(splits));surrogate_parameters.append(ls)
     mat=sparse.coo_matrix((np.concatenate(value_parts),(np.concatenate(row_parts),np.concatenate(col_parts))),shape=(p,p)).tocsr()
     mat.sum_duplicates();mat.eliminate_zeros();co=mat.tocoo()
     result=dict(constant=constant,left=co.row.copy(),right=co.col.copy(),coef=co.data.copy(),

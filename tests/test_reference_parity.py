@@ -31,7 +31,7 @@ class ReferenceParity(unittest.TestCase):
         proposal=self.ref.base.query_plan(old,self.ref.zero_helper(len(a),4),4)
         for key in ['left','right','coef']:
             np.testing.assert_allclose(prepared.polynomial[key],old[key],rtol=0,atol=1e-14)
-        self.assertAlmostEqual(prepared.epsilon,old['epsilon'],14)
+        self.assertAlmostEqual(prepared.legacy_paired_epsilon,old['epsilon'],14)
         np.testing.assert_allclose(prepared.proposal['q'],proposal['q'],rtol=0,atol=1e-15)
         current_cache=LabelCache(len(a),4,ArrayLabelProvider(y))
         reference_cache=self.ref.base.Oracle(y)

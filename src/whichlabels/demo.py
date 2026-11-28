@@ -36,8 +36,13 @@ def main():
     parser.add_argument('--objects', type=int, default=1024)
     parser.add_argument('--splits', type=int, default=8)
     parser.add_argument('--penalty', type=float, default=.125)
-    parser.add_argument('--tolerance', type=float, default=.01)
+    tolerances = parser.add_mutually_exclusive_group()
+    tolerances.add_argument('--tolerance', type=float, help='excess log loss (default: 0.01)')
+    tolerances.add_argument('--relative-drop', type=float,
+                            help='allowed fractional decrease in the geometric-mean score')
     args = parser.parse_args()
+    if args.tolerance is None and args.relative_drop is None:
+        args.tolerance = .01
     if (args.output / 'results.json').exists():
         parser.error('output contains a completed run; select a fresh --output directory')
     args.output.mkdir(parents=True, exist_ok=True)
@@ -59,7 +64,8 @@ def main():
     for method in ['selective','active_cv']:
         progress('Running '+method)
         cache=LabelCache(len(a),a.shape[1],ArrayLabelProvider(y))
-        row=compare(prepared,cache,final,tolerance=args.tolerance,seed=args.seed+1,method=method)
+        row=compare(prepared,cache,final,tolerance=args.tolerance,relative_drop=args.relative_drop,
+                    seed=args.seed+1,method=method)
         rows.append(row)
         print(f"{method}: {row['choice']}, {row['total_labels']} distinct labels, {row['branch']}",flush=True)
     # The audit happens only after both decisions, and has a separate provider/cache.
@@ -68,7 +74,7 @@ def main():
     for row in rows:
         d=audit['difference'];lo,hi=row['interval']
         row['audit_covered']=bool(lo<=d<=hi)
-        row['audit_acceptable']=bool(d<=args.tolerance if row['choice']=='A' else d>=-args.tolerance)
+        row['audit_acceptable']=bool(d<=row['tolerance'] if row['choice']=='A' else d>=-row['tolerance'])
     save('results.json',dict(configuration=vars(args),audit=audit,methods=rows,
         note='One synthetic example, not a new manuscript experiment.',
         label_saving_percent=100*(1-rows[0]['total_labels']/rows[1]['total_labels'])))

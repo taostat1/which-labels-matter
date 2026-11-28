@@ -37,7 +37,7 @@ The tolerance also has a relative interpretation. Write `G_j = exp(-mean_CV_loss
 
 $$\mathcal G_{\widehat j}\ge e^{-g}\max(\mathcal G_A,\mathcal G_B).$$
 
-Thus `g = 0.005` allows a relative decrease of at most `1 - exp(-0.005)`, or about **0.499%**, in this score. An allowed decrease `rho` corresponds to `g = -log(1-rho)`.
+Choose the allowed fractional decrease before querying. With `relative_drop=0.005`, the selected rule must retain at least 99.5% of the better geometric-mean score. The API computes `g = -log1p(-relative_drop)` and returns it in `result['tolerance']`. Supply `tolerance=g` to work directly on the loss scale.
 
 | Symbol | Meaning |
 |---|---|
@@ -68,7 +68,7 @@ After averaging over splits and combining repeated label pairs,
 
 $$T=c_0+\sum_k a_k\psi_k,\qquad\psi_k=x_{i_k}x_{j_k},\qquad S_1=\sum_k|a_k|.$$
 
-Diagonal products equal one and enter `c0`. Both `Q_A` and `Q_B` map the same training labels to the same validation rows, so their difference is defined for any feature widths. Public matrices give a uniform bound `|Delta_V - T| <= epsilon`. With common coefficient coordinates, LEC computes the paired and separate bounds and uses the tighter valid bound. With different widths, it adds the two individual loss-error bounds. Cache refinement uses the same rule after labels arrive.
+Diagonal products equal one and enter `c0`. Both `Q_A` and `Q_B` map the same training labels to the same validation rows. The prediction-space bound compares the errors on those rows for any pair of feature widths. LEC first computes each split's bound with all training signs unknown. Averaging the split bounds gives `prepared.epsilon`.
 
 ## Queries and decisions
 
@@ -78,13 +78,13 @@ The steps below follow the paper's Algorithm 1. The three stages separate public
 Input: public designs, fixed CV plan, lambda, g, delta, inspections N_1,...,N_J, final subset.
 Stage 1: Label-free Preparation
  1. Initialize both anchors to zero and create an empty cache C.
- 2. Approximation: obtain T = c0 + sum(a_k psi_k) and error bound epsilon.
- 3. Set S1 = sum(abs(a_k)), and I = [c0-S1-epsilon, c0+S1+epsilon].
- 4. Go to Stage 3 if upper(I) <= g, lower(I) >= -g, or S1 = 0.
- 5. Sampling law: set p_k = abs(a_k)/S1.
+ 2. Form T = c0 + sum(a_k psi_k) from public weights and signed label products.
+ 3. Set epsilon = mean_b B_b(empty), and S1 = sum(abs(a_k)).
+ 4. Set I = [c0-S1-epsilon, c0+S1+epsilon]. Go to Stage 3 if I supports a rule or S1 = 0.
 Stage 2: Sequential Label Queries
- 6. For each prescribed inspection N:
- 7.   Query: extend independent K_i ~ p draws to N; buy and cache missing labels.
+ 5. For each prescribed inspection N:
+ 6.   Sample product indices through draw N with probabilities p_k = abs(a_k)/S1.
+ 7.   Buy missing factors, cache their signs, and carry forward the previous bound.
  8.   Count: C_N = sum_{i=1}^N 1{sign(a[K_i])*psi[K_i] = 1}.
  9.   CP limits: compute (ell_N,u_N) with error probability delta/J.
 10.   Refine epsilon using cached labels if the raw CP interval supports a choice
@@ -119,9 +119,9 @@ with `ell_N = 0` at zero successes and `u_N = 1` at `N` successes. The beta quan
 
 $$I_N=[c_0+S_1(2\ell_N-1)-\varepsilon_N,\ c_0+S_1(2u_N-1)+\varepsilon_N].$$
 
-At a refinement, `_cache_bounds.py` encloses the Newton scores for every binary completion agreeing with the acquired labels. Local curvature and gradient bounds control the resulting risk error. The algorithm retains
+At a refinement, `_prediction_bound.py` substitutes the known training signs in each split. The split certificate still covers every assignment of the remaining signs. The updated error bound is
 
-$$\varepsilon_N=\min\{\varepsilon_{N^-},\varepsilon_{\rm loc}(\mathcal C_N)\}.$$
+$$\varepsilon_N=\min\left\{\varepsilon_{N^-},\frac{1}{B}\sum_b B_b(\mathcal C_N)\right\}.$$
 
 The true labels belong to that completion set, including after adaptive purchases. Thus this deterministic bound can use the same labels as the CP statistic without a new independence assumption or error allocation. The code refines only when the raw sampling interval could support a decision. At other checkpoints it keeps the preceding bound. This schedule leaves the polynomial, proposal, and cumulative counts unchanged.
 

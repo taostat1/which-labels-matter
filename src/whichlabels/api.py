@@ -1,9 +1,13 @@
 """Public API for Algorithm 1 and its same-permission active-CV baseline."""
 from dataclasses import dataclass
+from functools import cached_property
+import math
+from numbers import Real
 import time
 import numpy as np
 from ._bounds import paired_preconditioned
 from ._moments import polynomial, query_plan, query_trial, decision
+from ._prediction_bound import split_allowances
 from ._active import public_bounds, zero_helper, active_cv
 from .solver import fit, risk
 from .labels import LabelCache, ArrayLabelProvider
@@ -19,11 +23,32 @@ class PreparedComparison:
     penalty: float
     polynomial: dict
     proposal: dict | None
-    bounds: dict
     epsilon: float
-    separate_epsilon: float
     setup_seconds: float
-    baseline_setup_seconds: float
+
+    @cached_property
+    def bounds(self):
+        """Public ranges for the active-CV baseline and historical controls."""
+        return public_bounds(self.a, self.b, self.splits, self.penalty)
+
+    @property
+    def separate_epsilon(self):
+        return self.bounds['epsilon']
+
+    @property
+    def baseline_setup_seconds(self):
+        return self.bounds['seconds']
+
+    @cached_property
+    def legacy_paired_epsilon(self):
+        if self.a.shape[-1] != self.b.shape[-1]:
+            return self.separate_epsilon
+        errors = [
+            paired_preconditioned(self.a[tr], self.b[tr], self.a[te], self.b[te],
+                                  self.penalty)['epsilon']
+            for tr, te in self.splits
+        ]
+        return min(float(np.mean(errors)), self.separate_epsilon)
 
 
 def _ids(values, size, name):
@@ -42,8 +67,8 @@ def prepare_comparison(a, b, splits, penalty):
 
     a and b have shapes (objects, attributes, d_a) and (objects, attributes, d_b)
     with matching object and attribute order. Each feature row has norm at most
-    one. Equal widths use common coefficient coordinates for the paired bound.
-    For unequal widths the error bound is the sum of the two candidate bounds.
+    one. The paired bound compares the rules on the same prediction rows at
+    either feature width.
     Each split is a pair (training_indices, evaluation_indices). Splits and
     final training indices must be fixed independently of acquisition labels.
     """
@@ -68,20 +93,11 @@ def prepare_comparison(a, b, splits, penalty):
     if not plan or len({len(tr) for tr, _ in plan}) != 1:
         raise ValueError('a nonempty plan with a common training size is required')
     plan = tuple(plan)
-    bounds = public_bounds(a, b, plan, penalty)
-    epsilon = bounds['epsilon']
-    if a.shape[-1] == b.shape[-1]:
-        paired_bounds = [
-            paired_preconditioned(a[tr], b[tr], a[te], b[te], penalty)['epsilon']
-            for tr, te in plan
-        ]
-        epsilon = min(float(np.mean(paired_bounds)), epsilon)
     poly = polynomial(a, b, plan, penalty)
-    poly['epsilon'] = epsilon
     mass = float(np.abs(poly['coef']).sum())
     proposal = query_plan(poly, zero_helper(len(a), a.shape[1]), a.shape[1]) if mass else None
-    return PreparedComparison(a, b, plan, float(penalty), poly, proposal, bounds,
-        epsilon, bounds['epsilon'], time.perf_counter() - start, bounds['seconds'])
+    return PreparedComparison(a, b, plan, float(penalty), poly, proposal,
+                              poly['epsilon'], time.perf_counter() - start)
 
 
 def _exact_score(prepared, cache, stage):
@@ -111,14 +127,29 @@ def audit_score(prepared, labels):
     return {'difference': value, 'numerical_radius': error, 'audit_labels': cache.count}
 
 
-def compare(prepared, cache, final_indices, *, tolerance, delta=0.05,
+def _loss_tolerance(tolerance, relative_drop):
+    if (tolerance is None) == (relative_drop is None):
+        raise ValueError('specify exactly one of tolerance and relative_drop')
+    if relative_drop is not None:
+        if not isinstance(relative_drop, Real) or not 0 < relative_drop < 1:
+            raise ValueError('relative_drop must be a fraction strictly between 0 and 1')
+        tolerance = -math.log1p(-relative_drop)
+    if not isinstance(tolerance, Real) or not math.isfinite(tolerance) or tolerance <= 1e-8:
+        raise ValueError('the loss tolerance must be finite and exceed 1e-8')
+    return float(tolerance)
+
+
+def compare(prepared, cache, final_indices, *, tolerance=None, relative_drop=None, delta=0.05,
             inspections=(128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768),
-            seed=1, method='selective', error_bound='paired', refine_error=True):
+            seed=1, method='selective', error_bound='prediction', refine_error=True):
     """Run a fixed-CV decision and fit the selected candidate once at the end.
 
     method is 'selective' (Algorithm 1) or 'active_cv' (paper comparator).
-    error_bound='separate' uses the sum of the two candidate error bounds.
-    For unequal widths the default also uses this sum, including at refinement.
+    Supply either an excess log-loss tolerance or an allowed relative drop in
+    the geometric-mean probability assigned to observed labels. For a drop rho
+    the loss tolerance is -log(1-rho). Fix the tolerance before querying.
+    The default uses the manuscript's prediction-space bound at all widths.
+    Explicit 'paired' and 'separate' reproduce the earlier bound choices.
     refine_error uses acquired labels to tighten the deterministic error bound
     when that refinement could support a decision. Set it to False to reproduce
     the earlier fixed-bound ablation. Neither option changes the query law.
@@ -130,8 +161,9 @@ def compare(prepared, cache, final_indices, *, tolerance, delta=0.05,
         raise ValueError('cache dimensions do not match the public designs')
     if cache.count:
         raise ValueError('use a fresh cache for each independent method comparison')
-    if not np.isfinite(tolerance) or tolerance <= 1e-8 or not 0 < delta < 1:
-        raise ValueError('tolerance must exceed 1e-8 and delta must lie in (0, 1)')
+    tolerance = _loss_tolerance(tolerance, relative_drop)
+    if not 0 < delta < 1:
+        raise ValueError('delta must lie in (0, 1)')
     checks = np.asarray(inspections)
     if (checks.ndim != 1 or not checks.size or not np.issubdtype(checks.dtype, np.integer)
             or checks[0] < 2 or (np.diff(checks) <= 0).any()):
@@ -139,18 +171,24 @@ def compare(prepared, cache, final_indices, *, tolerance, delta=0.05,
     final_indices = _ids(final_indices, len(prepared.a), 'final_indices')
     if len(final_indices) != len(prepared.splits[0][0]):
         raise ValueError('the final subset must have the prescribed training size')
-    if method not in {'selective', 'active_cv'} or error_bound not in {'paired', 'separate'}:
+    if method not in {'selective', 'active_cv'} or error_bound not in {'prediction', 'paired', 'separate'}:
         raise ValueError('unknown method or approximation bound')
     poly = dict(prepared.polynomial)
-    eps = prepared.epsilon if error_bound == 'paired' else prepared.separate_epsilon
+    eps = prepared.epsilon
+    if error_bound == 'paired':
+        eps = prepared.legacy_paired_epsilon
+    elif error_bound == 'separate':
+        eps = prepared.separate_epsilon
     poly['epsilon'] = eps
     fallback = False
     if method == 'active_cv':
         cfg = dict(delta=delta, active_initial_draws=32, active_max_draws_per_fold=4096,
             inner_lambdas=[.005, .01, .02, .05, .1, .2, .4, .6, .8, .95],
             outer_betting_fractions=[.05, .1, .2, .4, .6, .8, .95])
+        baseline_bounds = prepared.bounds
+        start = time.perf_counter()
         trial = active_cv(prepared.a, prepared.b, cache, prepared.splits,
-            prepared.penalty, tolerance, prepared.bounds, cfg, seed, seed + 1000000)
+            prepared.penalty, tolerance, baseline_bounds, cfg, seed, seed + 1000000)
         branch = 'active_cv'
         fallback = trial['empty_protection']
         setup = prepared.baseline_setup_seconds
@@ -163,13 +201,15 @@ def compare(prepared, cache, final_indices, *, tolerance, delta=0.05,
             estimate=center, draws=0, history=[])
         branch = 'public_range'
         if choice == 'unresolved' and mass:
-            refine_bound = None
-            if refine_error:
+            def refine_bound():
+                if error_bound == 'prediction':
+                    return split_allowances(prepared.a, prepared.b, prepared.splits,
+                                            prepared.penalty, cache._values).mean()
                 from ._cache_bounds import approximation_bound
-                refine_bound = lambda: approximation_bound(prepared, cache._values,
-                    separate=(error_bound == 'separate'))
+                return approximation_bound(prepared, cache._values, separate=(error_bound == 'separate'))
+
             trial = query_trial(poly, prepared.proposal, cache, np.random.default_rng(seed),
-                list(map(int, checks)), tolerance, delta, refine_bound=refine_bound)
+                list(map(int, checks)), tolerance, delta, refine_bound=refine_bound if refine_error else None)
             eps = trial['epsilon']
             branch = 'selective_moments'
         if trial['choice'] == 'unresolved':
@@ -187,7 +227,8 @@ def compare(prepared, cache, final_indices, *, tolerance, delta=0.05,
     elapsed = time.perf_counter() - start
     assert cache.count == sum(cache.stage_counts.values())
     return dict(method=method, choice=trial['choice'], interval=[trial['lower'], trial['upper']],
-        tolerance=float(tolerance), delta=float(delta), approximation_error_bound=float(eps),
+        tolerance=tolerance, relative_drop=None if relative_drop is None else float(relative_drop),
+        delta=float(delta), approximation_error_bound=float(eps),
         initial_approximation_error_bound=float(poly['epsilon']),
         refine_error=bool(refine_error and method == 'selective'),
         branch=branch, fallback=bool(fallback), comparison_labels=before_final,

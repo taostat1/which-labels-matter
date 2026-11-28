@@ -31,7 +31,7 @@ class AlgorithmChecks(unittest.TestCase):
     def test_no_provider_needed_for_public_preparation(self):
         self.assertGreater(self.prepared.polynomial['terms'], 0)
         self.assertTrue(np.isfinite(self.prepared.epsilon))
-        self.assertLessEqual(self.prepared.epsilon, self.prepared.separate_epsilon)
+        self.assertAlmostEqual(self.prepared.epsilon, self.prepared.polynomial['split_allowances'].mean())
 
     def test_polynomial_identity_and_bound(self):
         check = audit_polynomial(self.prepared.polynomial, self.y, self.plan,
@@ -106,6 +106,30 @@ class AlgorithmChecks(unittest.TestCase):
         with self.assertRaises(ValueError):
             cache.query_keys(np.array([0,1]))
         self.assertEqual(cache.count,0)
+
+    def test_relative_drop_matches_absolute_tolerance(self):
+        import math
+        rho = .005
+        g = -math.log1p(-rho)
+        for method in ('selective', 'active_cv'):
+            with self.subTest(method=method):
+                args = dict(method=method, seed=17, inspections=(32, 128, 512))
+                relative = compare(self.prepared, self.cache(), self.final, relative_drop=rho, **args)
+                absolute = compare(self.prepared, self.cache(), self.final, tolerance=g, **args)
+                self.assertEqual(relative['relative_drop'], rho)
+                for key in ('tolerance', 'branch', 'choice', 'interval', 'history', 'stage_labels',
+                            'total_labels', 'final_parameter'):
+                    self.assertEqual(relative[key], absolute[key])
+
+    def test_invalid_tolerance_options_before_any_purchase(self):
+        invalid = [{}, {'relative_drop': .005, 'tolerance': .005}]
+        invalid.extend({'relative_drop': v} for v in (-.1, 0., 1., 1.1, np.nan, np.inf, 1e-12))
+        for kwargs in invalid:
+            with self.subTest(kwargs=kwargs):
+                cache = self.cache()
+                with self.assertRaises(ValueError):
+                    compare(self.prepared, cache, self.final, **kwargs)
+                self.assertEqual(cache.count, 0)
 
     def test_bound_over_all_small_binary_labelings(self):
         rng = np.random.default_rng(21)

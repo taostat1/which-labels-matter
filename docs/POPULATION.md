@@ -1,6 +1,6 @@
-# Algorithm 2: LEC for population risk
+# Algorithm 2: November 25 population-risk protocol
 
-Algorithm 2 compares expected test risk over random training sets of fixed size. Algorithm 1 conditions on a fixed cross-validation plan. Both now start from **zero anchors and an empty label cache**. The installable `whichlabels.compare` API implements Algorithm 1; Algorithm 2 uses the research sources in [current reproduction](../paper_reproduction/current).
+The [November 25 research sources](../paper_reproduction/current) implement Algorithm 2 for expected test risk over random training sets of fixed size. The installable [Algorithm 1](ALGORITHM.md) compares two rules on a fixed cross-validation plan. Both start from **zero anchors and an empty label cache**.
 
 ## Target and initialization
 
